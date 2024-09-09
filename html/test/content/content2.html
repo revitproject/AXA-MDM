@@ -1,0 +1,275 @@
+<!-- base-view -->
+<div class="base-view">
+  <div class="content-inner">
+    <h1 class="content-title">기기</h1>
+    <div>
+      <button type="button" id="showAlert" class="btn is-grays-1">alert1</button>
+      <button type="button" id="showConfirm" class="btn is-grays-1">confirm</button>
+    </div>
+    <div class="module-top">
+      <div class="form-searchbox">
+        <dl class="dl-formbox">
+          <dt>기간</dt>
+          <dd>
+            <div class="area-datepicker">
+              <!-- DatePicker -->
+              <div class="wrap-datepicker">
+                <div class="datePicker">
+                  <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+                    <div id="startpicker-div1" class="datepicker-div"></div>
+                  </div>
+                </div>
+                <span class="datepicker-to">~</span>
+                <div class="datePicker">
+                  <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+                    <div id="endpicker-div1" class="datepicker-div"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- //DatePicker -->
+              <div class="btn-options">
+                <button type="button" class="btn is-secondary-1 is-active">전체</button>
+                <button type="button" class="btn is-secondary-1">오늘</button>
+                <button type="button" class="btn is-secondary-1">1주일</button>
+                <button type="button" class="btn is-secondary-1">1개월</button>
+                <button type="button" class="btn is-secondary-1">3개월</button>
+                <button type="button" class="btn is-secondary-1">6개월</button>
+              </div>
+            </div>
+          </dd>
+        </dl>
+        <dl class="dl-formbox">
+          <dt>사용유무</dt>
+          <dd>
+            <select id="select-date" class="inp-select is-sm">
+              <option value="" selected>전체</option>
+              <option value="">Y</option>
+              <option value="">N</option>
+            </select>
+          </dd>
+          <dt>관리모드</dt>
+          <dd>
+            <select id="select-date" class="inp-select is-sm">
+              <option value="" selected>전체</option>
+              <option value="">Y</option>
+              <option value="">N</option>
+            </select>
+          </dd>
+        </dl>
+        <dl class="dl-formbox inbtn">
+          <dt>검색어</dt>
+          <dd>
+            <div class="searchbox-item">
+              <select id="select-search" class="inp-select is-sm">
+                <option value="" selected>전체</option>
+                <option value="">Y</option>
+                <option value="">N</option>
+              </select>
+          
+              <input type="search" id="inp-search" class="inp-base" placeholder="">
+            </div>
+          </dd>
+          <dd class="searchbox-btn">
+            <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+            <button type="submit" class="btn is-search">검색</button>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="module-bottom">
+      <div class="box-form">
+        <div class="wrap-tbl">
+          <div class="tbl-head">
+            <select class="inp-select">
+              <option value="" selected="">10개씩 보기</option>
+              <option value="">30개씩 보기</option>
+              <option value="">50개씩 보기</option>
+              <option value="">100개씩 보기</option>
+            </select>
+            <div class="head-option">
+              <!-- <button type="button" class="btn is-grays-1" onclick="window.location.href='./list-device2.html';">기기 추가</button> -->
+              <button type="button" class="btn is-grays-1" data-content="content2-1" data-path="./device">기기 추가</button>
+            </div>
+          </div>
+
+          <table class="tbl-base">
+            <colgroup>
+              <col style="width: 5rem;">
+              <col style="width: 20rem;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>기기명</th>
+                <th>모델</th>
+                <th>사용자</th>
+                <th>정책/버전</th>
+                <th>관리 모드</th>
+                <th>API레벨</th>
+                <th>사용유무</th>
+                <th>기기 등록일시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
+                <td>SM-G960N</td>
+                <td>홍길동</td>
+                <td>slack/14</td>
+                <td>프로필</td>
+                <td>29</td>
+                <td>Y</td>
+                <td>2023-04-24 15:21:59</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
+                <td>SM-G960N</td>
+                <td>홍길동</td>
+                <td>slack/14</td>
+                <td>프로필</td>
+                <td>29</td>
+                <td>Y</td>
+                <td>2023-04-24 15:21:59</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="wrap-pagination">
+            <div class="wrap-count">
+              <span class="count-text">총 <em class="count-number">115</em>건</span>
+            </div>
+            <div class="pagination">
+              <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+              <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+              <a href="#" class="pagination-link">2</a>
+              <a href="#" class="pagination-link">3</a>
+              <a href="#" class="pagination-link">4</a>
+              <a href="#" class="pagination-link">5</a>
+              <a href="#" class="pagination-link">6</a>
+              <a href="#" class="pagination-link">7</a>
+              <a href="#" class="pagination-link">8</a>
+              <a href="#" class="pagination-link">9</a>
+              <a href="#" class="pagination-link">10</a>
+              <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+              <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-dimmed"></div>
+    <div class="modal-inner" style="width: 450px;">
+      <div class="modal-header">
+        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+        <strong class="modal-title">기기 상세</strong>
+      </div>
+      <div class="modal-body">
+        기기 이름
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn is-grays-1 is-footer is-true">기기 원격제어 설정</button>
+        <button type="button" id="deleteConfirm" class="btn is-grays-1 is-footer is-false">기기 삭제</button>
+      </div>
+    </div>
+  </div>
+  <!-- //modal -->
+</div>
+<!-- //base-view -->
+
+<!-- page script -->
+<script>
+  // DatePicker 초기화
+  (function() {
+    console.log('content2.html')
+
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    
+    // datepicker buttons
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+      }
+
+      startpicker.setDate(startDate);
+      endpicker.setDate(endDate);
+    });
+
+    // modal
+    let modalManager = new ModalManager();
+    
+    document.querySelector('#deleteConfirm').addEventListener('click', function(){
+
+      modalManager.confirm(
+        '알림',
+        '기기를 정말 삭제 하시겠습니까?',
+        () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 콜백
+        () => { console.log('실행이 취소되었습니다.'); }, // 취소 버튼 콜백
+        '확인',   // 확인 버튼 텍스트
+        '취소'    // 취소 버튼 텍스트
+      );
+    });
+
+    document.querySelector('#showAlert').addEventListener('click', function() {
+      modalManager.alert(
+        '알림',           // 타이틀
+        '이것은 경고 메시지입니다.'  // 메시지
+      );
+    });
+
+    document.querySelector('#showConfirm').addEventListener('click', function() {
+      modalManager.confirm(
+        'confirm', // 타이틀
+        '이 항목을 삭제하시겠습니까?', // 메시지
+        () => { console.log('항목이 삭제되었습니다.'); }, // 확인 버튼 콜백
+        () => { console.log('삭제가 취소되었습니다.'); }, // 취소 버튼 콜백
+        '삭제',   // 확인 버튼 텍스트 
+        '취소'    // 취소 버튼 텍스트
+      );
+    });
+  })();
+</script>

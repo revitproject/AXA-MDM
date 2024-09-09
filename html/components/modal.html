@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white"> 
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Modal</h1>
+      <h2 class="component-title">Trigger</h2>
+      <div class="component-btn-group">
+        <a href="#sampleModal" class="btn is-grays-1" data-modal="open">1. a태그(href)</a>
+        <button type="button" class="btn is-grays-1" data-modal="open" data-url="#sampleModal">2. button태그(data-url)</button>
+        <button type="button" id="openModalBtn" class="btn is-grays-2">3. ID 기반 이벤트 핸들링</button>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="component-subtitle">1. Anchor Tag (&lt;a&gt; 태그) 기반 트리거</h3>
+        <p class="component-subtext">이 방식은 href 속성을 사용하여 모달의 ID를 전달한다. 주로 링크 요소로 사용되며, 자연스러운 링크 형태로 모달을 트리거할 때 적합하다.</p>
+      </div>
+<pre>
+<code class="language-Markup">&lt;a href="#sampleModal" class="btn is-grays-1" data-modal="open">모달 열기 (a 태그)&lt;/a></code>
+</pre>
+
+<div class="mt-16">
+  <h3 class="component-subtitle">2. Button Tag (&lt;button&gt; 태그) 기반 트리거</h3>
+  <p class="component-subtext">이 방식은 data-url 속성을 사용하여 모달의 ID를 전달한다. 주로 버튼 요소로 사용되며, 버튼을 클릭하여 모달을 트리거할 때 적합하다.</p>
+</div>
+<pre>
+<code class="language-Markup">&lt;button type="button" class="btn is-grays-1" data-modal="open" data-url="#sampleModal">모달 열기 (button 태그)&lt;/button></code>
+</pre>
+
+<div class="mt-16">
+  <h3 class="component-subtitle">3. JavaScript 기반 트리거 (직접 호출)</h3>
+  <p class="component-subtext">이 방식은 자바스크립트로 직접 모달을 제어한다. ModalManager의 openModalById 메서드를 통해 모달 ID를 전달하고 열 수 있다.</p>
+</div>
+<pre>
+<code class="language-Markup">&lt;script>
+  document.getElementById('openModalBtn').addEventListener('click', function() {
+    window.modalManager.openModalById('sampleModal2', // 모달 ID
+      () => { console.log('확인 버튼 클릭됨.'); }, // 확인 버튼 콜백
+      () => { console.log('취소 버튼 클릭됨.'); }  // 취소 버튼 콜백
+    );
+  });
+&lt;/script></code>
+</pre>
+
+    <h2 class="component-title">Markup</h2>
+<pre class="mt-0">
+<code class="language-Markup">&lt;!-- data-modal --&gt;
+&lt;div id="sampleModal" class="modal">
+  &lt;div class="modal-inner">
+    &lt;div class="modal-header">
+      &lt;button class="modal-close" data-modal="close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+      &lt;strong class="modal-title">모달 타이틀&lt;/strong>
+    &lt;/div>
+    &lt;div class="modal-body">
+      모달 컨텐츠
+    &lt;/div>
+    &lt;div class="modal-footer">
+      &lt;button type="button" class="btn is-footer is-true">확인&lt;/button>
+      &lt;button type="button" class="btn is-footer is-false">취소&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;!-- alert/confirm은 동적 요소 생성 --&gt;</code>
+</pre>
+
+    <h2 class="component-title">Dialog Modal</h2>
+    <div class="component-btn-group">
+      <button type="button" id="sampleAlert" class="btn is-outline-2">Alert</button>
+      <button type="button" id="sampleConfirm" class="btn is-outline-2">Confirm</button>
+    </div>
+<pre>
+<code class="language-Markup">&lt;script>
+  // Alert
+  document.querySelector('#sampleAlert').addEventListener('click', function() {
+    window.modalManager.alert(
+      '알림',                          // 타이틀
+      '이것은 경고 메시지입니다.',      // 메시지
+      () => { console.log('확인 클릭'); } // 확인 버튼 콜백
+    );
+  });
+
+  // Confirm
+  document.querySelector('#sampleConfirm').addEventListener('click', function() {
+    window.modalManager.confirm(
+      '삭제 확인',                     // 타이틀
+      '이 항목을 삭제하시겠습니까?',    // 메시지
+      () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
+      () => { console.log('삭제 취소'); }, // 취소 버튼 콜백
+      '삭제',                          // 확인 버튼 텍스트
+      '취소'                           // 취소 버튼 텍스트
+    );
+  });
+&lt;/script></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- modal -->
+  <div id="sampleModal" class="modal">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+        <strong class="modal-title">모달 타이틀</strong>
+      </div>
+      <div class="modal-body">
+        모달 컨텐츠
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn is-footer is-true">확인</button>
+        <button type="button" class="btn is-footer is-false">취소</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sampleModal2" class="modal">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+        <strong class="modal-title">모달 타이틀2</strong>
+      </div>
+      <div class="modal-body">
+        모달 컨텐츠2
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn is-footer is-true">확인</button>
+        <button type="button" class="btn is-footer is-false">취소</button>
+      </div>
+    </div>
+  </div>
+  <!-- /modal -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+  <script>
+    // default 모달 트리거
+    document.getElementById('openModalBtn').addEventListener('click', function() {
+      window.modalManager.openModalById('sampleModal2', // 모달 ID
+        () => { console.log('확인 버튼 클릭됨.'); }, // 확인 버튼 콜백
+        () => { console.log('취소 버튼 클릭됨.'); }  // 취소 버튼 콜백
+      );
+    });
+
+    // Alert 모달 트리거
+    document.querySelector('#sampleAlert').addEventListener('click', function() {
+      window.modalManager.alert(
+        '알림',                          // 타이틀
+        '이것은 경고 메시지입니다.',      // 메시지
+        () => { console.log('확인 클릭'); } // 확인 버튼 콜백
+      );
+    });
+
+    // Confirm 모달 트리거
+    document.querySelector('#sampleConfirm').addEventListener('click', function() {
+      window.modalManager.confirm(
+        '삭제 확인',                     // 타이틀
+        '이 항목을 삭제하시겠습니까?',    // 메시지
+        () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
+        () => { console.log('삭제 취소'); }, // 취소 버튼 콜백
+        '삭제',                          // 확인 버튼 텍스트
+        '취소'                           // 취소 버튼 텍스트
+      );
+    });
+  </script>
+</body>
+</html>

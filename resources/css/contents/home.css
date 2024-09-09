@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+.home .list-mdm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem 1.2rem;
+}
+.home .list-mdm li {
+  width: calc(100% / 3 - 1.2rem);
+  background: #fff;
+  border-radius: 1rem;
+  text-align: center;
+}
+.home .list-mdm li .mdm-link {
+  display: block;
+  padding: 6rem 2rem;
+}
+.home .list-mdm li .number {
+  display: block;
+  font-size: 4rem;
+}
+.home .list-mdm li .title {
+  display: block;
+  margin-top: 1rem;
+  color: var(--grays-2);
+  font-size: 1.6rem;
+}
+
+.wrap-clock {
+  width: 100%;
+  margin: 0 auto 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+}
+.wrap-clock .date {
+  font-size: 2rem;
+  color: var(--grays-3);
+}
+.wrap-clock .time {
+  font-size: 5rem;
+  font-weight: 700;
+}
+.wrap-clock .time > span {
+  font-size: 5rem;
+}
+.wrap-clock .seconds {
+  color: var(--primary);
+}

@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+.area-tbl {
+  display: flex;
+  gap: 2.8rem;
+  margin-top: 2.8rem;
+}
+.area-tbl .wrap-tbl + .wrap-tbl {
+  margin-top: 0;
+}
+.wrap-tbl + .wrap-tbl {
+  margin-top: 3rem;
+}
+.tbl-base {
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 1rem;
+  border-top: .1rem solid var(--grays-3);
+  border-bottom: .1rem solid var(--secondary-3);
+}
+.tbl-base + .tbl-base {margin-top: 1.2rem;}
+.tbl-base > thead > tr > th,
+.tbl-base > tbody > tr > th,
+.tbl-base > tbody > tr > td,
+.tbl-base > tfoot > tr > th,
+.tbl-base > tfoot > tr > td {
+  height: 4.8rem;
+  padding: .5rem .8rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  text-align: center;
+}
+.tbl-base > thead > tr,
+.tbl-base > tbody > tr {
+  border-bottom: .1rem solid var(--secondary-3);
+}
+.tbl-base > thead > tr > th {
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: var(--grays-6);
+  border-right: .1rem solid var(--grays-5);
+}
+.tbl-base > thead > tr > th:last-child {
+  border-right: 0;
+}
+.tbl-base > tfoot > tr > th,
+.tbl-base > tfoot > tr > td {
+  font-weight: 500;
+  background-color: var(--secondary-1);
+}
+.tbl-base > tfoot > tr > td {
+  text-align: right;
+}
+
+.tbl-base > tbody > tr > th,
+.tbl-base > tbody > tr > td {
+  color: var(--grays-1);
+  background: #fff;
+}
+.tbl-base > tbody > tr > th.is-bg,
+.tbl-base > tbody > tr > td.is-bg {
+  background: var(--grays-6);
+}
+.tbl-base > tbody > tr > th.is-bg {
+  color: var(--grays-1);
+  font-weight: 500;
+  background: var(--grays-6);
+  border-right: .1rem solid var(--grays-5);
+}
+.tbl-base > colgroup + tbody > tr > th {
+  padding: .6rem 1.3rem;
+  color: var(--grays-1);
+  font-weight: 600;
+  border-right: .1rem solid var(--grays-5);
+}
+.tbl-base > colgroup + tbody > tr > td {
+  padding: .6rem 1.8rem;
+}
+.tbl-base > colgroup + tbody > tr > th {
+  background-color: var(--grays-6);
+}
+.tbl-base > tbody > tr > th.align-center .form-checkbox,
+.tbl-base > tbody > tr > td.align-center .form-checkbox {
+  justify-content: center;
+}
+.tbl-base .no-result {
+  position: relative;
+  padding: 20.2rem 0 8rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--grays-3);
+  text-align: center;
+}
+.tbl-base .no-result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  margin-top: 10.8rem;
+  width: 8rem;
+  height: 8rem;
+  background: url("../../images/ico/ico-nodata.png") no-repeat 50% 100% / 100%;
+  transform: translateX(-50%);
+}
+.tbl-title {
+	margin-bottom: 1rem;
+	color: var(--grays-1);
+	font-size: 1.4rem;
+	font-weight: 700;
+  line-height: 2.2rem;
+}
+.tbl-base .wrap-group.is-flex {
+  display: flex;
+  align-items: center;
+}
+.tbl-base .wrap-group.is-flex .form-checkbox + .form-checkbox {
+  margin-top: 0;
+  margin-left: 1.6rem;
+}
+.tbl-base > thead > tr > th.bold,
+.tbl-base > thead > tr > td.bold,
+.tbl-base > tbody > tr > th.bold,
+.tbl-base > tbody > tr > td.bold,
+.module-top .tbl-base > tbody > tr > th.bold,
+.module-top .tbl-base > tbody > tr > td.bold {
+  font-weight: 700;
+}
+
+/* .table has-left */
+.tbl-base.has-left > thead > tr > th,
+.tbl-base.has-left > tbody > tr > th,
+.tbl-base.has-left > tbody > tr > td {
+  text-align: left;
+}
+/* .table has-data */
+.tbl-base.has-data > tbody > tr > td {
+  text-align: left;
+}
+
+/* module-top 박스 내 테이블 */
+.module-top .tbl-base > colgroup + tbody > tr > th {
+  background-color: var(--grays-6);
+}
+.module-top .tbl-base > tbody > tr > th, 
+.module-top .tbl-base > tbody > tr > td {
+  color: var(--grays-1);
+  font-weight: 500;
+}
+
+/* tbl-head */
+.tbl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.8rem;
+  margin-bottom: 1rem;
+}
+.tbl-head.is-end {
+  justify-content: flex-end;
+}
+.tbl-head .count-text {
+  color: var(--grays-1);
+  font-size: 1.4rem;
+}
+.tbl-head .count-text .count-num {
+  font-weight: 600;
+}
+.tbl-head .inp-select {
+  min-width: 10.6rem;
+  padding: .3rem 1.2rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 5L0.535899 0.499999L7.4641 0.5L4 5Z' fill='%23222222'/%3E%3C/svg%3E%0A");
+}
+.tbl-head .info-text {
+  color: var(--grays-2);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+.tbl-head .head-option .inp-select {
+  margin-right: .8rem;
+}
+.tbl-btn-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2.4rem;
+  gap: 1rem;
+}
+.tbl-btn-group.is-right {
+  justify-content: flex-end;
+}
+.tbl-btn-group.is-center {
+  justify-content: center;
+}
+
+/* tbl-scroll */
+.tbl-base.has-scrollbar {
+  table-layout: auto;
+  margin-bottom: .6rem;
+}
+.scroll-content {
+  overflow: auto;
+}
+/* nodata */
+.tbl-nodata, 
+.tbl-nodata tbody tr {
+  border-bottom: 0;
+}
+/* rowspan이 있을 경우 border-left 값 추가 */
+.tbl-base tr > th.is-border {
+  border-left: .1rem solid var(--grays-5);
+} 
+
+/* dl type */
+.tbl-dl {
+  display: inline-flex;
+  align-items: center;
+  line-height: 2rem;
+}
+.tbl-dl dt {
+  padding-right: 1.2rem;
+  color: var(--grays-2); 
+}
+.tbl-dl dd {
+  color: var(--grays-1);
+  font-weight: 500;
+}
+.tbl-dl + .tbl-base {
+  margin-top: 1.4rem;
+}
+.dl-formbox + .tbl-base {
+  margin-top: 2.4rem;
+}
+.tbl-dl + .tbl-dl {
+  margin-left: 2.8rem;
+  padding-left: 2.8rem;
+  border-left: .1rem solid #D9D9D9;
+  line-height: 2.2rem;
+}
+
+/* etc */
+.tbl-base > tbody > tr > td .data-block {
+  display: block;
+}
+.tbl-base > tbody > tr > td .btn-group {
+  justify-content: center;
+}
+.tbl-base > tbody > tr > td .btn-group button {
+  flex: initial;
+}

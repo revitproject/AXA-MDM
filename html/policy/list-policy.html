@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body>
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">정책</h1>
+        
+        <div class="ui-tab is-line">
+          <ul class="tab-menu">
+            <li class="tab-item is-active">
+              <a href="#" class="tab-link" data-tab="linetab1">전체</a>
+            </li>
+            <li class="tab-item">  
+              <a href="#" class="tab-link" data-tab="linetab2">패스워드</a>
+            </li>
+            <li class="tab-item">
+              <a href="#" class="tab-link" data-tab="linetab3">기기</a>
+            </li>
+            <li class="tab-item">
+              <a href="#" class="tab-link" data-tab="linetab4">앱</a>
+            </li>
+            <li class="tab-item">
+              <a href="#" class="tab-link" data-tab="linetab5">보안</a>
+            </li>
+            <li class="tab-item">
+              <a href="#" class="tab-link" data-tab="linetab6">사용자</a>
+            </li>
+            <li class="tab-item">
+              <a href="#" class="tab-link" data-tab="linetab7">키오스크</a>
+            </li>
+          </ul>
+          <div class="tab-contents">
+            <div class="tab-content is-active" data-tab-content="linetab1">
+              <div class="box-form mt-0">
+                전체
+              </div>
+            </div>
+            <div class="tab-content" data-tab-content="linetab2">content2</div>
+            <div class="tab-content" data-tab-content="linetab3">content3</div>
+            <div class="tab-content" data-tab-content="linetab4">content4</div>
+            <div class="tab-content" data-tab-content="linetab5">content5</div>
+            <div class="tab-content" data-tab-content="linetab6">content6</div>
+            <div class="tab-content" data-tab-content="linetab7">content7</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+   <script>
+    (function() {
+      console.log('list-policy.html')
+    })();
+   </script>
+</body>
+</html>

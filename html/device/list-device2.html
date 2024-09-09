@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body>
+  <!-- base-wrap -->
+  <div class="base-wrap">
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">기기 > 추가</h1>
+        <div class="module-top">
+          <div class="form-searchbox dt-length6">
+            <dl class="dl-formbox">
+              <dt>사용자</dt>
+              <dd>
+                <select id="select-date" class="inp-select">
+                  <option value="" selected>선택</option>
+                  <option value="">옵션</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>정책</dt>
+              <dd>
+                <select id="select-date" class="inp-select">
+                  <option value="" selected>선택</option>
+                  <option value="">옵션</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>관리모드</dt>
+              <dd>
+                <select id="select-date" class="inp-select">
+                  <option value="" selected>선택</option>
+                  <option value="">옵션</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>QR 유효기간</dt>
+              <dd>
+                <select id="select-date" class="inp-select">
+                  <option value="" selected>선택</option>
+                  <option value="">옵션</option>
+                </select>
+              </dd>
+            </dl>
+          </div>
+          <div class="wrap-link is-end">
+            <div class="wrap-btn">
+              <button type="button" class="btn is-outline-2" data-modal="open" data-url="#modal1">기업 소유 기기(초기화) QR 코드 생성</button>
+              <button type="button" class="btn is-outline-2" data-modal="open" data-url="#modal2">개인 소유 기기(BYOD) QR 코드 생성</button>
+              <button type="button" class="btn is-outline-3">QR 코드 메일 전송</button>
+            </div>
+          </div>
+        </div>
+        <div class="module-bottom">
+          <div class="box-form">
+            <div class="wrap-tbl">
+              <div class="tbl-head">
+                <select class="inp-select">
+                  <option value="" selected="">10개씩 보기</option>
+                  <option value="">30개씩 보기</option>
+                  <option value="">50개씩 보기</option>
+                  <option value="">100개씩 보기</option>
+                </select>
+
+                <div class="head-option">
+                  <button type="button" class="btn is-secondary-1" onclick="window.location.href='./list-device.html';">목록</button>
+                </div>
+              </div>
+  
+              <table class="tbl-base">
+                <colgroup>
+                  <col style="width: 5rem;">
+                  <col style="width: 20rem;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>기기명</th>
+                    <th>모델</th>
+                    <th>사용자</th>
+                    <th>정책/버전</th>
+                    <th>관리 모드</th>
+                    <th>API레벨</th>
+                    <th>사용유무</th>
+                    <th>기기 등록일시</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>ddd</td>
+                    <td>SM-G960N</td>
+                    <td>홍길동</td>
+                    <td>slack/14</td>
+                    <td>프로필</td>
+                    <td>29</td>
+                    <td>Y</td>
+                    <td>2023-04-24 15:21:59</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>ddd</td>
+                    <td>SM-G960N</td>
+                    <td>홍길동</td>
+                    <td>slack/14</td>
+                    <td>프로필</td>
+                    <td>29</td>
+                    <td>Y</td>
+                    <td>2023-04-24 15:21:59</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wrap-pagination">
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">115</em>건</span>
+                </div>
+                <div class="pagination">
+                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                  <a href="#" class="pagination-link">2</a>
+                  <a href="#" class="pagination-link">3</a>
+                  <a href="#" class="pagination-link">4</a>
+                  <a href="#" class="pagination-link">5</a>
+                  <a href="#" class="pagination-link">6</a>
+                  <a href="#" class="pagination-link">7</a>
+                  <a href="#" class="pagination-link">8</a>
+                  <a href="#" class="pagination-link">9</a>
+                  <a href="#" class="pagination-link">10</a>
+                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <div id="modal1" class="modal">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 500px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">기업 소유 기기(초기화) QR 코드 생성</strong>
+        </div>
+        <div class="modal-body">
+          <div class="wrap-qrcode">
+            <img src="https://via.placeholder.com/150" alt="QR Code" id="qrCodeImage">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-dimmed"></div>
+      <div class="modal-inner" style="width: 500px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">개인 소유 기기(초기화) QR 코드 생성</strong>
+        </div>
+        <div class="modal-body">
+          <div class="wrap-qrcode">
+            <img src="https://via.placeholder.com/150" alt="QR Code" id="qrCodeImage">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+</body>
+</html>

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  word-break: keep-all;
+  -ms-overflow-style: scrollbar;
+  scroll-behavior: smooth;
+  /* Smooth scrolling for modern browsers */
+}
+
+body {
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape */
+  text-size-adjust: 100%;
+  line-height: 1.5;
+  /* Improve readability */
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button,
+fieldset,
+iframe,
+input,
+select,
+textarea {
+  border: 0;
+}
+
+button,
+dialog,
+input,
+mark,
+meter,
+progress {
+  background-color: transparent;
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+meter,
+progress,
+select,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+  /* Remove border in IE 11 */
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  /* for Firefox */
+}
+
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+  /* for Internet Explorer */
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  /* Remove cancel button in search inputs */
+}
+
+input,
+textarea {
+  outline: none;
+  /* Remove default outline */
+}

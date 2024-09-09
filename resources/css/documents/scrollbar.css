@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* default */
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {border-radius: .4rem;}
+::-webkit-scrollbar {width: .8rem; height: .8rem; background-color: #F1F3F4;}
+::-webkit-scrollbar-thumb {background-color: #C6CBD0;}
+
+/* lnb */
+.lnb::-webkit-scrollbar,
+.lnb::-webkit-scrollbar-thumb {border-radius: .3rem;}
+.lnb::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: var(--grays-6);}
+.lnb::-webkit-scrollbar-thumb {background-color: var(--grays-5);}
+
+/* scroll-content */
+.scroll-content::-webkit-scrollbar,
+.scroll-content::-webkit-scrollbar-thumb {border-radius: .6rem;}
+.scroll-content::-webkit-scrollbar {width: .6rem; height: .6rem; background-color: #fff;}
+.scroll-content::-webkit-scrollbar-thumb {background-color: var(--grays-5);}
+
+/* modal */
+.has-scrollbar::-webkit-scrollbar,
+.has-scrollbar::-webkit-scrollbar-thumb {border-radius: 1rem;}
+.has-scrollbar::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: #fff;}
+.has-scrollbar::-webkit-scrollbar-thumb {background-color: var(--grays-5);}

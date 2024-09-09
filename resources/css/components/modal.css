@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+.modal-dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 4990;
+  pointer-events: auto;
+  opacity: 1;
+}
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+  z-index: 5000;
+}
+.modal.is-show {
+	display: flex;
+  z-index: 5010; 
+}
+.modal-inner {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 34rem;
+  max-height: 74.7rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  box-shadow: .4rem .4rem 2.7rem 0 rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+  z-index: 5010;
+}
+.modal .modal-header {
+  position: relative;
+  padding: 3.2rem 4rem 0;
+}
+.modal .modal-header .modal-close {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='2' height='21.3333' rx='1' transform='matrix(-0.707107 0.707107 0.707107 0.707107 9.25757 7.59082)' fill='%23333333'/%3E%3Crect x='22.9282' y='7.59082' width='2' height='21.3333' rx='1' transform='rotate(45 22.9282 7.59082)' fill='%23333333'/%3E%3C/svg%3E%0A");
+}
+.modal .modal-header .modal-title {
+  display: block;
+  padding-bottom: 1.9rem;
+  color: var(--grays-1);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.9rem;
+  border-bottom: .1rem solid var(--secondary-3);
+}
+.modal-body {
+  margin: 2rem 4rem 3.2rem;
+  color: var(--grays-2);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.modal-body .msg {
+  color: var(--grays-1);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.modal-body.has-scrollbar {
+  overflow: auto;
+  margin: 1.6rem 2.2rem 3rem 3rem;
+  padding-right: .8rem;
+}
+.modal-body.scroll-content {
+  max-height: calc(100vh - 290px);
+  margin: 1.6rem 2.2rem 3rem 3rem;
+  padding-right: .8rem;
+}
+.modal-body .modal-msg {
+  display: block;
+  color: var(--grays-1);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 4rem 3rem;
+}
+.modal-footer .btn {
+  border-radius: .8rem;
+}
+.modal-footer .btn.is-secondary-1 {
+  color: var(--grays-1);
+}
+.modal-footer .btn:disabled {
+  color: #fff;
+  background-color: var(--grays-4);
+}
+.modal-footer .btn + .btn {
+  margin-left: .8rem;
+}
+
+/* qrcode */
+.modal .wrap-qrcode {
+  display: flex;
+  justify-content: center;
+}

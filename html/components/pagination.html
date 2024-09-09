@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white"> 
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Pagination</h1>
+      <h2 class="component-title">Default</h2>
+      <div class="pagination">
+        <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+        <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+        <a href="#" class="pagination-link is-current">1</a><!-- 현재 페이지 -->
+        <a href="#" class="pagination-link">2</a>
+        <a href="#" class="pagination-link">3</a>
+        <a href="#" class="pagination-link">4</a>
+        <a href="#" class="pagination-link">5</a>
+        <a href="#" class="pagination-link">6</a>
+        <a href="#" class="pagination-link">7</a>
+        <a href="#" class="pagination-link">8</a>
+        <a href="#" class="pagination-link">9</a>
+        <a href="#" class="pagination-link">10</a>
+        <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+        <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+    </div>
+<pre>
+<code class="language-Markup">&lt;div class="pagination">
+  &lt;a href="#" class="pagination-link is-first">&lt;span class="hidden">첫 페이지로 이동&lt;/span>&lt;/a>
+  &lt;a href="#" class="pagination-link is-prev">&lt;span class="hidden">이전 페이지로 이동&lt;/span>&lt;/a>
+  &lt;a href="#" class="pagination-link is-current">1&lt;/a>
+  &lt;a href="#" class="pagination-link">2&lt;/a>
+  &lt;a href="#" class="pagination-link">3&lt;/a>
+  &lt;a href="#" class="pagination-link">4&lt;/a>
+  &lt;a href="#" class="pagination-link">5&lt;/a>
+  &lt;a href="#" class="pagination-link">6&lt;/a>
+  &lt;a href="#" class="pagination-link">7&lt;/a>
+  &lt;a href="#" class="pagination-link">8&lt;/a>
+  &lt;a href="#" class="pagination-link">9&lt;/a>
+  &lt;a href="#" class="pagination-link">10&lt;/a>
+  &lt;a href="#" class="pagination-link is-next">&lt;span class="hidden">다음 페이지 이동&lt;/span>&lt;/a>
+  &lt;a href="#" class="pagination-link is-last">&lt;span class="hidden">마지막 페이지로 이동&lt;/span>&lt;/a>
+&lt;/div></code>
+</pre>
+
+      <h2 class="component-title">count</h2>
+      <div class="wrap-pagination">
+        <div class="wrap-count">
+          <span class="count-text">총 <em class="count-number">10</em>건</span>
+        </div>
+        <div class="pagination">
+          <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+          <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+          <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+          <a href="#" class="pagination-link">2</a>
+          <a href="#" class="pagination-link">3</a>
+          <a href="#" class="pagination-link">4</a>
+          <a href="#" class="pagination-link">5</a>
+          <a href="#" class="pagination-link">6</a>
+          <a href="#" class="pagination-link">7</a>
+          <a href="#" class="pagination-link">8</a>
+          <a href="#" class="pagination-link">9</a>
+          <a href="#" class="pagination-link">10</a>
+          <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+          <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+        </div>
+      </div>
+<pre>
+<code class="language-markup">&lt;div class="wrap-pagination">
+  &lt;div class="wrap-count">
+    &lt;span class="count-text">총 &lt;em class="count-number">10&lt;/em>건&lt;/span>
+  &lt;/div>
+  &lt;div class="pagination">
+    &lt;a href="#" class="pagination-link is-first">&lt;span class="hidden">첫 페이지로 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-prev">&lt;span class="hidden">이전 페이지로 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-current">1&lt;/a> &lt;!-- 현재 페이지 --&gt;
+    &lt;a href="#" class="pagination-link">2&lt;/a>
+    &lt;a href="#" class="pagination-link">3&lt;/a>
+    &lt;a href="#" class="pagination-link">4&lt;/a>
+    &lt;a href="#" class="pagination-link">5&lt;/a>
+    &lt;a href="#" class="pagination-link">6&lt;/a>
+    &lt;a href="#" class="pagination-link">7&lt;/a>
+    &lt;a href="#" class="pagination-link">8&lt;/a>
+    &lt;a href="#" class="pagination-link">9&lt;/a>
+    &lt;a href="#" class="pagination-link">10&lt;/a>
+    &lt;a href="#" class="pagination-link is-next">&lt;span class="hidden">다음 페이지 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-last">&lt;span class="hidden">마지막 페이지로 이동&lt;/span>&lt;/a>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+<h2 class="component-title">count&button</h2>
+<div class="wrap-pagination">
+  <div class="wrap-count">
+    <span class="count-text">총 <em class="count-number">10</em>건</span>
+  </div>
+  <div class="pagination">
+    <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+    <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+    <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+    <a href="#" class="pagination-link">2</a>
+    <a href="#" class="pagination-link">3</a>
+    <a href="#" class="pagination-link">4</a>
+    <a href="#" class="pagination-link">5</a>
+    <a href="#" class="pagination-link">6</a>
+    <a href="#" class="pagination-link">7</a>
+    <a href="#" class="pagination-link">8</a>
+    <a href="#" class="pagination-link">9</a>
+    <a href="#" class="pagination-link">10</a>
+    <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+    <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
+  </div>
+  <button type="button" class="btn is-outline-3">신규등록</button>
+</div>
+<pre>
+<code class="language-markup">&lt;div class="wrap-pagination">
+  &lt;div class="wrap-count">
+    &lt;span class="count-text">총 &lt;em class="count-number">10&lt;/em>건&lt;/span>
+  &lt;/div>
+  &lt;div class="pagination">
+    &lt;a href="#" class="pagination-link is-first">&lt;span class="hidden">첫 페이지로 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-prev">&lt;span class="hidden">이전 페이지로 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-current">1&lt;/a> &lt;!-- 현재 페이지 --&gt;
+    &lt;a href="#" class="pagination-link">2&lt;/a>
+    &lt;a href="#" class="pagination-link">3&lt;/a>
+    &lt;a href="#" class="pagination-link">4&lt;/a>
+    &lt;a href="#" class="pagination-link">5&lt;/a>
+    &lt;a href="#" class="pagination-link">6&lt;/a>
+    &lt;a href="#" class="pagination-link">7&lt;/a>
+    &lt;a href="#" class="pagination-link">8&lt;/a>
+    &lt;a href="#" class="pagination-link">9&lt;/a>
+    &lt;a href="#" class="pagination-link">10&lt;/a>
+    &lt;a href="#" class="pagination-link is-next">&lt;span class="hidden">다음 페이지 이동&lt;/span>&lt;/a>
+    &lt;a href="#" class="pagination-link is-last">&lt;span class="hidden">마지막 페이지로 이동&lt;/span>&lt;/a>
+  &lt;/div>
+  &lt;button type="button" class="btn is-outline-3">신규등록&lt;/button>
+&lt;/div></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+</body>
+</html>

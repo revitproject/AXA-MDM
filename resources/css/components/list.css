@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+.list-base > div,
+.list-base > li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--grays-2);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+.list-base[data-bullet=dot] > div::before,
+.list-base[data-bullet=dot] > li::before {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  top: 0.65em;
+  line-height: 1;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background-color: var(--grays-2);
+}
+.list-base[data-bullet=hyphen] > div::before,
+.list-base[data-bullet=hyphen] > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.69em;
+  line-height: 1;
+  width: 0.4rem;
+  height: 0.1rem;
+  background-color: var(--grays-2);
+}
+.list-base[data-bullet=info] > div,
+.list-base[data-bullet=info] > li {
+  padding-left: 1.8rem;
+}
+.list-base[data-bullet=info] > div::before,
+.list-base[data-bullet=info] > li::before {
+  content: "info";
+  font-family: "Material Icons Outlined";
+  position: absolute;
+  left: 0;
+  top: 0.16em;
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1;
+}
+.list-base[data-bullet=error] > div,
+.list-base[data-bullet=error] > li {
+  padding-left: 1.8rem;
+  color: #f44336;
+}
+.list-base[data-bullet=error] > div::before,
+.list-base[data-bullet=error] > li::before {
+  content: "error_outline";
+  font-family: "Material Icons Outlined";
+  position: absolute;
+  left: 0;
+  top: 0.16em;
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1;
+}
+.list-base[data-bullet=help] > div,
+.list-base[data-bullet=help] > li {
+  padding-left: 1.8rem;
+}
+.list-base[data-bullet=help] > div::before,
+.list-base[data-bullet=help] > li::before {
+  content: "help_outline";
+  font-family: "Material Icons Outlined";
+  position: absolute;
+  left: 0;
+  top: 0.16em;
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1;
+}
+.list-base[data-bullet=star] > div,
+.list-base[data-bullet=star] > li {
+  padding-left: 1.2rem;
+}
+.list-base[data-bullet=star] > div::before,
+.list-base[data-bullet=star] > li::before {
+  content: "*";
+  position: absolute;
+  left: 0.1em;
+  top: 0.35em;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1;
+}
+.list-base[data-bullet=care] > div,
+.list-base[data-bullet=care] > li {
+  padding-left: 1.2rem;
+}
+.list-base[data-bullet=care] > div::before,
+.list-base[data-bullet=care] > li::before {
+  content: "※";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.list-base[data-bullet=custom] > div,
+.list-base[data-bullet=custom] > li {
+  display: flex;
+  padding: 0;
+}
+.list-base[data-bullet=custom] > div::before,
+.list-base[data-bullet=custom] > li::before {
+  content: attr(data-text);
+  display: block;
+  margin-right: 0.4rem;
+  font-size: 0.8em;
+  margin-top: 0.11em;
+}
+.list-base[data-number] {
+  counter-reset: dep1 0 dep2 0;
+}
+.list-base[data-number] > div,
+.list-base[data-number] > li {
+  counter-increment: dep1 1;
+  display: flex;
+  padding: 0;
+}
+.list-base[data-number] > div::before,
+.list-base[data-number] > li::before {
+  content: counter(dep1) ".";
+  font-weight: 400;
+  font-size: 1em;
+  margin-right: 0.2em;
+  min-width: 1em;
+  display: block;
+  text-align: right;
+}
+.list-base[data-number=base] > div::before,
+.list-base[data-number=base] > li::before {
+  content: counter(dep1) ".";
+}
+.list-base[data-number=upper-roman] > div::before,
+.list-base[data-number=upper-roman] > li:before {
+  content: counter(dep1, upper-roman) ".";
+}
+.list-base[data-number=lower-roman] > div::before,
+.list-base[data-number=lower-roman] > li:before {
+  content: counter(dep1, lower-roman) ".";
+}
+.list-base[data-number=decimal-zero] > div::before,
+.list-base[data-number=decimal-zero] > li:before {
+  content: counter(dep1, decimal-leading-zero) ".";
+  min-width: 1.5em;
+}
+.list-base[data-number=lower-greek] > div::before,
+.list-base[data-number=lower-greek] > li:before {
+  content: counter(dep1, lower-greek) ".";
+}
+.list-base[data-number=lower-alpha] > div::before,
+.list-base[data-number=lower-alpha] > li:before {
+  content: counter(dep1, lower-alpha) ".";
+}
+.list-base[data-number=upper-alpha] > div::before,
+.list-base[data-number=upper-alpha] > li:before {
+  content: counter(dep1, upper-alpha) ".";
+}
+.list-base[data-shape=round] > div, .list-base[data-shape=round] > li {
+  padding-left: 0;
+}
+.list-base[data-shape=round] > div::before, .list-base[data-shape=round] > li::before {
+  display: inline-block;
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  top: 0.5em;
+  font-size: 0.6em;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  max-width: 1.5em;
+  max-height: 1.5em;
+  line-height: 1.36em;
+  text-align: center;
+  border: 0.1em solid #616161;
+}
+.list-base[data-shape=square] > div, .list-base[data-shape=square] > li {
+  padding-left: 0;
+}
+.list-base[data-shape=square] > div::before, .list-base[data-shape=square] > li::before {
+  display: inline-block;
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 0.2em;
+  top: 0.5em;
+  font-size: 0.6em;
+  min-width: 1.6em;
+  min-height: 1.6em;
+  max-width: 1.6em;
+  max-height: 1.6em;
+  line-height: 1.39em;
+  text-align: center;
+  border: 0.1em solid #616161;
+}
+.list-base[data-shape][data-number=base] > li:before {
+  content: counter(dep1);
+}
+.list-base[data-shape][data-number=upper-roman] > li:before {
+  content: counter(dep1, upper-roman);
+}
+.list-base[data-shape][data-number=lower-roman] > li:before {
+  content: counter(dep1, lower-roman);
+}
+.list-base[data-shape][data-number=decimal-zero] > li:before {
+  content: counter(dep1, decimal-leading-zero);
+}
+.list-base[data-shape][data-number=lower-greek] > li:before {
+  content: counter(dep1, lower-greek);
+}
+.list-base[data-shape][data-number=lower-alpha] > li:before {
+  content: counter(dep1, lower-alpha);
+}
+.list-base[data-shape][data-number=upper-alpha] > li:before {
+  content: counter(dep1, upper-alpha);
+}
+.list-base[data-number=custom] > li:before {
+  content: attr(data-text);
+}
+.list-base[data-shape][data-number=custom] > li:before {
+  content: attr(data-text);
+  text-indent: -0.1em;
+  font-weight: 500;
+}

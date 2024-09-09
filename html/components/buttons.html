@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white"> 
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Buttons</h1>
+      <h2 class="component-title">Search</h2>
+      <div class="wrap-btn">
+        <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
+        <button type="button" class="btn is-search">검색</button>
+      </div>
+<pre>
+<code class="language-Markup">&lt;button type="button" class="btn is-reset"&gt;&ltspan class="ico-reset">초기화&lt;/span>&lt;/button&gt;
+&lt;button type="button" class="btn is-search"&gt;검색&lt;/button&gt;</code>
+</pre>
+
+<h2 class="component-title">Table button-group</h2>
+<table class="tbl-base">
+  <colgroup>
+    <col style="width: 9rem;">
+    <col>
+    <col>
+    <col>
+    <col style="width: 12.8rem;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>NO.</th>
+      <th>thead</th>
+      <th>thead</th>
+      <th>thead</th>
+      <th>수정/삭제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>data</td>
+      <td>data</td>
+      <td>data</td>
+      <td>
+        <div class="wrap-btn">
+          <button type="button" class="btn is-outline-2">수정</button>
+          <button type="button" class="btn is-secondary-1">삭제</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pre>
+<code class="language-Markup">&lt;div class="wrap-btn">
+  &lt;button type="button" class="btn is-outline-2">수정&lt;/button>
+  &lt;button type="button" class="btn is-secondary-1">삭제&lt;/button>
+&lt;/div></code>
+</pre>
+
+    <h2 class="component-title">Type</h2>
+    <div class="wrap-btn">
+      <button type="button" class="btn is-outline-1">목록</button>
+      <button type="button" class="btn is-outline-1" disabled>목록</button> <!-- 비활성화 -->
+      <button type="button" class="btn is-secondary-1">삭제</button>
+      <button type="button" class="btn is-primary">저장</button>
+      <button type="button" class="btn is-primary" disabled>저장</button> <!-- 비활성화 -->
+    </div>
+
+<pre>
+<code class="language-Markup">&lt;button type="button" class="btn is-outline-1"&gt;목록&lt;/button&gt;
+&lt;button type="button" class="btn is-outline-1" disabled&gt;목록&lt;/button&gt; &lt;!-- 비활성화 --&gt;
+&lt;button type="button" class="btn is-secondary-1"&gt;삭제&lt;/button&gt;
+&lt;button type="button" class="btn is-primary"&gt;저장&lt;/button&gt;
+&lt;button type="button" class="btn is-primary" disabled&gt;저장&lt;/button&gt; &lt;!-- 비활성화 --&gt;</code>
+</pre>
+
+  <h2 class="component-title">Size</h2>
+  <div class="wrap-btn">
+    <button type="button" class="btn is-secondary-2 is-h48">h48</button>
+    <button type="button" class="btn is-secondary-2 is-h36">h36</button>
+  </div>
+<pre>
+<code class="language-Markup">&lt;button type="button" class="btn is-secondary-2 is-h48">h48&lt;/button>
+&lt;button type="button" class="btn is-secondary-2 is-h36">h36&lt;/button></code>
+</pre>
+    <h2 class="component-title">Icon</h2>
+    <div class="wrap-btn">
+      <button type="button" class="btn is-ico is-excel"><span class="ico-excel">다운로드</span></button>
+    </div>
+<pre>
+<code class="language-Markup">&lt;button type="button" class="btn is-ico is-excel">&lt;span class="ico-excel">다운로드&lt;/span>&lt;/button></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+</body>
+</html>

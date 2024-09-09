@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.wrap-link.is-end {
+  margin-top: 1.2rem;
+}
+.wrap-link.is-end {
+  display: flex;
+  justify-content: flex-end;
+}

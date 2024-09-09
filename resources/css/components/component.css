@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+/* worklist */
+.worklist::before {
+  display: none;
+}
+.worklist .base-content {
+  width: 100%;
+}
+.worklist .content-title {
+  margin: 2rem 0 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.worklist .tbl-base > tbody > tr > th,
+.worklist .tbl-base > tbody > tr > td,
+.worklist .tbl-base > tbody > tr > td > a {
+  color: var(--grays-1);
+  font-size: 1.4rem;
+}
+.worklist .tbl-base > thead > tr > th {
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: var(--grays-6);
+  border-right: .1rem solid var(--grays-5);
+}
+.worklist .tbl-base>tbody>tr>td {
+  text-align: left;
+}
+.worklist .tbl-base > tbody > tr > td.date,
+.worklist .tbl-base > tbody > tr > td.status {
+  text-align: center;
+}
+.worklist .tbl-base .status.ing {
+  color: #f16122;
+}
+.worklist .tbl-base .status.modify {
+  color: #04AA6D;
+}
+.worklist .tbl-base .status.complete {
+  color: #007CEF;
+}
+.worklist .tbl-base .status.confirm {
+  color: #E5493A;
+}
+.worklist .tbl-base .status.delete {
+  color: var(--grays-2);
+}
+
+/* component */
+.component .base-aside.guide .lnb-link::before {
+  display: none;
+}
+.component code, 
+.component pre {
+  background: #F5F5F5 !important;
+}
+.component .component-pre {
+  margin-top: 2rem;
+}
+.component .component-h1 {
+  padding: 2rem 0;
+  color: var(--grays-1);
+  font-size: 4rem;
+  font-weight: 400;
+}
+.component .component-h2 {
+  margin: 5rem 0 1.2rem;
+  color: var(--grays-1);
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.component .component-h3 {
+  margin: 1.2rem 0 1rem;
+  color: var(--grays-1);
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.component .component-title {
+  margin: 2rem 0 .8rem;
+  color: var(--grays-1);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.component .component-title:first-child {
+  margin-top: 0;
+}
+.component .component-subtitle {
+  margin-bottom: .8rem;
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.component .component-desc {
+  color: var(--grays-1);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.component .component-subtext {
+  color: var(--grays-2);
+  font-size: 1.4rem;
+}
+.component .wrap-group {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+.component .component-area:not(:first-child) {
+  margin-top: 4rem;
+}
+.component .list-base li {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+.component .list-base[data-bullet=dot] > li::before {
+  top: 1.5rem;
+}
+.component .component-box {
+  max-width: 50rem;
+  padding: 2rem 2rem;
+  margin-top: 3rem;
+  background: var(--grays-6);
+  border-radius: 1rem;
+}
+.component .component-box em {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.component .component-box p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+.component .wrap-btn .btn {
+  flex: initial;
+}
+.component .component-link {
+  margin-bottom: 2rem;
+}
+.component .component-link .link {
+  color: var(--system-3);
+  font-size: 2rem;
+}
+.component .wrap-color,
+.component .wrap-txtcolor,
+.component .wrap-bordercolor {
+  display: flex;
+}
+.component .color-item,
+.component .bordercolor-item {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  margin-left: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+}
+.component .bordercolor-item {
+  margin-right: 1rem;
+  border-width: .2rem;
+  border-style: solid;
+  border-radius: 50%;
+}
+.component .color-item em {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+}
+.component .txtcolor-item {
+  margin-top: 1rem;
+}
+.component .txtcolor-item:not(:first-child) {
+  margin-left: 2rem;
+}
+.component .wrap-flex .wrap-tooltip {
+  margin-right: 1.4rem;
+}
+.component .toggle {
+  margin-right: 1.4rem;
+}

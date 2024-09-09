@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white">  
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Structure</h1>
+<pre class="component-pre">
+<code class="language-Markup">AXA-MDM/
+  |- assets/
+  |   |- css/              # styles
+  |   |- js/               # common javascripts, third party(core, library, plug-in etc.)
+  |   |- images/           # png, svg, etc.
+  |   `- fonts/            # web fonts(pretendard)
+  |
+  `- html/
+      |- components/       # 컴포넌트 페이지(colors, buttons, table, etc.)
+      |- common/           # 공통 영역(header, aside.)
+      |- ...               # Sub Content Pages
+      `- index.html        # Markup List
+  ----
+
+  /css
+  |
+  |- documents/            # Document Style(Default)
+  |   |- resets.css
+  |   |- fonts.css
+  |   |- layout.css
+  |   |- scrollbar.css
+  |   `-  ...     
+  |
+  |- components/           # Component Style
+  |   |- forms.css
+  |   |- list.css
+  |   |- buttons.css
+  |   |- table.css
+  |   `-  ... 
+  |
+  |- contents/             # Content Style
+  |   |- home.css
+  |   |- device.css
+  |   |- policy.css
+  |   `- ...
+  |
+  |- base.css              # @import css files
+  |
+  `- variables.css         # 반복적으로 사용되는 변수 선언 파일</code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white">  
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Naming</h1>
+      <h2 class="component-title">CSS Class Naming</h2>
+      <ul class="list-base" data-bullet="dot">
+        <li>Kebab casing 으로 영문 소문자, 숫자, hyphen(-)으로 조합하여 작성한다.</li>
+        <li>hyphen(-)조합은 최대 3단계를 초과하지 않는 걸 권장한다.</li>
+        <li>단어와 숫자 조합은 hyphen(-)을 생략한다.</li>
+        <li>숫자는 1부터 시작하며 '01' 과 같이 앞에 '0'을 붙여 사용하지 않는다.</li>
+        <li>Multi class의 조합은 3개 이하(우선순위 점수 33점 미만)을 권장한다.</li>
+        <li>스타일 지정 시 ID 선택자의 사용을 지양한다.</li>
+        <li>엘리먼트에 직접적인 스타일을 적용하지 않고, 모든 스타일은 클래스를 통해 지정한다.</li>
+      </ul>
+
+      <div class="component-box">
+        <em>name-name</em>
+        <p>
+          .btn-mix-outlined-s<br>
+          .list2<br>
+          .btn-mix-outlined .on
+        </p>
+      </div>
+
+      <div class="component-area">
+        <h3 class="component-title">Reserve a Prefix</h3>
+        <p class="component-desc">예약된 접두사로 기본적으로 공통 사용하는 CSS naming</p>
+        <table class="tbl-base has-left">
+          <colgroup>
+            <col style="width: 20%;">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Reserve a Prefix</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.base-</td>
+              <td>
+                페이지내에서 유니크하게 하나만 사용하는 기본적인 구조, 전체적인 레이아웃 요소나 페이지의 필수요소에 사용<br>
+                base-wrap, base-header, base-content, base-aside
+              </td>
+            </tr>
+            <tr>
+              <td>.btn-</td>
+              <td>button 관련된 스타일</td>
+            </tr>
+            <tr>
+              <td>.bul-</td>
+              <td>bullet에 관련된 스타일</td>
+            </tr>
+            <tr>
+              <td>.area-</td>
+              <td>
+                .wrap 요소를 그룹으로 묶어주는 스타일<br>
+                area-dropdown
+              </td>
+            </tr>
+            <tr>
+              <td>.wrap-</td>
+              <td>
+                독립적인 item요소를 그룹으로 묶어주는 스타일<br>
+                wrap-group, wrap-searchbox
+              </td>
+            </tr>
+            <tr>
+              <td>.form-</td>
+              <td>입력양식의 레이아웃 스타일</td>
+            </tr>
+            <tr>
+              <td>.inp-</td>
+              <td>input, select, textarea에 관련된 스타일</td>
+            </tr>
+            <tr>
+              <td>.lb-</td>
+              <td>radio,checkbox의 label 스타일</td>
+            </tr>
+            <tr>
+              <td>.ui-</td>
+              <td>자바스크립트 관련 클래스</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+</body>
+
+</html>

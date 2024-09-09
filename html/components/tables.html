@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white"> 
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <h1 class="component-h1">Tables</h1>
+      <h2 class="component-title">Default - thead</h2>
+      <table class="tbl-base">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>헤더1</th>
+            <th>헤더2</th>
+            <th>헤더3</th>
+            <th>헤더4</th>
+            <th>헤더5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>콘텐츠1</td>
+            <td>콘텐츠2</td>
+            <td>콘텐츠3</td>
+            <td>콘텐츠4</td>
+            <td>콘텐츠5</td>
+          </tr>
+          <tr>
+            <td>콘텐츠1</td>
+            <td>콘텐츠2</td>
+            <td>콘텐츠3</td>
+            <td>콘텐츠4</td>
+            <td>콘텐츠5</td>
+          </tr>
+          <tr>
+            <td>콘텐츠1</td>
+            <td>콘텐츠2</td>
+            <td>콘텐츠3</td>
+            <td>콘텐츠4</td>
+            <td>콘텐츠5</td>
+          </tr>
+        </tbody>
+      </table>
+<pre>
+<code class="language-Markup">&lt;table class="tbl-base">
+  &lt;colgroup>
+    &lt;col>
+    &lt;col>
+    &lt;col>
+    &lt;col>
+    &lt;col>
+  &lt;/colgroup>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>헤더 1&lt;/th>
+      &lt;th>헤더 2&lt;/th>
+      &lt;th>헤더 3&lt;/th>
+      &lt;th>헤더 4&lt;/th>
+      &lt;th>헤더 5&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>콘텐츠 1&lt;/td>
+      &lt;td>콘텐츠 2&lt;/td>
+      &lt;td>콘텐츠 3&lt;/td>
+      &lt;td>콘텐츠 4&lt;/td>
+      &lt;td>콘텐츠 5&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>콘텐츠 1&lt;/td>
+      &lt;td>콘텐츠 2&lt;/td>
+      &lt;td>콘텐츠 3&lt;/td>
+      &lt;td>콘텐츠 4&lt;/td>
+      &lt;td>콘텐츠 5&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>콘텐츠 1&lt;/td>
+      &lt;td>콘텐츠 2&lt;/td>
+      &lt;td>콘텐츠 3&lt;/td>
+      &lt;td>콘텐츠 4&lt;/td>
+      &lt;td>콘텐츠 5&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+    <h2 class="component-title">Default</h2>
+    <table class="tbl-base has-left">
+      <colgroup>
+        <col style="width: 20rem;">
+        <col>
+        <col style="width: 20rem;">
+        <col>
+        <col style="width: 20rem;">
+        <col>
+        <col style="width: 20rem;">
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>이름</th>
+          <td>김해피</td>
+          <th>아이디</th>
+          <td>endorhappy001</td>
+          <th>생년월일</th>
+          <td>2024-10-24</td>
+          <th>성별</th>
+          <td>남</td>
+        </tr>
+        <tr>
+          <th>휴대폰번호</th>
+          <td>010-7777-1111</td>
+          <th>이메일</th>
+          <td>happymong@happy.com</td>
+          <th>회원유형</th>
+          <td>일반회원</td>
+          <th>연동정보/전환해머포인트</th>
+          <td>해피머니/500(톤)</td>
+        </tr>
+        <tr>
+          <th>등급</th>
+          <td>소울스타</td>
+          <th>레벨</th>
+          <td>02</td>
+          <th>닉네임</th>
+          <td>진짜해피몽</td>
+          <th>초대코드</th>
+          <td>ABC122</td>
+        </tr>
+        <tr>
+          <th>엔돌캐시</th>
+          <td>1,000</td>
+          <th>골드해머</th>
+          <td>50,000</td>
+          <th>최초가입일</th>
+          <td>2024-02-26 15:00</td>
+          <th>일반회원 전환일</th>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+<pre>
+<code class="language-Markup">&lt;table class="tbl-base has-left">
+  &lt;colgroup>
+    &lt;col style="width: 20rem;">
+    &lt;col>
+    &lt;col style="width: 20rem;">
+    &lt;col>
+    &lt;col style="width: 20rem;">
+    &lt;col>
+    &lt;col style="width: 20rem;">
+    &lt;col>
+  &lt;/colgroup>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>이름&lt;/th>
+      &lt;td>김해피&lt;/td>
+      &lt;th>아이디&lt;/th>
+      &lt;td>endorhappy001&lt;/td>
+      &lt;th>생년월일&lt;/th>
+      &lt;td>2024-10-24&lt;/td>
+      &lt;th>성별&lt;/th>
+      &lt;td>남&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>휴대폰번호&lt;/th>
+      &lt;td>010-7777-1111&lt;/td>
+      &lt;th>이메일&lt;/th>
+      &lt;td>happymong@happy.com&lt;/td>
+      &lt;th>회원유형&lt;/th>
+      &lt;td>일반회원&lt;/td>
+      &lt;th>연동정보/전환해머포인트&lt;/th>
+      &lt;td>해피머니/500(톤)&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>등급&lt;/th>
+      &lt;td>소울스타&lt;/td>
+      &lt;th>레벨&lt;/th>
+      &lt;td>02&lt;/td>
+      &lt;th>닉네임&lt;/th>
+      &lt;td>진짜해피몽&lt;/td>
+      &lt;th>초대코드&lt;/th>
+      &lt;td>ABC122&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>엔돌캐시&lt;/th>
+      &lt;td>1,000&lt;/td>
+      &lt;th>골드해머&lt;/th>
+      &lt;td>50,000&lt;/td>
+      &lt;th>최초가입일&lt;/th>
+      &lt;td>2024-02-26 15:00&lt;/td>
+      &lt;th>일반회원 전환일&lt;/th>
+      &lt;td>-&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+    <h2 class="component-title">Check toggle</h2>
+    <table class="tbl-base">
+      <colgroup>
+        <col style="width: 6rem;">
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col style="width: 9rem;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th><input class="inp-checkbox" type="checkbox" name="allCheck"></th>
+          <th>헤더1</th>
+          <th>헤더2</th>
+          <th>헤더3</th>
+          <th>헤더4</th>
+          <th>헤더5</th>
+          <th>헤더6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="inp-checkbox" type="checkbox" name="checkItem"></td>
+          <td>콘텐츠1</td>
+          <td>콘텐츠2</td>
+          <td>콘텐츠3</td>
+          <td>콘텐츠4</td>
+          <td>콘텐츠5</td>
+          <td><a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼</a></td>
+        </tr>
+        <tr>
+          <td><input class="inp-checkbox" type="checkbox" name="checkItem"></td>
+          <td>콘텐츠1</td>
+          <td>콘텐츠2</td>
+          <td>콘텐츠3</td>
+          <td>콘텐츠4</td>
+          <td>콘텐츠5</td>
+          <td><a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼</a></td>
+        </tr>
+        <tr>
+          <td><input class="inp-checkbox" type="checkbox" name="checkItem"></td>
+          <td>콘텐츠1</td>
+          <td>콘텐츠2</td>
+          <td>콘텐츠3</td>
+          <td>콘텐츠4</td>
+          <td>콘텐츠5</td>
+          <td><a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼</a></td>
+        </tr>
+        <tr>
+          <td><input class="inp-checkbox" type="checkbox" name="checkItem"></td>
+          <td>콘텐츠1</td>
+          <td>콘텐츠2</td>
+          <td>콘텐츠3</td>
+          <td>콘텐츠4</td>
+          <td>콘텐츠5</td>
+          <td><a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼</a></td>
+        </tr>
+        <tr>
+          <td><input class="inp-checkbox" type="checkbox" name="checkItem"></td>
+          <td>콘텐츠1</td>
+          <td>콘텐츠2</td>
+          <td>콘텐츠3</td>
+          <td>콘텐츠4</td>
+          <td>콘텐츠5</td>
+          <td><a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre>
+<code class="language-Markup">&lt;table class="tbl-base">
+  &lt;colgroup>
+    &lt;col style="width: 6rem;">
+    &lt;col>
+    &lt;col>
+    &lt;col>
+    &lt;col>
+    &lt;col>
+    &lt;col style="width: 9rem;">
+  &lt;/colgroup>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>&lt;input class="inp-checkbox" type="checkbox" name="allCheck">&lt;/th>
+      &lt;th>헤더1&lt;/th>
+      &lt;th>헤더2&lt;/th>
+      &lt;th>헤더3&lt;/th>
+      &lt;th>헤더4&lt;/th>
+      &lt;th>헤더5&lt;/th>
+      &lt;th>헤더6&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>&lt;input class="inp-checkbox" type="checkbox" name="checkItem">&lt;/td>
+      &lt;td>콘텐츠1&lt;/td>
+      &lt;td>콘텐츠2&lt;/td>
+      &lt;td>콘텐츠3&lt;/td>
+      &lt;td>콘텐츠4&lt;/td>
+      &lt;td>콘텐츠5&lt;/td>
+      &lt;td>&lt;a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼&lt;/a>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;input class="inp-checkbox" type="checkbox" name="checkItem">&lt;/td>
+      &lt;td>콘텐츠1&lt;/td>
+      &lt;td>콘텐츠2&lt;/td>
+      &lt;td>콘텐츠3&lt;/td>
+      &lt;td>콘텐츠4&lt;/td>
+      &lt;td>콘텐츠5&lt;/td>
+      &lt;td>&lt;a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼&lt;/a>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;input class="inp-checkbox" type="checkbox" name="checkItem">&lt;/td>
+      &lt;td>콘텐츠1&lt;/td>
+      &lt;td>콘텐츠2&lt;/td>
+      &lt;td>콘텐츠3&lt;/td>
+      &lt;td>콘텐츠4&lt;/td>
+      &lt;td>콘텐츠5&lt;/td>
+      &lt;td>&lt;a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼&lt;/a>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;input class="inp-checkbox" type="checkbox" name="checkItem">&lt;/td>
+      &lt;td>콘텐츠1&lt;/td>
+      &lt;td>콘텐츠2&lt;/td>
+      &lt;td>콘텐츠3&lt;/td>
+      &lt;td>콘텐츠4&lt;/td>
+      &lt;td>콘텐츠5&lt;/td>
+      &lt;td>&lt;a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼&lt;/a>&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>&lt;input class="inp-checkbox" type="checkbox" name="checkItem">&lt;/td>
+      &lt;td>콘텐츠1&lt;/td>
+      &lt;td>콘텐츠2&lt;/td>
+      &lt;td>콘텐츠3&lt;/td>
+      &lt;td>콘텐츠4&lt;/td>
+      &lt;td>콘텐츠5&lt;/td>
+      &lt;td>&lt;a class="btn is-outline-2" data-modal="open" href="#user-registration">버튼&lt;/a>&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+
+<h2 class="component-title">nodata</h2>
+<table class="tbl-base">
+  <colgroup>
+    <col style="width: 5.6rem;">
+    <col>
+    <col>
+    <col>
+    <col>
+    <col style="width: 7rem;">
+    <col style="width: 14rem;">
+    <col style="width: 9rem;">
+    <col style="width: 9rem;">
+    <col style="width: 9rem;">
+    <col style="width: 9rem;">
+    <col style="width: 9rem;">
+    <col style="width: 9rem;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th rowspan="2">NO.</th>
+      <th rowspan="2">아이디</th>
+      <th rowspan="2">이메일</th>
+      <th rowspan="2">이름</th>
+      <th rowspan="2">닉네임</th>
+      <th rowspan="2">레벨</th>
+      <th rowspan="2">참여시간</th>
+      <th colspan="6">획득 리워드</th>
+    </tr>
+    <tr>
+      <th>XP(기본)</th>
+      <th>XP(혜택)</th>
+      <th>GP(기본)</th>
+      <th>GP(혜택)</th>
+      <th>EP(기본)</th>
+      <th>EP(혜택)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 데이터 없는 CASE : 'no-result' 클래스 추가 -->
+    <tr>
+      <td colspan="13" class="no-result">검색 내용이 없습니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre>
+<code class="language-Markup">&lt;table class="tbl-base">
+  &lt;tbody>
+    &lt;!-- 데이터 없는 CASE : 'no-result' 클래스 추가 --&gt;
+    &lt;tr>
+      &lt;td colspan="13" class="no-result">검색 내용이 없습니다.&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
+</pre>
+
+<h2 class="component-title">dl table</h2>
+<div class="wrap-tbl">
+  <dl class="tbl-dl">
+    <dt>챌린지 진행 여부</dt>
+    <dd>진행</dd>
+  </dl>
+  <dl class="tbl-dl">
+    <dt>챌린지 진행 기간</dt>
+    <dd>2024-09-01 00:00 ~ 2024-09-30 23:59</dd>
+  </dl>
+</div>
+<pre>
+<code class="language-Markup">&lt;div class="wrap-tbl">
+  &lt;dl class="tbl-dl">
+    &lt;dt>챌린지 진행 여부&lt;/dt>
+    &lt;dd>진행&lt;/dd>
+  &lt;/dl>
+  &lt;dl class="tbl-dl">
+    &lt;dt>챌린지 진행 기간&lt;/dt>
+    &lt;dd>2024-09-01 00:00 ~ 2024-09-30 23:59&lt;/dd>
+  &lt;/dl>
+&lt;/div></code>
+</pre>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+   
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+  <script>
+    // 테이블 check toggle
+    const checkedAllCheckBox = (allCheck, check) => {
+      const allCheckBox = document.querySelector(allCheck);
+      const checkBox = document.querySelectorAll(check);
+
+      allCheckBox.addEventListener('change', () => {
+        ToggledCheckBox(allCheck, check, "allCheck");
+      });
+
+      checkBox.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          ToggledCheckBox(allCheck, check, "check");
+        });
+      })
+    }
+
+    const ToggledCheckBox = (allCheck, check, target) => {
+      const allCheckBox = document.querySelector(allCheck);
+      const checkBox = document.querySelectorAll(check);
+      let isChecked = allCheckBox.checked;
+      let uncheckedLength = document.querySelectorAll(`${check}:enabled`).length;
+      let checkedLength = document.querySelectorAll(`${check}:checked:enabled`).length;
+
+      if (target === "allCheck") {
+        if( isChecked === true ){
+          checkBox.forEach((checkbox) => {
+            if( checkbox.disabled !== true ){
+              checkbox.setAttribute('checked', 'checked');
+              checkbox.checked = true;
+            }
+          })
+        } else {
+          checkBox.forEach((checkbox) => {
+            checkbox.removeAttribute('checked', 'checked');
+            checkbox.checked = false;
+          })
+        }
+      } else {
+        if ( uncheckedLength === checkedLength ) {
+          allCheckBox.setAttribute('checked', 'checked');
+          allCheckBox.checked = true;
+        } else {
+          allCheckBox.removeAttribute('checked', 'checked');
+          allCheckBox.checked = false;
+        }
+      }
+    }
+
+    // init
+    window.addEventListener('load', () => {
+      checkedAllCheckBox('input[name="allCheck"]', 'input[name="checkItem"]');
+    });
+  </script>
+</body>
+</html>

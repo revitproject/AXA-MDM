@@ -195,6 +195,15 @@ export class ModalManager {
   showDialog(type, title, msg, trueFn, falseFn = null, trueBtnText = '확인', falseBtnText = '취소') {
     this.initDialog();
 
+    // 타입에 따라 클래스 추가
+    this.dialogContainer.classList.remove('has-alert', 'has-confirm'); // 기존 클래스 제거
+    if (type === 'alert') {
+        this.dialogContainer.classList.add('has-alert');
+    } else if (type === 'confirm') {
+        this.dialogContainer.classList.add('has-confirm');
+    }
+    
+
     this.dialogTitle.textContent = title;
     this.dialogText.innerHTML = msg;
     this.trueBtn.textContent = trueBtnText;

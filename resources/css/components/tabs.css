@@ -7,9 +7,9 @@
 }
 .tab-item {
   position: relative;
-  border-top: .1rem solid var(--grays-5);
-  border-right: .1rem solid var(--grays-5);
-  border-left: .1rem solid var(--grays-5);
+  border-top: .1rem solid var(--grays-6);
+  border-right: .1rem solid var(--grays-6);
+  border-left: .1rem solid var(--grays-6);
   border-radius: .6rem .6rem 0 0;
 }
 .tab-item + .tab-item {

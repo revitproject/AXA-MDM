@@ -88,7 +88,7 @@ body {
   align-items: center;
 	width: 100%;
   padding: 1.8rem 2.4rem;
-  color: var(--grays-3);
+  color: #969696;
   font-size: 2rem;
   line-height: 2.4rem;
   text-decoration: none;
@@ -280,11 +280,11 @@ body {
 	background: #fff;
 	border-radius: 3rem;
 }
-.login-form .wrap-inp {
+.login-form .form-input {
 	gap: 0;
 	margin-top: .8rem;
 }
-.login-form .wrap-inp:first-child {
+.login-form .form-input:first-child {
 	margin-top: 0;
 }
 .login-form .login-head {

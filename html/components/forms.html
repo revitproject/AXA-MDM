@@ -26,66 +26,78 @@
       <h2 class="component-title">Checkbox</h2>
       <div class="wrap-group">
         <div class="form-checkbox">
-          <label><input type="checkbox" class="inp-checkbox">default</label>
-          <label><input type="checkbox" class="inp-checkbox" checked>checked</label>
-          <label><input type="checkbox" class="inp-checkbox" disabled>disabled</label>
-          <label><input type="checkbox" class="inp-checkbox" checked disabled>disabled</label>
+          <label class="lb-checkbox"><input type="checkbox" class="inp-checkbox">default</label>
+          <label class="lb-checkbox"><input type="checkbox" class="inp-checkbox" checked>checked</label>
+          <label class="lb-checkbox is-disabled"><input type="checkbox" class="inp-checkbox" disabled>disabled</label>
+          <label class="lb-checkbox is-disabled"><input type="checkbox" class="inp-checkbox" checked disabled>disabled(checked)</label>
         </div>
       </div>
 <pre>
 <code class="language-Markup">&lt;div class="form-checkbox">
-  &lt;label>&lt;input type="checkbox" class="inp-checkbox">default&lt;/label>
-  &lt;label>&lt;input type="checkbox" class="inp-checkbox" checked>checked&lt;/label>
-  &lt;label>&lt;input type="checkbox" class="inp-checkbox" disabled>disabled&lt;/label>
-  &lt;label>&lt;input type="checkbox" class="inp-checkbox" checked disabled>disabled&lt;/label>
+  &lt;label class="lb-checkbox">&lt;input type="checkbox" class="inp-checkbox">default&lt;/label>
+  &lt;label class="lb-checkbox">&lt;input type="checkbox" class="inp-checkbox" checked>checked&lt;/label>
+  &lt;label class="lb-checkbox is-disabled">&lt;input type="checkbox" class="inp-checkbox" disabled>disabled&lt;/label>
+  &lt;label class="lb-checkbox is-disabled">&lt;input type="checkbox" class="inp-checkbox" checked disabled>disabled(checked)&lt;/label>
 &lt;/div></code>
 </pre>
 <!-- //checkbox -->
 
-<h2 class="component-title">Toggle(Checkbox)</h2>
-<label class="toggle"><input type="checkbox">&nbsp;default</label>
-<label class="toggle"><input type="checkbox" checked>&nbsp;checked</label>
-<label class="toggle"><input type="checkbox" disabled>&nbsp;disabled</label>
-<label class="toggle"><input type="checkbox" checked disabled>&nbsp;disabled</label>
-
-<pre>
-<code class="language-Markup">&lt;label class="toggle">&lt;input type="checkbox">&lt;/label>
-&lt;label class="toggle">&lt;input type="checkbox" checked>&lt;/label>
-&lt;label class="toggle">&lt;input type="checkbox" disabled>&lt;/label>
-&lt;label class="toggle">&lt;input type="checkbox" checked disabled>&lt;/label></code>
-</pre>
-
-<h2 class="component-title">Toggle Text(Checkbox)</h2>
-<label class="toggle is-text"><input type="checkbox"><span class="false">off</span><span class="true">on</span></label>
-<label class="toggle is-text"><input type="checkbox" checked><span class="false">off</span><span class="true">on</span></label>
-<label class="toggle is-text"><input type="checkbox" disabled><span class="false">off</span><span class="true">on</span></label>
-<label class="toggle is-text"><input type="checkbox" checked disabled><span class="false">off</span><span class="true">on</span></label>
-
-<pre>
-<code class="language-Markup">&lt;label class="toggle is-text">&lt;input type="checkbox">&lt;span class="false">off&lt;/span>&lt;span class="true">on&lt;/span>&lt;/label>
-&lt;label class="toggle is-text">&lt;input type="checkbox" checked>&lt;span class="false">off&lt;/span>&lt;span class="true">on&lt;/span></label></code>
-</pre>
-<!-- //toggle -->
-
-  <h2 class="component-title">Radio</h2>
-  <div class="wrap-group">
-    <div class="form-radio">
-      <label><input type="radio" name="appType" class="inp-radio">default</label>
-      <label><input type="radio" name="appType" class="inp-radio" checked>checked</label>
-      <label><input type="radio" name="appType" class="inp-radio" disabled>disabled</label>
-    </div>
+<h2 class="component-title">Radio</h2>
+<div class="wrap-group">
+  <div class="form-radio">
+    <label class="lb-radio"><input type="radio" name="rdoGroup" class="inp-radio">default</label>
+    <label class="lb-radio"><input type="radio" name="rdoGroup" class="inp-radio" checked>checked</label>
+    <label class="lb-radio is-disabled"><input type="radio" name="rdoGroup" class="inp-radio" disabled>disabled</label>
+    <label class="lb-radio is-disabled"><input type="radio" name="rdoGroup2" class="inp-radio" checked disabled>disabled(checked)</label>
   </div>
+</div>
 <pre>
 <code class="language-Markup">&lt;div class="form-radio">
-  &lt;label>&lt;input type="radio" name="appType" class="inp-radio">선택 전&lt;/label>
-  &lt;label>&lt;input type="radio" name="appType" class="inp-radio" checked>선택 후&lt;/label>
-  &lt;label>&lt;input type="radio" name="appType" class="inp-radio" disabled>비활성화&lt;/label>
+&lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio">default&lt;/label>
+&lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio" checked>checked&lt;/label>
+&lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup" class="inp-radio" disabled>disabled&lt;/label>
+&lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup2" class="inp-radio" checked disabled>disabled(checked)&lt;/label>
 &lt;/div></code>
 </pre>
 <!-- // radio -->
 
+<h2 class="component-title">Switch(Checkbox)</h2>
+<div class="form-switch">
+  <label class="lb-switch"><input type="checkbox" class="inp-switch">&nbsp;default</label>
+  <label class="lb-switch"><input type="checkbox" class="inp-switch" checked>&nbsp;checked</label>
+  <label class="lb-switch is-disabled"><input type="checkbox" class="inp-switch" disabled>&nbsp;disabled</label>
+  <label class="lb-switch is-disabled"><input type="checkbox" class="inp-switch" checked disabled>&nbsp;disabled(checked)</label>
+</div>
+
+<pre>
+<code class="language-Markup">&lt;div class="form-switch">
+  &lt;label class="lb-switch">&lt;input type="checkbox" class="inp-switch">&nbsp;default&lt;/label>
+  &lt;label class="lb-switch">&lt;input type="checkbox" class="inp-switch" checked>&nbsp;checked&lt;/label>
+  &lt;label class="lb-switch is-disabled">&lt;input type="checkbox" class="inp-switch" disabled>&nbsp;disabled&lt;/label>
+  &lt;label class="lb-switch is-disabled">&lt;input type="checkbox" class="inp-switch" checked disabled>&nbsp;disabled(checked)&lt;/label>
+&lt;/div></code>
+</pre>
+
+<h2 class="component-title">Switch Text(Checkbox)</h2>
+<div class="form-switch">
+  <label class="lb-switch is-text"><input type="checkbox" class="inp-switch"><span class="false">OFF</span><span class="true">ON</span></label>
+  <label class="lb-switch is-text"><input type="checkbox" class="inp-switch" checked><span class="false">OFF</span><span class="true">ON</span></label>
+  <label class="lb-switch is-text"><input type="checkbox" class="inp-switch" disabled><span class="false">OFF</span><span class="true">ON</span></label>
+  <label class="lb-switch is-text"><input type="checkbox" class="inp-switch" checked disabled><span class="false">OFF</span><span class="true">ON</span></label>
+</div>
+
+<pre>
+<code class="language-Markup">&lt;div class="form-switch">
+  &lt;label class="lb-switch is-text">&lt;input type="checkbox" class="inp-switch">&lt;span class="false">OFF&lt;/span>&lt;span class="true">ON&lt;/span>&lt;/label>
+  &lt;label class="lb-switch is-text">&lt;input type="checkbox" class="inp-switch" checked>&lt;span class="false">OFF&lt;/span>&lt;span class="true">ON&lt;/span>&lt;/label>
+  &lt;label class="lb-switch is-text">&lt;input type="checkbox" class="inp-switch" disabled>&lt;span class="false">OFF&lt;/span>&lt;span class="true">ON&lt;/span>&lt;/label>
+  &lt;label class="lb-switch is-text">&lt;input type="checkbox" class="inp-switch" checked disabled>&lt;span class="false">OFF&lt;/span>&lt;span class="true">ON&lt;/span>&lt;/label>
+&lt;/div></code>
+</pre>
+<!-- //toggle -->
+
   <h2 class="component-title">Input Text</h2>
-  <div class="wrap-inp">
+  <div class="form-input">
     <input class="inp-base" type="text" maxlength="8" placeholder="텍스트" value="normal">
     <input class="inp-base" type="text" maxlength="8" value="readonly" readonly>
     <input class="inp-base" type="text" maxlength="8" value="disabled" disabled>
@@ -100,7 +112,7 @@
 <!-- // input(text) -->
 
   <h2 class="component-title">Input Password</h2>
-  <div class="wrap-inp">
+  <div class="form-input">
     <input class="inp-base" type="password" maxlength="8" placeholder="텍스트" value="normal">
     <input class="inp-base" type="password" maxlength="8" value="readonly" readonly>
     <input class="inp-base" type="password" maxlength="8" value="disabled" disabled>
@@ -115,7 +127,19 @@
 <!-- // input(password) -->
   
   <h2 class="component-title">Select</h2>
-  <div class="wrap-group">
+  <div class="wrap-group select">
+    <select class="inp-select is-h56">
+      <option value="select1">셀렉트1</option>
+      <option value="select2">셀렉트2</option>
+      <option value="select3">셀렉트3</option>
+    </select>
+
+    <select class="inp-select is-h48">
+      <option value="select1">셀렉트1</option>
+      <option value="select2">셀렉트2</option>
+      <option value="select3">셀렉트3</option>
+    </select>
+
     <select class="inp-select">
       <option value="select1">셀렉트1</option>
       <option value="select2">셀렉트2</option>
@@ -123,7 +147,19 @@
     </select>
   </div>
 <pre>
-<code class="language-Markup">&lt;select class="inp-select">
+<code class="language-Markup">&lt;select class="inp-select is-h56">
+  &lt;option value="select1">셀렉트1&lt;/option>
+  &lt;option value="select2">셀렉트2&lt;/option>
+  &lt;option value="select3">셀렉트3&lt;/option>
+&lt;/select>
+
+&lt;select class="inp-select is-h48">
+  &lt;option value="select1">셀렉트1&lt;/option>
+  &lt;option value="select2">셀렉트2&lt;/option>
+  &lt;option value="select3">셀렉트3&lt;/option>
+&lt;/select>
+
+&lt;select class="inp-select"> &lt;!-- default --&gt;
   &lt;option value="select1">셀렉트1&lt;/option>
   &lt;option value="select2">셀렉트2&lt;/option>
   &lt;option value="select3">셀렉트3&lt;/option>
@@ -141,155 +177,6 @@
 &lt;/div></code>
 </pre>
 <!-- //textarea -->
-
-<h2 class="component-title">Tooltip</h2>
-<div class="wrap-flex">
-  <div class="wrap-tooltip">
-    툴팁(hover)
-    <div class="tooltip">
-      <button type="button" class="btn-tooltip" data-handler="hover" data-position="right"><span class="hidden">도움말</span></button>
-      <div role="tooltip" class="tooltip-inner">
-        <div class="tooltip-content">
-          <strong class="tooltip-title">툴팁 타이틀</strong>
-          <p class="tooltip-desc">툴팁 텍스트</p>
-        </div>
-        <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap-tooltip">
-    툴팁(click/top)
-    <div class="tooltip">
-      <button type="button" class="btn-tooltip" data-handler="click" data-position="top"><span class="hidden">도움말</span></button>
-      <div role="tooltip" class="tooltip-inner">
-        <div class="tooltip-content">
-          <strong class="tooltip-title">툴팁 타이틀</strong>
-          <p class="tooltip-desc">툴팁 텍스트</p>
-        </div>
-        <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap-tooltip">
-    툴팁(right)
-    <div class="tooltip">
-      <button type="button" class="btn-tooltip" data-handler="click" data-position="right"><span class="hidden">도움말</span></button>
-      <div role="tooltip" class="tooltip-inner">
-        <div class="tooltip-content">
-          <strong class="tooltip-title">툴팁 타이틀</strong>
-          <p class="tooltip-desc">툴팁 텍스트</p>
-        </div>
-        <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-      </div>
-    </div>
-  </div>
-  
-  <div class="wrap-tooltip">
-    툴팁(bottom)
-    <div class="tooltip">
-      <button type="button" class="btn-tooltip" data-handler="click" data-position="bottom"><span class="hidden">도움말</span></button>
-      <div role="tooltip" class="tooltip-inner">
-        <div class="tooltip-content">
-          <strong class="tooltip-title">툴팁 타이틀</strong>
-          <p class="tooltip-desc">툴팁 텍스트</p>
-        </div>
-        <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-      </div>
-    </div>
-  </div>
-  <div class="wrap-tooltip">
-    툴팁(left)
-    <div class="tooltip">
-      <button type="button" class="btn-tooltip" data-handler="click" data-position="left"><span class="hidden">도움말</span></button>
-      <div role="tooltip" class="tooltip-inner">
-        <div class="tooltip-content">
-          <strong class="tooltip-title">툴팁 타이틀</strong>
-          <p class="tooltip-desc">툴팁 텍스트</p>
-        </div>
-        <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-      </div>
-    </div>
-  </div>
-</div>
-<pre>
-<code class="language-Markup">&lt;--
-  data-handler 속성으로 툴팁 타입 구분(hover|click)
---&gt;
-
-&lt;!-- data-handler="hover" --&gt;
-&lt;div class="wrap-tooltip">
-  툴팁(hover)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-handler="hover" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-
-&lt;!-- data-handler="click" --&gt;
-&lt;div class="wrap-tooltip">
-  툴팁(click/top)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-handler="click" data-position="top">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-
-&lt;div class="wrap-tooltip">
-  툴팁(right)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-handler="click" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-
-&lt;div class="wrap-tooltip">
-  툴팁(bottom)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-handler="click" data-position="bottom">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-&lt;div class="wrap-tooltip">
-  툴팁(left)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-handler="click" data-position="left">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div></code>
-</pre>
-<!-- //textarea -->
  
   <h2 class="component-title">Date</h2>
   <div class="wrap-group">
@@ -297,197 +184,60 @@
       <!-- DatePicker -->
       <div class="wrap-datepicker">
         <div class="datePicker">
-          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            <input id="startpicker-inp1" type="text" aria-label="Date-Time">
+          <div class="tui-datepicker-input">
+            <input type="text" id="startpicker-inp1" aria-label="Date-Time">
             <div id="startpicker-div1" class="datepicker-div"></div>
           </div>
         </div>
         <span class="datepicker-to">~</span>
         <div class="datePicker">
-          <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-            <input id="endpicker-inp1" type="text" aria-label="Date-Time">
+          <div class="tui-datepicker-input">
+            <input type="text" id="endpicker-inp1" aria-label="Date-Time">
             <div id="endpicker-div1" class="datepicker-div"></div>
           </div>
         </div>
       </div>
       <!-- //DatePicker -->
       <div class="btn-options">
-        <button type="button" class="btn is-secondary-1 is-active">전체</button>
-        <button type="button" class="btn is-secondary-1">오늘</button>
-        <button type="button" class="btn is-secondary-1">1주일</button>
-        <button type="button" class="btn is-secondary-1">1개월</button>
-        <button type="button" class="btn is-secondary-1">3개월</button>
-        <button type="button" class="btn is-secondary-1">6개월</button>
+        <button type="button" class="btn is-outline-1 is-active">전체</button>
+        <button type="button" class="btn is-outline-1">오늘</button>
+        <button type="button" class="btn is-outline-1">1주일</button>
+        <button type="button" class="btn is-outline-1">1개월</button>
+        <button type="button" class="btn is-outline-1">3개월</button>
+        <button type="button" class="btn is-outline-1">6개월</button>
       </div>
     </div>
   </div>
 <pre>
 <code class="language-Markup">&lt;div class="area-datepicker">
+  &lt;!-- DatePicker --&gt;
   &lt;div class="wrap-datepicker">
     &lt;div class="datePicker">
-      &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-        &lt;input id="startpicker-inp1" type="text" aria-label="Date-Time">
+      &lt;div class="tui-datepicker-input">
+        &lt;input type="text" id="startpicker-inp1" aria-label="Date-Time">
         &lt;div id="startpicker-div1" class="datepicker-div">&lt;/div>
       &lt;/div>
     &lt;/div>
     &lt;span class="datepicker-to">~&lt;/span>
     &lt;div class="datePicker">
-      &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-        &lt;input id="endpicker-inp1" type="text" aria-label="Date-Time">
+      &lt;div class="tui-datepicker-input">
+        &lt;input type="text" id="endpicker-inp1" aria-label="Date-Time">
         &lt;div id="endpicker-div1" class="datepicker-div">&lt;/div>
       &lt;/div>
     &lt;/div>
   &lt;/div>
+  &lt;!-- //DatePicker --&gt;
   &lt;div class="btn-options">
-    &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
-    &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
-    &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
-    &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
-    &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
-    &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
+    &lt;button type="button" class="btn is-outline-1 is-active">전체&lt;/button>
+    &lt;button type="button" class="btn is-outline-1">오늘&lt;/button>
+    &lt;button type="button" class="btn is-outline-1">1주일&lt;/button>
+    &lt;button type="button" class="btn is-outline-1">1개월&lt;/button>
+    &lt;button type="button" class="btn is-outline-1">3개월&lt;/button>
+    &lt;button type="button" class="btn is-outline-1">6개월&lt;/button>
   &lt;/div>
 &lt;/div></code>
 </pre>
 <!-- // datepicker -->
-
-<h2 class="component-title">Search form</h2>
-<div class="wrap-group">
-  <div class="form-searchbox">
-    <dl class="dl-formbox">
-      <dt>기간</dt>
-      <dd>
-        <select id="select-date" class="inp-select is-sm">
-          <option value="" selected>등록일</option>
-          <option value="">옵션1</option>
-          <option value="">옵션1</option>
-          <option value="">옵션1</option>
-        </select>
-      
-        <div class="area-datepicker">
-          <!-- DatePicker -->
-          <div class="wrap-datepicker">
-            <div class="datePicker">
-              <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                <input id="startpicker-inp2" type="text" aria-label="Date-Time">
-                <div id="startpicker-div2" class="datepicker-div"></div>
-              </div>
-            </div>
-            <span class="datepicker-to">~</span>
-            <div class="datePicker">
-              <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-                <input id="endpicker-inp2" type="text" aria-label="Date-Time">
-                <div id="endpicker-div2" class="datepicker-div"></div>
-              </div>
-            </div>
-          </div>
-          <!-- //DatePicker -->
-          <div class="btn-options">
-            <button type="button" class="btn is-secondary-1 is-active">전체</button>
-            <button type="button" class="btn is-secondary-1">오늘</button>
-            <button type="button" class="btn is-secondary-1">1주일</button>
-            <button type="button" class="btn is-secondary-1">1개월</button>
-            <button type="button" class="btn is-secondary-1">3개월</button>
-            <button type="button" class="btn is-secondary-1">6개월</button>
-            <button type="button" class="btn is-secondary-1">12개월</button>
-          </div>
-        </div>
-      </dd>
-    </dl>
-    <dl class="dl-formbox">
-      <dt><label for="inpName" class="lb-inp">이름</label></dt>
-      <dd><input type="text" id="inpName" class="inp-base" placeholder=""></dd>
-      <dt><label for="inpId" class="lb-inp">아이디</label></dt>
-      <dd><input type="text" id="inpId" class="inp-base" placeholder=""></dd>
-    </dl>
-    <dl class="dl-formbox inbtn">
-      <dt>검색어</dt>
-      <dd>
-        <div class="searchbox-item">
-          <select id="select-search" class="inp-select is-sm">
-            <option value="" selected>제목</option>
-            <option value="">등록자</option>
-            <option value="">최종수정자</option>
-          </select>
-      
-          <input type="search" id="inp-search" class="inp-base" placeholder="">
-        </div>
-      </dd>
-      <dd class="searchbox-btn">
-        <button type="button" class="btn is-reset"><span class="ico-reset">초기화</span></button>
-        <button type="submit" class="btn is-search">검색</button>
-      </dd>
-    </dl>
-  </div>
-</div>
-<pre>
-<code class="language-Markup">&lt;div class="form-searchbox">
-  &lt;dl class="dl-formbox">
-    &lt;dt>기간&lt;/dt>
-    &lt;dd>
-      &lt;select id="select-date" class="inp-select is-sm">
-        &lt;option value="" selected>등록일&lt;/option>
-        &lt;option value="">옵션1&lt;/option>
-        &lt;option value="">옵션1&lt;/option>
-        &lt;option value="">옵션1&lt;/option>
-      &lt;/select>
-    
-      &lt;div class="area-datepicker">
-        &lt;!-- DatePicker --&gt;
-        &lt;div class="wrap-datepicker">
-          &lt;div class="datePicker">
-            &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-              &lt;input id="startpicker-inp2" type="text" aria-label="Date-Time">
-              &lt;div id="startpicker-div2" class="datepicker-div">&lt;/div>
-            &lt;/div>
-          &lt;/div>
-          &lt;span class="datepicker-to">~&lt;/span>
-          &lt;div class="datePicker">
-            &lt;div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-              &lt;input id="endpicker-inp2" type="text" aria-label="Date-Time">
-              &lt;div id="endpicker-div2" class="datepicker-div">&lt;/div>
-            &lt;/div>
-          &lt;/div>
-        &lt;/div>
-        &lt;!-- //DatePicker --&gt;
-        &lt;div class="btn-options">
-          &lt;button type="button" class="btn is-secondary-1 is-active">전체&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">오늘&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">1주일&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">1개월&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">3개월&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">6개월&lt;/button>
-          &lt;button type="button" class="btn is-secondary-1">12개월&lt;/button>
-        &lt;/div>
-      &lt;/div>
-    &lt;/dd>
-  &lt;/dl>
-  &lt;dl class="dl-formbox">
-    &lt;dt>&lt;label for="inpName" class="lb-inp">이름&lt;/label>&lt;/dt>
-    &lt;dd>&lt;input type="text" id="inpName" class="inp-base" placeholder="">&lt;/dd>
-    &lt;dt>&lt;label for="inpId" class="lb-inp">아이디&lt;/label>&lt;/dt>
-    &lt;dd>&lt;input type="text" id="inpId" class="inp-base" placeholder="">&lt;/dd>
-  &lt;/dl>
-  &lt;dl class="dl-formbox inbtn">
-    &lt;dt>검색어&lt;/dt>
-    &lt;dd>
-      &lt;div class="searchbox-item">
-        &lt;select id="select-search" class="inp-select is-sm">
-          &lt;option value="" selected>제목&lt;/option>
-          &lt;option value="">등록자&lt;/option>
-          &lt;option value="">최종수정자&lt;/option>
-        &lt;/select>
-    
-        &lt;input type="search" id="inp-search" class="inp-base" placeholder="">
-      &lt;/div>
-    &lt;/dd>
-    &lt;dd class="searchbox-btn">
-      &lt;button type="button" class="btn is-reset">&lt;span class="ico-reset">초기화&lt;/span>&lt;/button>
-      &lt;button type="submit" class="btn is-search">검색&lt;/button>
-    &lt;/dd>
-  &lt;/dl>
-&lt;/div></code>
-</pre>
-<!-- // searchform -->
     </main>
       <!-- //content -->
   </div>
@@ -511,7 +261,7 @@
       language: 'ko',
       input: {
         element: '#startpicker-inp1',
-        format: 'yyyy-MM-dd'
+        format: 'yyyy.mm.dd'
       }
     });
     const endpicker = new tui.DatePicker('#endpicker-div1', {
@@ -519,23 +269,7 @@
       language: 'ko',
       input: {
         element: '#endpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp2',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp2',
-        format: 'yyyy-MM-dd'
+        format: 'yyyy.MM.dd'
       }
     });
 
@@ -567,8 +301,6 @@
 
       startpicker.setDate(startDate);
       endpicker.setDate(endDate);
-      startpicker2.setDate(startDate);
-      endpicker2.setDate(endDate);
     });
   </script>
   <!-- //page script -->

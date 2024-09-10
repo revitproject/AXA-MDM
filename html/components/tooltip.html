@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM GUIDE</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/prism.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body class="bg-white"> 
+  <!-- base-wrap -->
+  <div class="base-wrap component">
+    <!-- base-aside -->
+    <aside class="base-aside guide"></aside>
+    <!-- // base-aside -->
+
+    <!-- content -->
+    <main class="base-content">
+      <h1 class="component-h1">Tooltip</h1>
+
+<h2 class="component-title">Hover</h2>
+<div class="wrap-flex">
+  <div class="wrap-tooltip">
+    Tooltip
+    <div class="tooltip">
+      <button type="button" class="btn-tooltip" data-type="hover" data-position="right"><span class="hidden">도움말</span></button>
+      <div role="tooltip" class="tooltip-inner">
+        <div class="tooltip-content">
+          <p class="tooltip-desc">네트워크 이스케이프 해치의 사용 설정 여부입니다. 부팅 시 네트워크를 연결할 수 없는 경우, 이스케이프 해치는 기기 정책을 새로고침하기 위해 일시적으로 네트워크에 연결하라는 메시지를 사용자에게 표시합니다. 정책을 적용하면 적절한 네트워크가 없고 기기가 작업 잠금 모드에서 앱으로 부팅되거나 사용자가 기기 설정에 도달할 수 없는 경우 네트워크에 연결할 수 없는 문제를 방지할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pre>
+<code class="language-Markup">&lt;!-- data-type="hover | click" --&gt;
+&lt;!-- data-position="top | right | left | bottom" --&gt;
+
+&lt;div class="tooltip">
+  &lt;button type="button" class="btn-tooltip" data-type="hover" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+  &lt;div role="tooltip" class="tooltip-inner">
+    &lt;div class="tooltip-content">
+      &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+      &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+    &lt;/div>
+    &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+  &lt;/div>
+&lt;/div>
+</code>
+</pre>
+
+  <h2 class="component-title">Click</h2>
+  <div class="wrap-flex">
+    <div class="wrap-tooltip">
+      툴팁(right)
+      <div class="tooltip">
+        <button type="button" class="btn-tooltip" data-type="click" data-position="right"><span class="hidden">도움말</span></button>
+        <div role="tooltip" class="tooltip-inner">
+          <div class="tooltip-content">
+            <strong class="tooltip-title">툴팁 타이틀</strong>
+            <p class="tooltip-desc">툴팁 텍스트</p>
+          </div>
+          <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap-tooltip">
+      툴팁(top)
+      <div class="tooltip">
+        <button type="button" class="btn-tooltip" data-type="click" data-position="top"><span class="hidden">도움말</span></button>
+        <div role="tooltip" class="tooltip-inner">
+          <div class="tooltip-content">
+            <strong class="tooltip-title">툴팁 타이틀</strong>
+            <p class="tooltip-desc">툴팁 텍스트</p>
+          </div>
+          <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrap-tooltip">
+      툴팁(bottom)
+      <div class="tooltip">
+        <button type="button" class="btn-tooltip" data-type="click" data-position="bottom"><span class="hidden">도움말</span></button>
+        <div role="tooltip" class="tooltip-inner">
+          <div class="tooltip-content">
+            <strong class="tooltip-title">툴팁 타이틀</strong>
+            <p class="tooltip-desc">툴팁 텍스트</p>
+          </div>
+          <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap-tooltip">
+      툴팁(left)
+      <div class="tooltip">
+        <button type="button" class="btn-tooltip" data-type="click" data-position="left"><span class="hidden">도움말</span></button>
+        <div role="tooltip" class="tooltip-inner">
+          <div class="tooltip-content">
+            <strong class="tooltip-title">툴팁 타이틀</strong>
+            <p class="tooltip-desc">툴팁 텍스트</p>
+          </div>
+          <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<pre>
+<code class="language-Markup">&lt;!-- data-type="hover" --&gt;
+&lt;div class="wrap-tooltip">
+  툴팁(hover)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="hover" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;!-- data-type="click" --&gt;
+&lt;div class="wrap-tooltip">
+  툴팁(click/top)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="top">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;div class="wrap-tooltip">
+  툴팁(right)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;div class="wrap-tooltip">
+  툴팁(bottom)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="bottom">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;div class="wrap-tooltip">
+  툴팁(left)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="left">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+    </main>
+      <!-- //content -->
+  </div>
+  <!-- //base-wrap -->
+
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
+  <script src="../../resources/js/lib/prism.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+  <script>
+    // DatePicker
+    const today = new Date();
+    const startpicker = new tui.DatePicker('#startpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker = new tui.DatePicker('#endpicker-div1', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp1',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#startpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
+      date: today,
+      language: 'ko',
+      input: {
+        element: '#endpicker-inp2',
+        format: 'yyyy-MM-dd'
+      }
+    });
+
+    // UI 확인용 스크립트
+    document.querySelector('.btn-options').addEventListener('click', function (event) {
+      const target = event.target;
+      if (!target.classList.contains('btn')) return;
+
+      let startDate, endDate = today;
+      switch (target.textContent.trim()) {
+        case '전체':
+          break;
+        case '오늘':
+          startDate = endDate = today;
+          break;
+        case '1주일':
+          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          break;
+        case '1개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          break;
+        case '3개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+          break;
+        case '6개월':
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+          break;
+      }
+
+      startpicker.setDate(startDate);
+      endpicker.setDate(endDate);
+      startpicker2.setDate(startDate);
+      endpicker2.setDate(endDate);
+    });
+  </script>
+  <!-- //page script -->
+</body>
+</html>

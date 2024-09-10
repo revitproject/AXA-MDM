@@ -29,7 +29,7 @@ export function initTooltips(selector) {
     const button = tooltip.querySelector('.btn-tooltip');
     const tooltipWrap = tooltip.querySelector('.tooltip-inner');
     const closeButton = tooltip.querySelector('.tooltip-close');
-    const handlerType = button.dataset.handler;
+    const handlerType = button.dataset.type;
 
     // 툴팁 활성화/비활성화 토글 함수
     const toggleTooltip = (isVisible) => {
@@ -79,5 +79,49 @@ export function initTooltips(selector) {
         toggleTooltip(true); 
       });
     }
+  });
+}
+
+// 폼 라벨 클래스 업데이트
+export function updateFormLabelClasses() {
+  const inputs = document.querySelectorAll('.inp-checkbox, .inp-radio, .inp-switch');
+
+  function updateLabelClass(input) {
+    const label = input.closest('label'); 
+    if (!label) return; // 라벨이 없으면 함수 종료
+
+    // 'is-checked'
+    if (input.checked) {
+      label.classList.add('is-checked');
+    } else {
+      label.classList.remove('is-checked');
+    }
+    // 'is-focused'
+    if (input === document.activeElement) {
+      label.classList.add('is-focused');
+    } else {
+      label.classList.remove('is-focused');
+    }
+    // 'is-disabled'
+    if (input.disabled) {
+      label.classList.add('is-disabled');
+    } else {
+      label.classList.remove('is-disabled');
+    }
+  }
+
+  inputs.forEach(input => {
+    updateLabelClass(input);
+
+    input.addEventListener('change', function() {
+      updateLabelClass(input);
+    });
+
+    input.addEventListener('focus', function() {
+      updateLabelClass(input);
+    });
+    input.addEventListener('blur', function() {
+      updateLabelClass(input);
+    });
   });
 }

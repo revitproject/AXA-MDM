@@ -22,8 +22,8 @@ export class SidebarManager {
     if (asideElement && !this.sidebarLoaded) {
       try {
         const fetchUrl = asideElement.classList.contains('guide') 
-          ? '/html/common/lnb-guide.html' 
-          : '/html/common/lnb.html';
+          ? '../../html/common/lnb-guide.html' 
+          : '../../html/common/lnb.html';
 
         const response = await fetch(fetchUrl);
         if (!response.ok) throw new Error(`사이드바 로드 실패: ${response.statusText}`);

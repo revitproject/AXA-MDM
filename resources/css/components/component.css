@@ -5,6 +5,7 @@
   display: none;
 }
 .worklist .base-content {
+  position: static;
   width: 100%;
 }
 .worklist .content-title {

@@ -127,7 +127,6 @@ export function updateFormLabels() {
   });
 }
 
-
 // 숫자 입력 컨트롤
 export function setNumberControls(selector) {
   const container = document.querySelector(selector);
@@ -158,6 +157,26 @@ export function setNumberControls(selector) {
       }
     }
   });
+}
+
+// 패스워드 폼 토글 버튼 제어
+export function setPasswordForm(selector) {
+  const passwordForms = document.querySelectorAll(selector);
+
+  passwordForms.forEach(passwordForm => {
+    const passwordInput = passwordForm.querySelector('.lb-inp.is-toggle .inp-base');
+    const clearBtn = passwordForm.querySelector('.btn-eye');
+
+    clearBtn.addEventListener('click', (e) => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        e.target.classList.add('is-show');
+      } else {
+        passwordInput.type = 'password';
+        e.target.classList.remove('is-show');
+      }
+    })
+  })
 }
 
 // 검색 폼 클리어 버튼 제어

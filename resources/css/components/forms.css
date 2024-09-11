@@ -56,6 +56,24 @@
 .is-error .inp-base {
   border-color: var(--system-1);
 }
+.is-toggle {
+  position: relative;
+}
+.is-toggle .inp-base {
+  padding-right: 4.4rem;
+}
+.is-toggle .btn-eye {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 2 20 20M6.713 6.723C3.665 8.795 2 12 2 12s3.636 7 10 7c2.05 0 3.817-.727 5.271-1.712M11 5.058A8.595 8.595 0 0 1 12 5c6.364 0 10 7 10 7s-.692 1.332-2 2.834'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M14 14.236a3 3 0 0 1-4.13-4.348'/%3E%3C/svg%3E") no-repeat 0 / 100%;
+}
+.is-toggle .btn-eye.is-show {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 12s4-8 11-8 11 8 11 8M1 12s4 8 11 8 11-8 11-8'/%3E%3Ccircle cx='12' cy='12' r='3' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+}
 .form-validation {
   flex-wrap: wrap;
 }

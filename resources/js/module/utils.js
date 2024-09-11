@@ -167,6 +167,12 @@ export function setPasswordForm(selector) {
     const passwordInput = passwordForm.querySelector('.lb-inp.is-toggle .inp-base');
     const clearBtn = passwordForm.querySelector('.btn-eye');
 
+    // 요소가 존재하는지 확인
+    if (!passwordInput || !clearBtn) {
+      // console.warn('Password input or clear button not found in form:', passwordForm);
+      return; 
+    }
+
     clearBtn.addEventListener('click', (e) => {
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';

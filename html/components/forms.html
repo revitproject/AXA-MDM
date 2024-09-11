@@ -218,7 +218,7 @@
     </label>
   </div>
   <div class="form-input">
-    <label class="lb-inp is-readonly">
+    <label class="lb-inp is-disabled">
       <span class="lb-title">disabled</span>
       <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" disabled>
     </label>
@@ -230,11 +230,18 @@
     </label>
     <p class="validation">validation 문구 노출 영역</p>
   </div>
-<pre><code class="language-Markup">
-&lt;div class="form-input">
+<pre>
+<code class="language-Markup">&lt;div class="form-input">
   &lt;label class="lb-inp">
     &lt;span class="lb-title">default&lt;/span>
     &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-toggle">
+    &lt;span class="lb-title">toggle&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+    &lt;button type="button" class="btn-eye">&lt;/button>
   &lt;/label>
 &lt;/div>
 &lt;div class="form-input">
@@ -250,7 +257,7 @@
   &lt;/label>
 &lt;/div>
 &lt;div class="form-input">
-  &lt;label class="lb-inp is-readonly">
+  &lt;label class="lb-inp is-disabled">
     &lt;span class="lb-title">disabled&lt;/span>
     &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" disabled>
   &lt;/label>

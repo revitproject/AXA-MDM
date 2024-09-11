@@ -6,8 +6,6 @@
   <title>AXA MDM GUIDE</title>
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
-  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/prism.css">
   <!-- css base -->
@@ -97,34 +95,196 @@
 <!-- //toggle -->
 
   <h2 class="component-title">Input Text</h2>
-  <div class="form-input">
-    <input class="inp-base" type="text" maxlength="8" placeholder="텍스트" value="normal">
-    <input class="inp-base" type="text" maxlength="8" value="readonly" readonly>
-    <input class="inp-base" type="text" maxlength="8" value="disabled" disabled>
-    <input class="inp-base is-warning" type="text" maxlength="8" value="warning">
-  </div>
+    <!-- default/multi -->
+    <div class="form-input">
+      <label class="lb-inp">
+        <span class="lb-title">default</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+      </label>
+
+      <label class="lb-inp">
+        <span class="lb-title">title</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+      </label>
+
+      <label class="lb-inp">
+        <span class="lb-title">title</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+      </label>
+    </div>
+    <!-- is-checked -->
+    <div class="form-input">
+      <label class="lb-inp is-checked">
+        <span class="lb-title">checked</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" checked>
+      </label>
+    </div>
+    <!-- is-readonly -->
+    <div class="form-input">
+      <label class="lb-inp is-readonly">
+        <span class="lb-title">readonly</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" readonly>
+      </label>
+    </div>
+    <!-- is-disabled -->
+    <div class="form-input">
+      <label class="lb-inp is-disabled">
+        <span class="lb-title">disabled</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" disabled>
+      </label>
+    </div>
+    <!-- is-error -->
+    <div class="form-input form-validation">
+      <label class="lb-inp is-error">
+        <span class="lb-title">error</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" value="유효성체크">
+      </label>
+      <p class="validation">validation 문구 노출 영역</p>
+    </div>
 <pre>
-<code class="language-Markup">&lt;input class="inp-base" type="text" maxlength="8" placeholder="텍스트" value="normal">
-&lt;input class="inp-base" type="text" maxlength="8" value="readonly" readonly>
-&lt;input class="inp-base" type="text" maxlength="8" value="disabled" disabled>
-&lt;input class="inp-base is-warning" type="text" maxlength="8" value="warning"></code>
+<code class="language-Markup">&lt;!-- default/multi --&gt;
+&lt;div class="form-input">
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">default&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+  &lt;/label>
+
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">default&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+  &lt;/label>
+
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">default&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+  &lt;/label>
+&lt;/div>
+&lt;!-- is-checked --&gt;
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-checked">
+    &lt;span class="lb-title">checked&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" checked>
+  &lt;/label>
+&lt;/div>
+&lt;!-- is-readonly --&gt;
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-readonly">
+    &lt;span class="lb-title">readonly&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" readonly>
+  &lt;/label>
+&lt;/div>
+&lt;!-- is-disabled --&gt;
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-disabled">
+    &lt;span class="lb-title">disabled&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" disabled>
+  &lt;/label>
+&lt;/div>
+&lt;!-- is-error --&gt;
+&lt;div class="form-input form-validation">
+  &lt;label class="lb-inp is-error">
+    &lt;span class="lb-title">error&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" value="유효성체크">
+  &lt;/label>
+  &lt;p class="validation">validation 문구 노출 영역&lt;/p>
+&lt;/div></code>
 </pre>
 <!-- // input(text) -->
 
   <h2 class="component-title">Input Password</h2>
   <div class="form-input">
-    <input class="inp-base" type="password" maxlength="8" placeholder="텍스트" value="normal">
-    <input class="inp-base" type="password" maxlength="8" value="readonly" readonly>
-    <input class="inp-base" type="password" maxlength="8" value="disabled" disabled>
-    <input class="inp-base is-warning" type="password" maxlength="8" value="warning">
+    <label class="lb-inp">
+      <span class="lb-title">default</span>
+      <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+    </label>
   </div>
-<pre>
-<code class="language-Markup">&lt;input class="inp-base" type="password" maxlength="8" placeholder="텍스트" value="normal">
-&lt;input class="inp-base" type="password" maxlength="8" value="readonly" readonly>
-&lt;input class="inp-base" type="password" maxlength="8" value="disabled" disabled>
-&lt;input class="inp-base is-warning" type="password" maxlength="8" value="warning"></code>
+  <div class="form-input">
+    <label class="lb-inp is-checked">
+      <span class="lb-title">checked</span>
+      <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" checked>
+    </label>
+  </div>
+  <div class="form-input">
+    <label class="lb-inp is-readonly">
+      <span class="lb-title">readonly</span>
+      <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" readonly>
+    </label>
+  </div>
+  <div class="form-input">
+    <label class="lb-inp is-readonly">
+      <span class="lb-title">disabled</span>
+      <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" disabled>
+    </label>
+  </div>
+  <div class="form-input form-validation">
+    <label class="lb-inp is-error">
+      <span class="lb-title">error</span>
+      <input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+    </label>
+    <p class="validation">validation 문구 노출 영역</p>
+  </div>
+<pre><code class="language-Markup">
+&lt;div class="form-input">
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">default&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-checked">
+    &lt;span class="lb-title">checked&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" checked>
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-readonly">
+    &lt;span class="lb-title">readonly&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" readonly>
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input">
+  &lt;label class="lb-inp is-readonly">
+    &lt;span class="lb-title">disabled&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910" disabled>
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input form-validation">
+  &lt;label class="lb-inp is-error">
+    &lt;span class="lb-title">error&lt;/span>
+    &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="10" placeholder="텍스트 입력" value="12345678910">
+  &lt;/label>
+  &lt;p class="validation">validation 문구 노출 영역&lt;/p>
+&lt;/div></code>
 </pre>
 <!-- // input(password) -->
+
+<h2 class="component-title">Input count</h2>
+<div class="ui-counter">
+  <button type="button" class="btn-minus"><span class="hidden">감소</span></button>
+  <input type="number" class="inp-number" value="10" />
+  <button type="button" class="btn-plus"><span class="hidden">증가</span></button>
+</div>
+
+<pre><code class="language-Markup">&lt;div class="ui-counter">
+&lt;button type="button" class="btn-minus">&lt;span class="hidden">감소&lt;/span>&lt;/button>
+&lt;input type="number" class="inp-number" value="10" />
+&lt;button type="button" class="btn-plus">&lt;span class="hidden">증가&lt;/span>&lt;/button>
+&lt;/div></code>
+</pre>
+<!-- //count input -->
+
+<h2 class="component-title">Input search</h2>
+<div class="form-search">
+  <input type="search" class="inp-search" placeholder="예) 홍길동, 초성검색" />
+  <button type="button" class="btn-clear" aria-label="검색어 삭제"><span class="hidden">삭제</span></button>
+</div>
+
+<pre>
+<code class="language-Markup">&lt;div class="form-search">
+&lt;input type="search" class="inp-search" placeholder="예) 홍길동, 초성검색" />
+&lt;button type="button" class="btn-clear" aria-label="검색어 삭제">&lt;span class="hidden">삭제&lt;/span>&lt;/button>
+&lt;/div></code>
+</pre>
   
   <h2 class="component-title">Select</h2>
   <div class="wrap-group select">
@@ -245,9 +405,7 @@
 
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
-  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
-  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
   <script src="../../resources/js/lib/prism.js"></script>
   <!-- js base -->
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
@@ -261,7 +419,7 @@
       language: 'ko',
       input: {
         element: '#startpicker-inp1',
-        format: 'yyyy.mm.dd'
+        format: 'yyyy.MM.dd'
       }
     });
     const endpicker = new tui.DatePicker('#endpicker-div1', {

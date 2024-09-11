@@ -22,7 +22,7 @@
   font-size: 1.4rem;
   font-weight: 500;
   background-color: var(--grays-6);
-  border-right: .1rem solid var(--grays-6);
+  border-right: .1rem solid var(--grays-5);
 }
 .worklist .tbl-base>tbody>tr>td {
   text-align: left;

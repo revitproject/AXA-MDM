@@ -57,13 +57,12 @@ export class ModalManager {
   }
 
   // 모달 열기
-  openModal(modal) {
+  openModal(modal, falseFn = null, trueFn = null) {
     if (!modal) {
       console.error('열 모달이 제공되지 않았습니다.');
       return;
     }
 
-    // 모달 스택에 추가
     this.modalStack.push(modal);
 
     // 첫 번째 모달일 때 dimmed 요소 생성
@@ -76,8 +75,19 @@ export class ModalManager {
     // 포커스 트랩 설정
     this.focusTrap(modal);
 
-    // 모달 스택 상태 출력
-    console.log('모달 스택 상태 (열림):', this.modalStack);
+    // 콜백 함수가 있으면 버튼 리스너 추가
+    const trueBtn = modal.querySelector('.is-true');
+    const falseBtn = modal.querySelector('.is-false');
+
+    if (trueBtn && typeof trueFn === 'function') {
+      trueBtn.addEventListener('click', trueFn);
+    }
+
+    if (falseBtn && typeof falseFn === 'function') {
+      falseBtn.addEventListener('click', falseFn);
+    }
+
+    // console.log('모달 스택 상태 (열림):', this.modalStack);
   }
 
   // 모달 닫기
@@ -87,28 +97,23 @@ export class ModalManager {
       return;
     }
 
-    // 모달 닫기
     modal.classList.remove('is-show');
 
-    // 모달 스택에서 해당 모달만 제거
     this.modalStack = this.modalStack.filter(m => m !== modal);
 
-    // 스택 상태가 비었을 때만 딤드 제거
     if (this.modalStack.length === 0) {
       this.removeDimmedElement();
     } else {
-      // 남아 있는 모달이 있으면 해당 모달로 포커스 이동
       const previousModal = this.modalStack[this.modalStack.length - 1];
       this.focusTrap(previousModal);
     }
 
-    // 모달 스택 상태 출력
-    console.log('모달 스택 상태 (닫힘):', this.modalStack);
+    // console.log('모달 스택 상태 (닫힘):', this.modalStack);
   }
 
-  // dimmed 요소 생성
+  // dimmed
   createDimmedElement() {
-    if (this.dimElement) return; // 이미 dimmed가 있으면 다시 생성하지 않음
+    if (this.dimElement) return;
 
     const dimmed = document.createElement('div');
     dimmed.classList.add('modal-dimmed');
@@ -116,7 +121,6 @@ export class ModalManager {
     this.dimElement = dimmed;
   }
 
-  // dimmed 요소 제거
   removeDimmedElement() {
     if (this.dimElement) {
       this.dimElement.remove();
@@ -125,17 +129,17 @@ export class ModalManager {
   }
 
   // ID로 모달 열기
-  openModalById(modalId) {
+  openModalById(modalId, falseFn = null, trueFn = null) {
     const modal = document.getElementById(modalId);
 
     if (modal) {
-      this.openModal(modal);
+      this.openModal(modal, falseFn, trueFn);
     } else {
       console.error(`ID가 ${modalId}인 모달을 찾을 수 없습니다.`);
     }
   }
 
-  // 포커스 트랩 설정 (모달 내부에서만 포커스가 순회되도록)
+  // 포커스 트랩 설정 (모달 내부에서만 포커스 순회)
   focusTrap(modal) {
     const focusableElements = modal.querySelectorAll(this.focusableElementsSelector);
     const firstFocusableElement = focusableElements[0];
@@ -192,11 +196,11 @@ export class ModalManager {
   }
 
   // 다이얼로그 모달 표시 (alert/confirm)
-  showDialog(type, title, msg, trueFn, falseFn = null, trueBtnText = '확인', falseBtnText = '취소') {
+  showDialog(type, title, msg, falseFn = null, trueFn, falseBtnText = '취소', trueBtnText = '확인') {
     this.initDialog();
 
     // 타입에 따라 클래스 추가
-    this.dialogContainer.classList.remove('has-alert', 'has-confirm'); // 기존 클래스 제거
+    this.dialogContainer.classList.remove('has-alert', 'has-confirm'); 
     if (type === 'alert') {
         this.dialogContainer.classList.add('has-alert');
     } else if (type === 'confirm') {
@@ -209,7 +213,7 @@ export class ModalManager {
     this.trueBtn.textContent = trueBtnText;
 
     if (type === 'confirm') {
-      this.addCancelButton(falseBtnText, falseFn);  // 취소 버튼 추가
+      this.addCancelButton(falseBtnText, falseFn);
     } else {
       this.hideCancelButton();
     }
@@ -275,12 +279,12 @@ export class ModalManager {
 
   // alert 모달
   alert(title, msg, trueFn, trueBtnText = '확인') {
-    this.showDialog('alert', title, msg, trueFn, null, trueBtnText);
+    this.showDialog('alert', title, msg, null, trueFn, trueBtnText);
   }
 
   // confirm 모달
-  confirm(title, msg, trueFn, falseFn, trueBtnText = '확인', falseBtnText = '취소') {
-    this.showDialog('confirm', title, msg, trueFn, falseFn, trueBtnText, falseBtnText);
+  confirm(title, msg, falseFn, trueFn, falseBtnText = '취소', trueBtnText = '확인') {
+    this.showDialog('confirm', title, msg, falseFn, trueFn, falseBtnText, trueBtnText);
   }
 
   // 다이얼로그 모달 열기
@@ -288,7 +292,6 @@ export class ModalManager {
     if (this.dialogContainer) {
       this.dialogContainer.classList.add('is-show');
 
-      // 모달 스택에 추가 및 dimmed 처리
       this.modalStack.push(this.dialogContainer);
       if (this.modalStack.length === 1) {
         this.createDimmedElement();
@@ -298,7 +301,7 @@ export class ModalManager {
       this.focusTrap(this.dialogContainer);
 
       // 모달 스택 상태 출력
-      console.log('다이얼로그 스택 상태 (열림):', this.modalStack);
+      // console.log('다이얼로그 스택 상태 (열림):', this.modalStack);
     }
   }
 
@@ -307,14 +310,12 @@ export class ModalManager {
     if (this.dialogContainer) {
       this.dialogContainer.classList.remove('is-show');
 
-      // 모달 스택에서 제거 및 dimmed 처리
       this.modalStack.pop();
       if (this.modalStack.length === 0) {
         this.removeDimmedElement();
       }
 
-      // 모달 스택 상태 출력
-      console.log('다이얼로그 스택 상태 (닫힘):', this.modalStack);
+      // console.log('다이얼로그 스택 상태 (닫힘):', this.modalStack);
     }
   }
 
@@ -328,7 +329,6 @@ export class ModalManager {
       console.error('닫을 모달이 없습니다.');
     }
 
-    // 모달 스택 상태 출력
-    console.log('모달 스택 상태 (현재 모달 닫힘):', this.modalStack);
+    // console.log('모달 스택 상태 (현재 모달 닫힘):', this.modalStack);
   }
 }

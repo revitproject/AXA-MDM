@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AXA MDM</title>
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
-  <!-- css library -->
-  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
@@ -24,14 +22,18 @@
             </h1>
           </div>
           <div class="login-body">
-            <form action="/login" method="post">
+            <form action="" method="post">
               <div class="form-input">
-                <label for="userEmail"><span class="hidden">메일 주소</span></label>
-                <input type="email" id="userEmail" class="inp-base" name="useremail" aria-label="메일 주소 입력" placeholder="메일 정보를 입력해 주세요.">
+                <label class="lb-inp">
+                  <span class="lb-title hidden">메일 주소</span>
+                  <input type="email" class="inp-base" name="useremail" aria-label="메일 주소 입력" placeholder="메일 정보를 입력해 주세요.">
+                </label>
               </div>
               <div class="form-input">
-                <label for="userPassword"><span class="hidden">비밀번호</span></label>
-                <input type="password" id="userPassword" class="inp-base" name="password" maxlength="" aria-label="비밀번호 입력" placeholder="비밀번호를 입력해주세요.">
+                <label class="lb-inp">
+                  <span class="lb-title hidden">비밀번호</span>
+                  <input type="password" id="userPassword" class="inp-base" name="password" maxlength="" aria-label="비밀번호 입력" placeholder="비밀번호를 입력해주세요.">
+                </label>
               </div>
               <div class="wrap-btn">
                 <button type="button" id="btnLogin" class="btn is-primary is-h56">LOGIN</button>
@@ -50,10 +52,7 @@
 
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
-  
   <!-- js common -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
 
   <!-- page script -->

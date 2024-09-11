@@ -1,7 +1,7 @@
 export class TabManager {
   constructor(container = document) {
     this.container = container; // 특정 컨테이너에서만 탭 관리
-    this.tabManagers = []; // 탭 관리자를 모아둠
+    this.tabManagers = []; 
     this.initTab();
   }
 
@@ -45,7 +45,7 @@ export class TabManager {
     });
   }
 
-  // 중첩된 탭이 있을 경우 추가적으로 탭 관리자 초기화
+  // 중첩된 탭이 있을 경우 추가적으로 tabManagers 초기화
   initNestedTabs(tabContentId, tabList) {
     const tabContent = tabList.querySelector(`.tab-content[data-tab-content="${tabContentId}"]`);
     if (tabContent) {
@@ -54,7 +54,7 @@ export class TabManager {
         if (!nestedTab.tabManager) {  // 중복 생성 방지
           const tabManager = new TabManager(nestedTab); // 중첩 탭의 컨테이너 전달
           nestedTab.tabManager = tabManager; // 중복 방지용 참조
-          this.tabManagers.push(tabManager); // 탭 관리자 목록에 추가
+          this.tabManagers.push(tabManager); // tabManager 목록에 추가
         }
       });
     }

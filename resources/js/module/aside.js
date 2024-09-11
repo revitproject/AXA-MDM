@@ -8,7 +8,6 @@ export class SidebarManager {
     this.initSidebar();
   }
 
-  // 사이드바 초기화
   initSidebar() {
     this.loadSidebar()
       .then(() => this.handleLinkClicks())
@@ -22,7 +21,7 @@ export class SidebarManager {
     if (asideElement && !this.sidebarLoaded) {
       try {
         const fetchUrl = asideElement.classList.contains('guide') 
-          ? '../../html/common/lnb-guide.html' 
+          ? '../../html/common/lnb-guide.html'
           : '../../html/common/lnb.html';
 
         const response = await fetch(fetchUrl);
@@ -69,12 +68,12 @@ export class SidebarManager {
         // 2depth 메뉴 열림/닫힘 (is-open 클래스)
         if (subMenu) {
           if (!parentItem.classList.contains('is-open')) {
-            parentItem.classList.add('is-open'); // 2depth 메뉴 열기
+            parentItem.classList.add('is-open'); 
           }
         }
       } else {
         parentItem.classList.remove('is-active');
-        parentItem.classList.remove('is-open'); // 2depth 메뉴 닫기
+        parentItem.classList.remove('is-open');
       }
     });
 
@@ -87,8 +86,8 @@ export class SidebarManager {
         subLink.classList.add('is-active');
         const parentItem = subLink.closest('.lnb-item');
         if (parentItem) {
-          parentItem.classList.add('is-active'); // 상위 1depth (lnb-item)도 활성화
-          parentItem.classList.add('is-open'); // 2depth 메뉴 열기
+          parentItem.classList.add('is-active');
+          parentItem.classList.add('is-open');
         }
       } else {
         subLink.classList.remove('is-active');

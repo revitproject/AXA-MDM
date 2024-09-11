@@ -222,8 +222,6 @@
   min-width: initial;
   height: 3.3rem;
   font-size: 1.2rem;
-  /* color: var(--grays-3);
-  background: var(--grays-6); */
 }
 .area-datepicker .btn-options .btn.is-active {
   color: #fff;

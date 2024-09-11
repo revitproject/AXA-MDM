@@ -6,8 +6,6 @@
   <title>AXA MDM GUIDE</title>
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
-  <link rel="stylesheet" href="../../resources/css/lib/jquery-ui.min.css">
-  <link rel="stylesheet" href="../../resources/css/lib/tui-pagination.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
   <link rel="stylesheet" href="../../resources/css/lib/prism.css">
   <!-- css base -->
@@ -39,10 +37,7 @@
   </div>
 </div>
 <pre>
-<code class="language-Markup">&lt;!-- data-type="hover | click" --&gt;
-&lt;!-- data-position="top | right | left | bottom" --&gt;
-
-&lt;div class="tooltip">
+<code class="language-Markup">&lt;div class="tooltip">
   &lt;button type="button" class="btn-tooltip" data-type="hover" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
   &lt;div role="tooltip" class="tooltip-inner">
     &lt;div class="tooltip-content">
@@ -70,7 +65,6 @@
         </div>
       </div>
     </div>
-
     <div class="wrap-tooltip">
       툴팁(top)
       <div class="tooltip">
@@ -84,7 +78,6 @@
         </div>
       </div>
     </div>
-    
     <div class="wrap-tooltip">
       툴팁(bottom)
       <div class="tooltip">
@@ -113,37 +106,7 @@
     </div>
   </div>
 <pre>
-<code class="language-Markup">&lt;!-- data-type="hover" --&gt;
-&lt;div class="wrap-tooltip">
-  툴팁(hover)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-type="hover" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-
-&lt;!-- data-type="click" --&gt;
-&lt;div class="wrap-tooltip">
-  툴팁(click/top)
-  &lt;div class="tooltip">
-    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="top">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
-    &lt;div role="tooltip" class="tooltip-inner">
-      &lt;div class="tooltip-content">
-        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
-        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
-      &lt;/div>
-      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
-    &lt;/div>
-  &lt;/div>
-&lt;/div>
-
-&lt;div class="wrap-tooltip">
+<code class="language-Markup">&lt;div class="wrap-tooltip">
   툴팁(right)
   &lt;div class="tooltip">
     &lt;button type="button" class="btn-tooltip" data-type="click" data-position="right">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
@@ -156,7 +119,19 @@
     &lt;/div>
   &lt;/div>
 &lt;/div>
-
+&lt;div class="wrap-tooltip">
+  툴팁(top)
+  &lt;div class="tooltip">
+    &lt;button type="button" class="btn-tooltip" data-type="click" data-position="top">&lt;span class="hidden">도움말&lt;/span>&lt;/button>
+    &lt;div role="tooltip" class="tooltip-inner">
+      &lt;div class="tooltip-content">
+        &lt;strong class="tooltip-title">툴팁 타이틀&lt;/strong>
+        &lt;p class="tooltip-desc">툴팁 텍스트&lt;/p>
+      &lt;/div>
+      &lt;button type="button" class="tooltip-close">&lt;span class="hidden">닫기&lt;/span>&lt;/button>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 &lt;div class="wrap-tooltip">
   툴팁(bottom)
   &lt;div class="tooltip">
@@ -191,82 +166,11 @@
 
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
-  <script src="../../resources/js/jquery/jquery-ui.min.js"></script>
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
-  <script src="../../resources/js/lib/tui-pagination.min.js"></script>
   <script src="../../resources/js/lib/prism.js"></script>
   <!-- js base -->
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
 
   <!-- page script -->
-  <script>
-    // DatePicker
-    const today = new Date();
-    const startpicker = new tui.DatePicker('#startpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker = new tui.DatePicker('#endpicker-div1', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp1',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const startpicker2 = new tui.DatePicker('#startpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#startpicker-inp2',
-        format: 'yyyy-MM-dd'
-      }
-    });
-    const endpicker2 = new tui.DatePicker('#endpicker-div2', {
-      date: today,
-      language: 'ko',
-      input: {
-        element: '#endpicker-inp2',
-        format: 'yyyy-MM-dd'
-      }
-    });
-
-    // UI 확인용 스크립트
-    document.querySelector('.btn-options').addEventListener('click', function (event) {
-      const target = event.target;
-      if (!target.classList.contains('btn')) return;
-
-      let startDate, endDate = today;
-      switch (target.textContent.trim()) {
-        case '전체':
-          break;
-        case '오늘':
-          startDate = endDate = today;
-          break;
-        case '1주일':
-          startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-          break;
-        case '1개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-          break;
-        case '3개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
-          break;
-        case '6개월':
-          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
-          break;
-      }
-
-      startpicker.setDate(startDate);
-      endpicker.setDate(endDate);
-      startpicker2.setDate(startDate);
-      endpicker2.setDate(endDate);
-    });
-  </script>
-  <!-- //page script -->
 </body>
 </html>

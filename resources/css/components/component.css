@@ -41,9 +41,6 @@
 .worklist .tbl-base .status.complete {
   color: #007CEF;
 }
-.worklist .tbl-base .status.confirm {
-  color: #E5493A;
-}
 .worklist .tbl-base .status.delete {
   color: var(--grays-2);
 }

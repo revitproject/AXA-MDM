@@ -26,7 +26,7 @@
   line-height: 1.8rem;
   letter-spacing: -0.25px;
   border: .1rem solid var(--grays-5);
-  background-position: 1.4rem 50%;
+  background-position: 1.2rem 50%;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3.5H2V10H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 3.5H2V6H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
@@ -181,17 +181,23 @@
   display: flex;
   align-items: center;
   max-height: 3.4rem;
-  padding: 0 .6rem 0 2.8rem;
+  padding: 0 .8rem 0 2.8rem;
   letter-spacing: -0.25px;
   border: .1rem solid var(--grays-6);
-  background-color: #fff;
   border-radius: .4rem;
-  background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3.5H2V10H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 3.5H2V6H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 1.2rem 50% no-repeat;
+  background-position: 1.2rem 50%;
+  background-repeat: no-repeat;
+  background-size: 1.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3333 4.66602H2.66663V13.3327H13.3333V4.66602Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.3333 4.66602H2.66663V7.99935H13.3333V4.66602Z' stroke='%23111111' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.66663 2.66602V4.66602' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.3334 2.66602V4.66602' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 .wrap-datepicker .datePicker .tui-datepicker-input >  input {
   width: 100%;
+  padding: 0 .4rem;
   color: var(--grays-3);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  letter-spacing: -.025rem;
   border: 0;
   background-image: none;
 }

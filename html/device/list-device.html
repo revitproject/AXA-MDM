@@ -7,12 +7,13 @@
   <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
   <!-- css library -->
   <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
 <body>
   <!-- base-wrap -->
-  <div class="base-wrap">
+  <div class="base-wrap device">
     <!-- base-aside -->
     <aside class="base-aside"></aside>
     <!-- //base-aside -->
@@ -119,7 +120,15 @@
               <table class="tbl-base">
                 <colgroup>
                   <col style="width: 6.2rem;">
+                  <col>
+                  <col style="width: 16rem;">
                   <col style="width: 19.1rem;">
+                  <col style="width: 13rem;">
+                  <col style="width: 12rem;">
+                  <col style="width: 9rem;">
+                  <col style="width: 9rem;">
+                  <col style="width: 19rem;">
+                  <col style="width: 21rem;">
                 </colgroup>
                 <thead>
                   <tr>
@@ -132,48 +141,24 @@
                     <th>API레벨</th>
                     <th>사용유무</th>
                     <th>기기 등록일시</th>
-                    <th>원격제어/삭제</th>
+                    <th>원격제어/수정/삭제</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
                     <td><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
-                    <td>
-                      <div class="wrap-tooltip">
-                        SM-G960N
-                        <div class="tooltip">
-                          <button type="button" class="btn-tooltip" data-type="click" data-position="bottom"><span class="hidden">도움말</span></button>
-                          <div role="tooltip" class="tooltip-inner">
-                            <div class="tooltip-content">
-                              <strong class="tooltip-title">프로필간 데이터 공유</strong>
-                              <p class="tooltip-desc">한 프로필 (개인 또는 직장)의 데이터를 다른 프로필의 앱과 공유할 수 있는지 여부 인텐트를 통해 간단한 데이터 공유를 구체적으로 제어합니다. 연락처 검색, 복사/붙여넣기, 연결된 업무 등 기타 프로필 간 커뮤니케이션 채널 관리 개인 앱은 별도로 구성됩니다.</p>
-                            </div>
-                            <button type="button" class="tooltip-close"><span class="hidden">닫기</span></button>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
+                    <td>SM-G960N</td>
                     <td>홍길동</td>
                     <td>slack/14</td>
-                    <td>
-                      <div class="tooltip">
-                        프로필
-                        <button type="button" class="btn-tooltip" data-type="hover" data-position="bottom"><span class="hidden">도움말</span></button>
-                        <div role="tooltip" class="tooltip-inner">
-                          <div class="tooltip-content">
-                            <strong class="tooltip-title">프로필간 데이터 공유</strong>
-                            <p class="tooltip-desc">한 프로필 (개인 또는 직장)의 데이터를 다른 프로필의 앱과 공유할 수 있는지 여부 인텐트를 통해 간단한 데이터 공유를 구체적으로 제어합니다. 연락처 검색, 복사/붙여넣기, 연결된 업무 등 기타 프로필 간 커뮤니케이션 채널 관리 개인 앱은 별도로 구성됩니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
+                    <td>프로필</td>
                     <td>29</td>
                     <td>Y</td>
                     <td>2023-04-24 15:21:59</td>
                     <td>
                       <div class="wrap-btn">
-                        <button type="button" class="btn is-outline-2">설정</button>
+                        <button type="button" class="btn is-outline-2" data-modal="open" data-url="#modalSetting">설정</button>
+                        <button type="button" class="btn is-secondary-1" id="btnModify">수정</button>
                         <button type="button" class="btn is-secondary-1" id="btnDelete">삭제</button>
                       </div>
                     </td>
@@ -213,21 +198,53 @@
       <div class="modal-inner" style="width: 450px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">기기 상세</strong>
+        </div>
+        <div class="modal-body">
+          기기 상세 내용
+        </div>
+      </div>
+    </div>
+
+    <div id="modalSetting" class="modal">
+      <div class="modal-inner" style="width: 450px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">기기 원격제어 설정</strong>
         </div>
         <div class="modal-body">
-          기기 이름
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn is-grays-2 is-footer is-true">기기 원격제어 설정</button>
-          <button type="button" id="deleteConfirm" class="btn is-grays-1 is-footer is-false">기기 삭제</button>
-        </div>
+          <div class="wrap-device">
+            <img src="" alt="">
+            <dl class="dl-formbox">
+              <dt>기기명</dt>
+              <dd>3708EFA7AF510E9</dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>사용자</dt>
+              <dd>홍길동/revit@revit.com</dd>
+            </dl>
+          </div>
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="status-text">디바이스 잠금</p>
+                <button type="button" id="alertDevice1" class="btn is-outline-1">실행</button>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
       </div>
     </div>
   </div>
   <!-- //base-wrap -->
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
   <!-- js base -->
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
@@ -253,7 +270,7 @@
       }
     });
 
-    // UI 확인용 스크립트
+    // 데이트피커 옵션 버튼 UI 확인용 스크립트
     document.querySelector('.btn-options').addEventListener('click', function (event) {
       const target = event.target;
       if (!target.classList.contains('btn')) return;
@@ -284,31 +301,37 @@
     });
   </script>
 
+  <!-- alert/confirm -->
   <script>
     document.querySelector('#btnDelete').addEventListener('click', function(){
       window.modalManager.confirm(
         '알림',
         '기기를 정말 삭제 하시겠습니까?',
-        () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 클릭 시 동작
         () => { console.log('실행이 취소되었습니다.'); }, // 취소 버튼 클릭 시 동작
+        () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 클릭 시 동작
         '확인',   // 확인 버튼 텍스트
         '취소'    // 취소 버튼 텍스트
       );
     });
 
-    document.querySelector('#deleteConfirm').addEventListener('click', function(){
+    document.querySelector('#alertDevice1').addEventListener('click', function() {
       window.modalManager.confirm(
-        '알림',
-        '기기를 정말 삭제 하시겠습니까?',
-        () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 클릭 시 동작
-        () => { 
-          console.log('실행이 취소되었습니다.'); 
-          // window.modalManager.hideDialog();
-          window.modalManager.closeCurrentModal();
-        }, // 취소 버튼 클릭 시 동작
-        '확인',   // 확인 버튼 텍스트
-        '취소'    // 취소 버튼 텍스트
+        '확인',                     // 타이틀
+        '기기 원격제어 설정을 실행 하시겠습니까?',    // 메시지
+        () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
+        () => { console.log('삭제 취소'); }, // 취소 버튼 콜백
+        '취소',                          // 확인 버튼 텍스트
+        '확인'                           // 취소 버튼 텍스트
       );
+    });
+  </script>
+
+  <!-- 기기 원격제어 설정 슬라이드 -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
     });
   </script>
 </body>

@@ -7,3 +7,23 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.device .swiper {
+  width: 100%;
+  height: 100%;
+}
+.device .swiper-slide {
+  min-height: 20rem;
+  font-size: 1.6rem;
+  background: #ddd;
+  text-align: center;
+}
+.device .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrap-device {
+  margin-bottom: 2rem;
+}

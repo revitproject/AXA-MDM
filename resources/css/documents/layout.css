@@ -278,7 +278,7 @@ body {
 .login-form {
 	position: relative;
 	width: 47rem;
-	height: 45.2rem;
+	height: 46rem;
 	padding: 5rem;
 	background: #fff;
 	border-radius: 3rem;
@@ -308,7 +308,7 @@ body {
 	margin-right: 0;
 }
 .login-form .wrap-btn {
-	margin-top: 2.4rem;
+	margin-top: 2rem;
 }
 .login-form .wrap-btn .btn {
 	color: #fff;
@@ -321,9 +321,16 @@ body {
 }
 .login-info .login-text {
 	color: var(--grays-3);
-	font-size: 1.4rem;
-	line-height: 1.4;
+	font-size: 1.2rem;
 	text-align: center;
+}
+/* 비밀번호 변경 */
+.login-form.has-pwchage {
+	width: 80rem;
+	height: 68rem;
+}
+.login-form.has-pwchage .list-base {
+	margin: 2rem 0;
 }
 
 /* wrap */

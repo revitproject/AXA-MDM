@@ -99,96 +99,100 @@
 <!-- //toggle -->
 
   <h2 class="component-title">Input Text</h2>
-    <!-- default/multi -->
+    <!-- default -->
     <div class="form-input">
       <label class="lb-inp">
-        <span class="lb-title">title</span>
-        <input type="text" class="inp-base is-h56" name="" aria-label="" placeholder="텍스트 입력">
-      </label>
-
-      <label class="lb-inp">
-        <span class="lb-title">title</span>
-        <input type="text" class="inp-base is-h48" name="" aria-label="" placeholder="텍스트 입력">
-      </label>
-
-      <label class="lb-inp">
-        <span class="lb-title">default</span>
-        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+        <span class="lb-title">h56</span>
+        <input type="text" class="inp-base is-h56" name="" aria-label="" placeholder="플레이스홀더">
       </label>
     </div>
-    <!-- is-checked -->
     <div class="form-input">
-      <label class="lb-inp is-checked">
-        <span class="lb-title">checked</span>
-        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" checked>
+      <label class="lb-inp">
+        <span class="lb-title">h48</span>
+        <input type="text" class="inp-base is-h48" name="" aria-label="" placeholder="플레이스홀더">
+      </label>
+    </div>
+    <div class="form-input">
+      <label class="lb-inp">
+        <span class="lb-title">default</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트">
+      </label>
+    </div>
+    <!-- is-focused -->
+    <div class="form-input is-focused">
+      <label class="lb-inp is-focused">
+        <span class="lb-title">focused</span>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트">
       </label>
     </div>
     <!-- is-readonly -->
     <div class="form-input">
       <label class="lb-inp is-readonly">
         <span class="lb-title">readonly</span>
-        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" readonly>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트" readonly>
       </label>
     </div>
     <!-- is-disabled -->
     <div class="form-input">
       <label class="lb-inp is-disabled">
         <span class="lb-title">disabled</span>
-        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" disabled>
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트" disabled>
       </label>
     </div>
     <!-- is-error -->
     <div class="form-input form-validation">
       <label class="lb-inp is-error">
         <span class="lb-title">error</span>
-        <input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" value="유효성체크">
+        <input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="유효성체크">
       </label>
       <p class="validation">validation 문구 노출 영역</p>
     </div>
 <pre>
-<code class="language-Markup">&lt;!-- default/multi --&gt;
+<code class="language-Markup">&lt;!-- default --&gt;
 &lt;div class="form-input">
   &lt;label class="lb-inp">
-    &lt;span class="lb-title">default&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
-  &lt;/label>
-
-  &lt;label class="lb-inp">
-    &lt;span class="lb-title">default&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
-  &lt;/label>
-
-  &lt;label class="lb-inp">
-    &lt;span class="lb-title">default&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력">
+    &lt;span class="lb-title">h56&lt;/span>
+    &lt;input type="text" class="inp-base is-h56" name="" aria-label="" placeholder="플레이스홀더">
   &lt;/label>
 &lt;/div>
-&lt;!-- is-checked --&gt;
 &lt;div class="form-input">
-  &lt;label class="lb-inp is-checked">
-    &lt;span class="lb-title">checked&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" checked>
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">h48&lt;/span>
+    &lt;input type="text" class="inp-base is-h48" name="" aria-label="" placeholder="플레이스홀더">
+  &lt;/label>
+&lt;/div>
+&lt;div class="form-input">
+  &lt;label class="lb-inp">
+    &lt;span class="lb-title">default&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트">
+  &lt;/label>
+&lt;/div>
+&lt;!-- is-focused --&gt;
+&lt;div class="form-input is-focused">
+  &lt;label class="lb-inp is-focused">
+    &lt;span class="lb-title">focused&lt;/span>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트">
   &lt;/label>
 &lt;/div>
 &lt;!-- is-readonly --&gt;
 &lt;div class="form-input">
   &lt;label class="lb-inp is-readonly">
     &lt;span class="lb-title">readonly&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" readonly>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트" readonly>
   &lt;/label>
 &lt;/div>
 &lt;!-- is-disabled --&gt;
 &lt;div class="form-input">
   &lt;label class="lb-inp is-disabled">
     &lt;span class="lb-title">disabled&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" disabled>
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="텍스트텍스트" disabled>
   &lt;/label>
 &lt;/div>
 &lt;!-- is-error --&gt;
 &lt;div class="form-input form-validation">
   &lt;label class="lb-inp is-error">
     &lt;span class="lb-title">error&lt;/span>
-    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="텍스트 입력" value="유효성체크">
+    &lt;input type="text" class="inp-base" name="" aria-label="" placeholder="플레이스홀더" value="유효성체크">
   &lt;/label>
   &lt;p class="validation">validation 문구 노출 영역&lt;/p>
 &lt;/div></code>

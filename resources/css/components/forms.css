@@ -46,23 +46,18 @@
 .inp-base::placeholder {
   color: var(--grays-3);
 }
-.inp-base:not(.is-error):not(:read-only):focus {
-  border-color: var(--grays-1);
-}
-.is-checked .inp-base {
-  border-color: var(--primary);
-}
+.inp-base:not(.is-error):not(:read-only):focus,
 .is-focused .inp-base {
-  border-color: var(--grays-1);
+  border-color: var(--primary);
 }
 .is-readonly .inp-base {
   color: var(--grays-2);
   border: .1rem solid var(--grays-5);
-  background-color: #F1F2F4;
+  background-color: var(--grays-6);
   pointer-events: none; 
 }
 .is-disabled .inp-base {
-  color: var(--grays-1);
+  color: var(--grays-4);
   border: .1rem solid var(--grays-5);
   background-color: var(--grays-6);
   pointer-events: none; 

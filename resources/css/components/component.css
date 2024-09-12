@@ -46,6 +46,9 @@
 }
 
 /* component */
+.base-wrap.component .wrap-account {
+  display: none;
+}
 .component .base-aside.guide .lnb-link::before {
   display: none;
 }

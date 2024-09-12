@@ -72,7 +72,6 @@
   font-size: 2rem;
   font-weight: 500;
   line-height: 2.8rem;
-  letter-spacing: -0.02rem;
 }
 .ui-tab.is-line .tab-item.is-active .tab-link {
   padding-bottom: .2rem;
@@ -93,7 +92,6 @@
   padding: .8rem 1.6rem;
   font-size: 1.3rem;
   line-height: 2rem;
-  letter-spacing: -0.01rem;
 }
 .ui-tab.is-round .tab-item.is-active {
   border: 0;

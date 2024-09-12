@@ -1,11 +1,18 @@
 export class SidebarManager {
-  constructor(asideSelector = '.base-aside', linkSelector = '.lnb-link', subLinkSelector = '.lnb-sub-link') {
+  constructor(
+    asideSelector = '.base-aside',
+    linkSelector = '.lnb-link',
+    subLinkSelector = '.lnb-sub-link',
+    headerSelector = '.base-header' // 추가된 헤더 선택자
+  ) {
     this.asideSelector = asideSelector;
     this.linkSelector = linkSelector;
     this.subLinkSelector = subLinkSelector;
+    this.headerSelector = headerSelector; // 헤더 선택자 추가
     this.sidebarLoaded = false;
 
     this.initSidebar();
+    this.loadHeader(); // 헤더 로드 추가
   }
 
   initSidebar() {
@@ -20,7 +27,7 @@ export class SidebarManager {
 
     if (asideElement && !this.sidebarLoaded) {
       try {
-        const fetchUrl = asideElement.classList.contains('guide') 
+        const fetchUrl = asideElement.classList.contains('guide')
           ? '../../html/common/lnb-guide.html'
           : '../../html/common/lnb.html';
 
@@ -93,5 +100,23 @@ export class SidebarManager {
         subLink.classList.remove('is-active');
       }
     });
+  }
+
+  // header load
+  async loadHeader() {
+    const headerElement = document.querySelector(this.headerSelector);
+
+    if (headerElement) {
+      try {
+        const response = await fetch('../../html/common/header.html');
+        if (!response.ok) throw new Error(`헤더 로드 실패: ${response.statusText}`);
+
+        const html = await response.text();
+        headerElement.innerHTML = html;
+      } catch (error) {
+        console.error('헤더 로드 에러:', error);
+        headerElement.innerHTML = '<p>헤더 내용 로드 실패.</p>';
+      }
+    }
   }
 }

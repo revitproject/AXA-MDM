@@ -14,6 +14,10 @@
 <body>
   <!-- base-wrap -->
   <div class="base-wrap device">
+    <!-- base-header -->
+    <header class="base-header"></header>
+    <!-- //base-header -->
+
     <!-- base-aside -->
     <aside class="base-aside"></aside>
     <!-- //base-aside -->
@@ -25,7 +29,7 @@
         <div class="module-top">
           <div class="form-searchbox">
             <dl class="dl-formbox">
-              <dt>기간</dt>
+              <dt class="length4">기간</dt>
               <dd>
                 <div class="area-datepicker">
                   <!-- DatePicker -->
@@ -52,15 +56,14 @@
                     <button type="button" class="btn is-outline-1">1개월</button>
                     <button type="button" class="btn is-outline-1">3개월</button>
                     <button type="button" class="btn is-outline-1">6개월</button>
-                    <button type="button" class="btn is-outline-1">12개월</button>
                   </div>
                 </div>
               </dd>
             </dl>
             <dl class="dl-formbox">
-              <dt><label for="select1" class="lb-inp">사용유무</label></dt>
+              <dt><label for="select1" class="lb-inp">사용 유무</label></dt>
               <dd>
-                <select id="select1" class="inp-select is-sm">
+                <select id="select1" class="inp-select">
                   <option value="전체" selected>전체</option>
                   <option value="Y">Y</option>
                   <option value="N">N</option>
@@ -68,7 +71,7 @@
               </dd>
               <dt><label for="select2" class="lb-inp">관리모드</label></dt>
               <dd>
-                <select id="select2" class="inp-select is-sm">
+                <select id="select2" class="inp-select">
                   <option value="전체" selected>전체</option>
                   <option value="프로필">프로필</option>
                   <option value="디바이스">디바이스</option>
@@ -77,115 +80,109 @@
               </dd>
               <dt><label for="select3" class="lb-inp">정책</label></dt>
               <dd>
-                <select id="select3" class="inp-select is-sm">
+                <select id="select3" class="inp-select">
                   <option value="전체" selected>전체</option>
                   <option value="정책리스트">정책리스트</option>
                 </select>
               </dd>
             </dl>
-            <dl class="dl-formbox inbtn">
-              <dt><label for="select5" class="lb-inp">검색어</label></dt>
-              <dd>
-                <div class="searchbox-item">
-                  <select id="select5" class="inp-select is-sm">
-                    <option value="전체" selected>전체</option>
-                    <option value="모델">모델</option>
-                    <option value="사용자">사용자</option>
-                  </select>
-              
-                  <input type="search" id="inp-search" class="inp-base" placeholder="">
-                </div>
-              </dd>
-              <dd class="searchbox-btn">
-                <button type="submit" class="btn is-search">검색</button>
-              </dd>
-            </dl>
+          </div>
+          <div class="wrap-btn is-end">
+            <button type="button" class="btn is-primary is-h48">조회</button>
           </div>
         </div>
         <div class="module-bottom">
-          <div class="box-form">
-            <div class="wrap-tbl">
-              <div class="tbl-head">
-                <select class="inp-select">
-                  <option value="" selected="">10개씩 보기</option>
-                  <option value="">30개씩 보기</option>
-                  <option value="">50개씩 보기</option>
-                  <option value="">100개씩 보기</option>
-                </select>
-                <div class="head-option">
-                  <button type="button" class="btn is-grays-1" onclick="window.location.href='./list-device2.html';">기기 추가</button>
+          <div class="wrap-tbl">
+            <div class="tbl-head">
+              <select class="inp-select">
+                <option value="10">10</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+              </select>
+              <div class="head-option">
+                <div class="form-search">
+                  <input type="search" class="inp-search" placeholder="기기번호 또는 사용자 검색" />
+                  <button type="button" class="btn-clear" aria-label="검색어 삭제"><span class="hidden">삭제</span></button>
                 </div>
+                <button type="button" class="btn is-primary is-h36" onclick="window.location.href='./list-device2.html';">기기 추가</button>
               </div>
-  
-              <table class="tbl-base">
-                <colgroup>
-                  <col style="width: 6.2rem;">
-                  <col>
-                  <col style="width: 16rem;">
-                  <col style="width: 19.1rem;">
-                  <col style="width: 13rem;">
-                  <col style="width: 12rem;">
-                  <col style="width: 9rem;">
-                  <col style="width: 9rem;">
-                  <col style="width: 19rem;">
-                  <col style="width: 21rem;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th>기기명</th>
-                    <th>모델</th>
-                    <th>사용자/이메일</th>
-                    <th>정책/버전</th>
-                    <th>관리 모드</th>
-                    <th>API레벨</th>
-                    <th>사용유무</th>
-                    <th>기기 등록일시</th>
-                    <th>원격제어/수정/삭제</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
-                    <td>SM-G960N</td>
-                    <td>홍길동</td>
-                    <td>slack/14</td>
-                    <td>프로필</td>
-                    <td>29</td>
-                    <td>Y</td>
-                    <td>2023-04-24 15:21:59</td>
-                    <td>
-                      <div class="wrap-btn">
-                        <button type="button" class="btn is-outline-2" data-modal="open" data-url="#modalSetting">설정</button>
-                        <button type="button" class="btn is-secondary-1" id="btnModify">수정</button>
-                        <button type="button" class="btn is-secondary-1" id="btnDelete">삭제</button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            </div>
 
-              <div class="wrap-pagination">
-                <div class="wrap-count">
-                  <span class="count-text">총 <em class="count-number">115</em>건</span>
-                </div>
-                <div class="pagination">
-                  <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
-                  <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
-                  <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
-                  <a href="#" class="pagination-link">2</a>
-                  <a href="#" class="pagination-link">3</a>
-                  <a href="#" class="pagination-link">4</a>
-                  <a href="#" class="pagination-link">5</a>
-                  <a href="#" class="pagination-link">6</a>
-                  <a href="#" class="pagination-link">7</a>
-                  <a href="#" class="pagination-link">8</a>
-                  <a href="#" class="pagination-link">9</a>
-                  <a href="#" class="pagination-link">10</a>
-                  <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
-                  <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
-                </div>
+            <table class="tbl-base">
+              <colgroup>
+                <col style="width: 5.5rem;">
+                <col>
+                <col>
+                <col style="width: 21.7rem;">
+                <col style="width: 11.8rem;">
+                <col style="width: 8.7rem;">
+                <col style="width: 7.8rem;">
+                <col style="width: 8.2rem;">
+                <col style="width: 15.4rem;">
+                <col style="width: 8.2rem;">
+                <col style="width: 5.6rem;">
+                <col style="width: 5.6rem;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>기기명</th>
+                  <th>모델명</th>
+                  <th>사용자(이메일)</th>
+                  <th>정책/버전</th>
+                  <th>관리 모드</th>
+                  <th>API레벨</th>
+                  <th>사용 유무</th>
+                  <th>기기 등록일시</th>
+                  <th>원격 제어</th>
+                  <th>수정</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="align-left"><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
+                  <td class="align-left">SM-G960N</td>
+                  <td class="align-left">홍길동 <span>(revit$%^#&&@revit.com)</span></td>
+                  <td>slack/14</td>
+                  <td>프로필</td>
+                  <td>29</td>
+                  <td>Y</td>
+                  <td>2023-04-24 15:21:59</td>
+                  <td>
+                    <button type="button" class="btn-ico is-setting" data-modal="open" data-url="#modalSetting"><span class="hidden">설정</span></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-ico is-modify" id="btnModify"><span class="hidden">수정</span></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-ico is-delete" id="btnDelete"><span class="hidden">삭제</span></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="wrap-pagination">
+              <div class="wrap-count">
+                <span class="count-text">총 <em class="count-number">115</em>건</span>
+              </div>
+              <div class="pagination">
+                <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>
+                <a href="#" class="pagination-link is-current">1</a> <!-- 현재 페이지 -->
+                <a href="#" class="pagination-link">2</a>
+                <a href="#" class="pagination-link">3</a>
+                <a href="#" class="pagination-link">4</a>
+                <a href="#" class="pagination-link">5</a>
+                <a href="#" class="pagination-link">6</a>
+                <a href="#" class="pagination-link">7</a>
+                <a href="#" class="pagination-link">8</a>
+                <a href="#" class="pagination-link">9</a>
+                <a href="#" class="pagination-link">10</a>
+                <a href="#" class="pagination-link is-next"><span class="hidden">다음 페이지 이동</span></a>
+                <a href="#" class="pagination-link is-last"><span class="hidden">마지막 페이지로 이동</span></a>
               </div>
             </div>
           </div>
@@ -258,7 +255,7 @@
       language: 'ko',
       input: {
         element: '#startpicker-inp1',
-        format: 'yyyy.MM.dd'
+        format: 'yyyy-MM-dd'
       }
     });
     const endpicker = new tui.DatePicker('#endpicker-div1', {
@@ -266,7 +263,7 @@
       language: 'ko',
       input: {
         element: '#endpicker-inp1',
-        format: 'yyyy.MM.dd'
+        format: 'yyyy-MM-dd'
       }
     });
 

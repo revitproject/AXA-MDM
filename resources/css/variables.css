@@ -3,16 +3,16 @@
 /* Colors */
 :root {
   --primary       : #545BFF;
-  --secondary-1   : #F8FAFD;
+  --secondary-1   : #F7F7FB;
   --secondary-2   : #F1F1F5;
   --secondary-3   : #E7E7E7;
   --secondary-4   : #CDCDCD;
   --grays-1       : #111111;
-  --grays-2       : #767676;
-  --grays-3       : #91929C;
+  --grays-2       : #7F7F83;
+  --grays-3       : #999999;
   --grays-4       : #C2C2C9;
   --grays-5       : #D4D6DD;
-  --grays-6       : #E4E4E7;
+  --grays-6       : #E7E7E7;
   --system-1      : #DC0000;
   --system-2      : #FFAA00;
   --system-3      : #04B014;

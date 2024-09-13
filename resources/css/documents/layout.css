@@ -37,7 +37,7 @@ body {
 	left: 0; 
 	width: 24rem;
 	min-height: 100%;
-	background-color: #F7F7FB;
+	background-color: var(--grays-10);
 }
 
 .base-content {
@@ -83,7 +83,7 @@ body {
 	width: 19.2rem;
 	margin-top: 5rem;
 	padding: 1.6rem;
-	background: #F1F1F8;
+	background: var(--grays-9);
 	border-radius: .6rem;
 }
 .wrap-account .user-profile {
@@ -156,7 +156,7 @@ body {
   align-items: center;
 	width: 100%;
   padding: 1.4rem 2.4rem;
-  color: #7F7F83;
+  color: var(--grays-4);
   font-size: 1.6rem;
   line-height: 2.4rem;
   text-decoration: none;
@@ -164,6 +164,7 @@ body {
 }
 .lnb-item.is-active > .lnb-link {
   color: #fff;
+	font-weight: 600;
 	background: var(--primary);
 	border-radius: .6rem;
 }
@@ -242,9 +243,10 @@ body {
 	margin-top: 2rem;
 	padding-top: .8rem;
 	padding-left: 4.2rem;
-	border-top: .1rem solid var(--grays-5);
-	color: #7F7F83;
+	color: var(--grays-4);
 	font-size: 1.2rem;
+	line-height: 2rem;
+	border-top: .1rem solid var(--grays-7);
 }
 .copyright::before {
 	content: '';
@@ -264,7 +266,7 @@ body {
 	left: 24rem;
 	width: calc(100% - 24rem);
 	height: 100%;
-	padding: 2.8rem 5rem;
+	padding: 6.2rem 5rem 5.4rem;
 	box-sizing: border-box;
 }
 .content-title {
@@ -273,6 +275,7 @@ body {
 	font-size: 3.2rem;
 	font-weight: 700;
 	line-height: 4.2rem;
+	letter-spacing: -.64px;
 }
 .content-subtitle {
 	margin-bottom: 1rem;
@@ -351,7 +354,7 @@ body {
 .login-info {
 	padding-top: 2rem;
 	margin-top: 4rem;
-	border-top: .1rem solid var(--secondary-3);
+	border-top: .1rem solid var(--grays-10);
 }
 .login-info .login-text {
 	color: var(--grays-3);

@@ -42,7 +42,7 @@
 }
 .modal .modal-header .modal-close {
   position: absolute;
-  top: 2rem;
+  top: 2.9rem;
   right: 2.4rem;
   width: 2.4rem;
   height: 2.4rem;
@@ -52,23 +52,23 @@
 }
 .modal .modal-header .modal-title {
   display: block;
-  padding: 6.4rem 2rem .6rem;
+  padding: 2.4rem;
   color: var(--grays-1);
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  line-height: 2.4rem;
+  line-height: 3.4rem;
   text-align: center;
 }
 .modal-body {
-  margin: .6rem 4rem 2.4rem;
-  color: var(--grays-2);
+  margin: 0 4rem 2.4rem;
+  color: var(--grays-3);
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
   text-align: center;
 }
 .modal-body .msg {
-  color: var(--grays-1);
+  color: var(--grays-3);
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -84,7 +84,7 @@
 }
 .modal-body .modal-msg {
   display: block;
-  color: var(--grays-2);
+  color: var(--grays-3);
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
@@ -94,19 +94,44 @@
   display: flex;
   justify-content: center;
   padding: 0 4rem 3.2rem;
+  gap: .8rem;
 }
 .modal-footer .btn.is-secondary-1 {
   color: var(--grays-1);
 }
 .modal-footer .btn:disabled {
   color: #fff;
-  background-color: var(--grays-6);
+  background-color: var(--grays-10);
 }
-.modal-footer .btn + .btn {
-  margin-left: .8rem;
+.modal-footer .btn.is-footer {
+  min-width: 10rem;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: .4rem;
+}
+.modal-footer .btn.is-footer.is-true {
+  color: #fff;
+  background: var(--primary);
+}
+.modal-footer .btn.is-footer.is-false {
+  color: var(--grays-4);
+  background: var(--grays-9);
 }
 
-/* qrcode */
+/* alert/confirm */
+.modal.has-alert .modal-header .modal-title,
+.modal.has-confirm .modal-header .modal-title {
+  padding: 6.4rem 2rem .6rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.modal.has-alert .modal-header .modal-close,
+.modal.has-confirm .modal-header .modal-close {
+  top: 2rem;
+}
+
+/* qrcode 임시 */
 .modal .wrap-qrcode {
   display: flex;
   justify-content: center;

@@ -9,7 +9,7 @@
 }
 .home .list-mdm li {
   width: calc(100% / 3 - 1.2rem);
-  background: var(--secondary-1);
+  background: var(--grays-10);
   border-radius: 1rem;
   text-align: center;
 }

@@ -26,7 +26,7 @@
     <main class="base-content">
       <h1 class="component-h1">Modal</h1>
       <h2 class="component-title">Trigger</h2>
-      <div class="component-btn-group">
+      <div class="wrap-btn">
         <a href="#sampleModal" class="btn is-grays-1" data-modal="open">1. a태그(href)</a>
         <button type="button" class="btn is-grays-1" data-modal="open" data-url="#sampleModal">2. button태그(data-url)</button>
         <button type="button" id="openModalBtn" class="btn is-grays-2">3. ID 기반 이벤트 핸들링</button>
@@ -86,7 +86,7 @@
 </pre>
 
     <h2 class="component-title">Dialog Modal</h2>
-    <div class="component-btn-group">
+    <div class="wrap-btn">
       <button type="button" id="sampleAlert" class="btn is-outline-2">Alert</button>
       <button type="button" id="sampleConfirm" class="btn is-outline-2">Confirm</button>
     </div>
@@ -121,13 +121,14 @@
 
   <!-- modal -->
   <div id="sampleModal" class="modal">
-    <div class="modal-inner">
+    <div class="modal-inner" style="width: 120rem;">
       <div class="modal-header">
         <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
         <strong class="modal-title">모달 타이틀</strong>
       </div>
       <div class="modal-body">
-        모달 컨텐츠
+        <!-- 임시 스타일 -->
+        <div style="min-height: 50rem; background: #ddd;">모달 컨텐츠</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn is-footer is-false">취소</button>
@@ -137,13 +138,14 @@
   </div>
 
   <div id="sampleModal2" class="modal">
-    <div class="modal-inner">
+    <div class="modal-inner" style="width: 120rem;">
       <div class="modal-header">
         <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
         <strong class="modal-title">모달 타이틀2</strong>
       </div>
       <div class="modal-body">
-        모달 컨텐츠2
+        <!-- 임시 스타일 -->
+        <div style="min-height: 50rem; background: #ddd;">모달 컨텐츠</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn is-footer is-false">취소</button>

@@ -615,12 +615,12 @@
   font-size: 1.4rem;
 }
 .tooltip-inner .tooltip-content {
-  color: var(--grays-4);
+  color: #7C7E8A;
   font-size: 1.4rem;
 }
 .tooltip-inner .tooltip-desc {
   margin-top: .8rem;
-  color: var(--grays-4);
+  color: #7C7E8A;
   font-size: 1.4rem;
 }
 .tooltip-inner .tooltip-close {

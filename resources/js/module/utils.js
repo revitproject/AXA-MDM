@@ -165,21 +165,26 @@ export function setPasswordForm(selector) {
 
   passwordForms.forEach(passwordForm => {
     const passwordInput = passwordForm.querySelector('.lb-inp.is-toggle .inp-base');
-    const clearBtn = passwordForm.querySelector('.btn-eye');
+    const showBtn = passwordForm.querySelector('.btn-eye');
 
     // 요소가 존재하는지 확인
-    if (!passwordInput || !clearBtn) {
+    if (!passwordInput || !showBtn) {
       // console.warn('Password input or clear button not found in form:', passwordForm);
       return; 
     }
 
-    clearBtn.addEventListener('click', (e) => {
+    showBtn.addEventListener('click', (e) => {
+      const target = e.target;
+      const targetLabel = target.querySelector('.hidden');
+
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        e.target.classList.add('is-show');
+        target.classList.add('is-show');
+        targetLabel.innerText = '비밀번호 보기';
       } else {
         passwordInput.type = 'password';
-        e.target.classList.remove('is-show');
+        target.classList.remove('is-show');
+        targetLabel.innerText = '비밀번호 숨기기';
       }
     })
   })

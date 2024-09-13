@@ -210,7 +210,7 @@
     <label class="lb-inp is-toggle">
       <span class="lb-title">toggle</span>
       <input type="password" class="inp-base" name="" aria-label="" maxlength="" placeholder="텍스트 입력" value="12345678910">
-      <button type="button" class="btn-eye"></button>
+      <button type="button" class="btn-eye"><span class="hidden">비밀번호 숨기기</span></button>
     </label>
   </div>
   <div class="form-input">
@@ -249,7 +249,7 @@
   &lt;label class="lb-inp is-toggle">
     &lt;span class="lb-title">toggle&lt;/span>
     &lt;input type="password" class="inp-base" name="" aria-label="" maxlength="" placeholder="텍스트 입력" value="12345678910">
-    &lt;button type="button" class="btn-eye">&lt;/button>
+    &lt;button type="button" class="btn-eye">&lt;span class="hidden">비밀번호 숨기기&lt;/span>&lt;/button>
   &lt;/label>
 &lt;/div>
 &lt;div class="form-input">
@@ -298,12 +298,14 @@
 <h2 class="component-title">Input search</h2>
 <div class="form-search">
   <input type="search" class="inp-search" placeholder="기기번호 또는 사용자 검색" />
+  <button type="button" class="btn-search" aria-label="검색어 검색"><span class="hidden">검색</span></button>
   <button type="button" class="btn-clear" aria-label="검색어 삭제"><span class="hidden">삭제</span></button>
 </div>
 
 <pre>
 <code class="language-Markup">&lt;div class="form-search">
   &lt;input type="search" class="inp-search" placeholder="기기번호 또는 사용자 검색" />
+  &lt;button type="button" class="btn-search" aria-label="검색어 검색">&lt;span class="hidden">검색&lt;/span>&lt;/button>
   &lt;button type="button" class="btn-clear" aria-label="검색어 삭제">&lt;span class="hidden">삭제&lt;/span>&lt;/button>
 &lt;/div></code>
 </pre>

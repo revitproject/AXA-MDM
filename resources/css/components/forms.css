@@ -108,12 +108,12 @@
 }
 .inp-search {
   min-width: 24rem;
-  height: 3.4rem;
+  height: 3.6rem;
   padding: 0 1.6rem;
   color: var(--grays-1);
   font-size: 1.4rem;
   font-weight: 400;
-  line-height: 1.8rem;
+  line-height: 2rem;
   border-radius: .6rem;
   border: .1rem solid var(--grays-7);
   background-color: #fff;
@@ -492,27 +492,33 @@
   align-items: center;
 }
 .form-search .inp-search {
-  padding-right: 3.6rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00008 11.3337C9.39331 11.3337 11.3334 9.39356 11.3334 7.00032C11.3334 4.60709 9.39331 2.66699 7.00008 2.66699C4.60685 2.66699 2.66675 4.60709 2.66675 7.00032C2.66675 9.39356 4.60685 11.3337 7.00008 11.3337Z' stroke='%23D4D6DD' stroke-width='1.5' stroke-miterlimit='10'/%3E%3Cpath d='M12.803 13.8637C13.0959 14.1566 13.5708 14.1566 13.8637 13.8637C14.1566 13.5708 14.1566 13.0959 13.8637 12.803L12.803 13.8637ZM9.46967 10.5303L12.803 13.8637L13.8637 12.803L10.5303 9.46967L9.46967 10.5303Z' fill='%23D4D6DD'/%3E%3C/svg%3E%0A");
-  background-position: calc(100% - 1.6rem) 50%;
-  background-size: 1.6rem;
-  background-repeat: no-repeat;
-  transition: background 0.3s ease;
+  padding-right: 7.8rem;
+}
+.form-search .btn-search  {
+  position: absolute;
+  top: 50%;
+  right: 1.6rem;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0.4rem;
+  background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00008 11.3337C9.39331 11.3337 11.3334 9.39356 11.3334 7.00032C11.3334 4.60709 9.39331 2.66699 7.00008 2.66699C4.60685 2.66699 2.66675 4.60709 2.66675 7.00032C2.66675 9.39356 4.60685 11.3337 7.00008 11.3337Z' stroke='%23D4D6DD' stroke-width='1.5' stroke-miterlimit='10'/%3E%3Cpath d='M12.803 13.8637C13.0959 14.1566 13.5708 14.1566 13.8637 13.8637C14.1566 13.5708 14.1566 13.0959 13.8637 12.803L12.803 13.8637ZM9.46967 10.5303L12.803 13.8637L13.8637 12.803L10.5303 9.46967L9.46967 10.5303Z' fill='%23D4D6DD'/%3E%3C/svg%3E%0A") no-repeat;
+  background-size: cover;
 }
 .form-search.is-focus .inp-search {
   border-color: var(--primary);
 }
-.form-search.has-value .inp-search {
-  background-image: none; 
+.form-search.has-value .btn-search {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00008 11.3337C9.39331 11.3337 11.3334 9.39356 11.3334 7.00032C11.3334 4.60709 9.39331 2.66699 7.00008 2.66699C4.60685 2.66699 2.66675 4.60709 2.66675 7.00032C2.66675 9.39356 4.60685 11.3337 7.00008 11.3337Z' stroke='%23111111' stroke-width='1.5' stroke-miterlimit='10'/%3E%3Cpath d='M12.803 13.8637C13.0959 14.1566 13.5708 14.1566 13.8637 13.8637C14.1566 13.5708 14.1566 13.0959 13.8637 12.803L12.803 13.8637ZM9.46967 10.5303L12.803 13.8637L13.8637 12.803L10.5303 9.46967L9.46967 10.5303Z' fill='%23111111'/%3E%3C/svg%3E%0A");
 }
 .form-search .btn-clear {
   position: absolute;
   top: 50%;
-  right: 1.6rem;
+  right: 4.2rem;
   width: 1.6rem;
   height: 1.6rem;
-  display: none;
-  background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3334 2.66699L2.66675 13.3337' stroke='%23111111' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M13.3334 13.3337L2.66675 2.66699' stroke='%23111111' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A") 50% no-repeat;
+  padding: 0.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath fill='%237C7E8A' fill-rule='evenodd' d='M7 1.167A5.828 5.828 0 0 0 1.167 7 5.828 5.828 0 0 0 7 12.834 5.828 5.828 0 0 0 12.833 7 5.828 5.828 0 0 0 7 1.167Zm2.505 7.516a.582.582 0 1 1-.822.822L7 7.824 5.317 9.506a.582.582 0 0 1-.823-.822L6.179 7 4.495 5.317a.582.582 0 1 1 .823-.822L7 6.178l1.683-1.683a.582.582 0 1 1 .822.822L7.823 7l1.682 1.683Z' clip-rule='evenodd'/%3E%3C/svg%3E") 50% no-repeat;
   cursor: pointer;
   transform: translateY(-50%);
 }

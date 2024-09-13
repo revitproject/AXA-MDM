@@ -128,7 +128,6 @@
   margin-right: .4rem;
   color: var(--grays-1);
   font-size: 1.4rem;
-  text-align: right;
 }
 .lb-inp:not(:first-child) {
   margin-left: .6rem;

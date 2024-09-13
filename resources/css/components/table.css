@@ -82,7 +82,7 @@
   border-right: .1rem solid var(--grays-7);
 }
 .tbl-base > colgroup + tbody > tr > th {
-  padding: .6rem 1.3rem;
+  padding: .6rem 1.6rem;
   color: var(--grays-1);
   font-weight: 600;
   border-right: .1rem solid var(--grays-7);

@@ -234,6 +234,8 @@
               <div class="swiper-slide">Slide 5</div>
             </div>
             <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
           </div>
       </div>
     </div>
@@ -306,8 +308,8 @@
         '기기를 정말 삭제 하시겠습니까?',
         () => { console.log('실행이 취소되었습니다.'); }, // 취소 버튼 클릭 시 동작
         () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 클릭 시 동작
-        '확인',   // 확인 버튼 텍스트
-        '취소'    // 취소 버튼 텍스트
+        '취소',    // 취소 버튼 텍스트
+        '확인'   // 확인 버튼 텍스트
       );
     });
 
@@ -315,10 +317,10 @@
       window.modalManager.confirm(
         '확인',                     // 타이틀
         '기기 원격제어 설정을 실행 하시겠습니까?',    // 메시지
-        () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
         () => { console.log('삭제 취소'); }, // 취소 버튼 콜백
-        '취소',                          // 확인 버튼 텍스트
-        '확인'                           // 취소 버튼 텍스트
+        () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
+        '취소',                          // 취소 버튼 텍스트
+        '확인'                           // 확인 버튼 텍스트
       );
     });
   </script>
@@ -328,7 +330,12 @@
     const swiper = new Swiper(".mySwiper", {
       pagination: {
         el: ".swiper-pagination",
+        clickable: true,
       },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
     });
   </script>
 </body>

@@ -6,9 +6,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6); 
-  z-index: 4990;
+  background-color: rgba(0, 0, 0, 0.5); 
   pointer-events: auto;
+  z-index: 1009;
   opacity: 1;
 }
 .modal {
@@ -20,11 +20,10 @@
 	justify-content: center;
 	width: 100vw;
 	height: 100vh;
-  z-index: 5000;
 }
 .modal.is-show {
 	display: flex;
-  z-index: 5010; 
+  z-index: 1010;
 }
 .modal-inner {
   position: relative;
@@ -33,9 +32,7 @@
   min-width: 42rem;
   max-height: 74.7rem;
   background-color: #fff;
-  box-shadow: 1.6rem 1.6rem 3rem 0 rgba(0, 0, 0, 0.06);
 	overflow: hidden;
-  z-index: 5010;
 }
 .modal .modal-header {
   position: relative;
@@ -129,6 +126,10 @@
 .modal.has-alert .modal-header .modal-close,
 .modal.has-confirm .modal-header .modal-close {
   top: 2rem;
+}
+.modal.has-alert .modal-inner,
+.modal.has-confirm .modal-inner {
+  box-shadow: 1.6rem 1.6rem 3rem 0 rgba(0, 0, 0, 0.06);
 }
 
 /* qrcode 임시 */

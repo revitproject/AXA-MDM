@@ -1,9 +1,8 @@
 export class ModalManager {
   constructor() {
     this.dialogContainer = null;
-    this.dimElement = null;  // dimmed 요소 저장
-    this.modalStack = [];    // 현재 열려 있는 모달을 관리하는 스택 배열
-    this.focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]'; // 포커스 가능한 요소
+    this.modalStack = [];
+    this.focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     this.initModal();
   }
 
@@ -33,7 +32,7 @@ export class ModalManager {
     });
   }
 
-  // 모달 열기 트리거 처리
+  // 모달 열기 트리거
   handleOpenTrigger(openTrigger) {
     const modalId = openTrigger.getAttribute('data-url') || openTrigger.getAttribute('href');
     const modalElement = document.querySelector(modalId);
@@ -45,7 +44,7 @@ export class ModalManager {
     }
   }
 
-  // 모달 닫기 트리거 처리
+  // 모달 닫기 트리거
   handleCloseTrigger(closeTrigger) {
     const modalElement = closeTrigger.closest('.modal');
 
@@ -63,17 +62,24 @@ export class ModalManager {
       return;
     }
 
-    this.modalStack.push(modal);
+    // 딤드 요소 생성 및 모달 앞에 추가
+    const dimmed = this.createDimmedElement(modal);
+    modal._dimmedElement = dimmed; // 모달에 딤드 요소 참조 저장
 
-    // 첫 번째 모달일 때 dimmed 요소 생성
-    if (this.modalStack.length === 1) {
-      this.createDimmedElement();
-    }
+    this.modalStack.push(modal);
 
     modal.classList.add('is-show');
 
+    // z-index 설정
+    const baseZIndex = 1000;
+    const modalZIndex = baseZIndex + this.modalStack.length * 10;
+    dimmed.style.zIndex = modalZIndex - 1; // 딤드 요소의 z-index 설정
+    modal.style.zIndex = modalZIndex;
+
     // 포커스 트랩 설정
     this.focusTrap(modal);
+
+    this.removeButtonListeners(modal);
 
     // 콜백 함수가 있으면 버튼 리스너 추가
     const trueBtn = modal.querySelector('.is-true');
@@ -81,13 +87,13 @@ export class ModalManager {
 
     if (trueBtn && typeof trueFn === 'function') {
       trueBtn.addEventListener('click', trueFn);
+      trueBtn._listener = trueFn; 
     }
 
     if (falseBtn && typeof falseFn === 'function') {
       falseBtn.addEventListener('click', falseFn);
+      falseBtn._listener = falseFn; 
     }
-
-    // console.log('모달 스택 상태 (열림):', this.modalStack);
   }
 
   // 모달 닫기
@@ -99,33 +105,24 @@ export class ModalManager {
 
     modal.classList.remove('is-show');
 
-    this.modalStack = this.modalStack.filter(m => m !== modal);
-
-    if (this.modalStack.length === 0) {
-      this.removeDimmedElement();
-    } else {
-      const previousModal = this.modalStack[this.modalStack.length - 1];
-      this.focusTrap(previousModal);
+    // 딤드 요소 제거
+    if (modal._dimmedElement) {
+      modal._dimmedElement.remove();
+      delete modal._dimmedElement;
     }
 
-    // console.log('모달 스택 상태 (닫힘):', this.modalStack);
+    this.removeButtonListeners(modal);
+    this.removeFocusTrap(modal);
+
+    this.modalStack = this.modalStack.filter((m) => m !== modal);
   }
 
-  // dimmed
-  createDimmedElement() {
-    if (this.dimElement) return;
-
+  // 딤드 요소 생성
+  createDimmedElement(modal) {
     const dimmed = document.createElement('div');
     dimmed.classList.add('modal-dimmed');
-    document.body.appendChild(dimmed);
-    this.dimElement = dimmed;
-  }
-
-  removeDimmedElement() {
-    if (this.dimElement) {
-      this.dimElement.remove();
-      this.dimElement = null;
-    }
+    modal.parentNode.appendChild(dimmed);
+    return dimmed;
   }
 
   // ID로 모달 열기
@@ -139,38 +136,64 @@ export class ModalManager {
     }
   }
 
-  // 포커스 트랩 설정 (모달 내부에서만 포커스 순회)
+  // 포커스 트랩 설정
   focusTrap(modal) {
     const focusableElements = modal.querySelectorAll(this.focusableElementsSelector);
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
-    modal.addEventListener('keydown', (e) => {
+    this.currentFocusTrap = (e) => {
       const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
       if (!isTabPressed) return;
 
-      if (e.shiftKey) { // Shift + Tab
+      if (e.shiftKey) {
         if (document.activeElement === firstFocusableElement) {
           lastFocusableElement.focus();
           e.preventDefault();
         }
-      } else { // Tab
+      } else {
         if (document.activeElement === lastFocusableElement) {
           firstFocusableElement.focus();
           e.preventDefault();
         }
       }
-    });
+    };
+
+    modal.addEventListener('keydown', this.currentFocusTrap);
 
     // 모달이 열리면 첫 번째 포커스 가능한 요소로 포커스 이동
     firstFocusableElement?.focus();
   }
 
+  // 포커스 트랩 제거
+  removeFocusTrap(modal) {
+    if (this.currentFocusTrap) {
+      modal.removeEventListener('keydown', this.currentFocusTrap);
+      this.currentFocusTrap = null;
+    }
+  }
+
+  // 버튼 이벤트 리스너 제거
+  removeButtonListeners(modal) {
+    const trueBtn = modal.querySelector('.is-true');
+    const falseBtn = modal.querySelector('.is-false');
+
+    if (trueBtn && trueBtn._listener) {
+      trueBtn.removeEventListener('click', trueBtn._listener);
+      delete trueBtn._listener;
+    }
+
+    if (falseBtn && falseBtn._listener) {
+      falseBtn.removeEventListener('click', falseBtn._listener);
+      delete falseBtn._listener;
+    }
+  }
+
   // 다이얼로그 모달 초기화
   initDialog() {
     if (this.dialogContainer) return;
-
+  
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
@@ -189,91 +212,80 @@ export class ModalManager {
     `;
     document.body.appendChild(modal);
     this.dialogContainer = modal;
-
+  
     this.dialogTitle = this.dialogContainer.querySelector('.modal-title');
     this.dialogText = this.dialogContainer.querySelector('.modal-msg');
     this.trueBtn = this.dialogContainer.querySelector('.is-true');
-  }
+  }  
 
-  // 다이얼로그 모달 표시 (alert/confirm)
+  // 다이얼로그 모달 표시
   showDialog(type, title, msg, falseFn = null, trueFn, falseBtnText = '취소', trueBtnText = '확인') {
     this.initDialog();
 
-    // 타입에 따라 클래스 추가
-    this.dialogContainer.classList.remove('has-alert', 'has-confirm'); 
+    this.dialogContainer.classList.remove('has-alert', 'has-confirm');
     if (type === 'alert') {
-        this.dialogContainer.classList.add('has-alert');
+      this.dialogContainer.classList.add('has-alert');
     } else if (type === 'confirm') {
-        this.dialogContainer.classList.add('has-confirm');
+      this.dialogContainer.classList.add('has-confirm');
     }
-    
 
     this.dialogTitle.textContent = title;
     this.dialogText.innerHTML = msg;
     this.trueBtn.textContent = trueBtnText;
 
     if (type === 'confirm') {
-      this.addCancelButton(falseBtnText, falseFn);
+      this.addCancelButton(falseBtnText);
     } else {
       this.hideCancelButton();
     }
 
-    this.addButtonListeners(trueFn, falseFn);
+    this.addDialogButtonListeners(trueFn, falseFn);
     this.showDialogModal();
   }
 
-  // 취소 버튼 추가 (confirm 전용)
-  addCancelButton(falseBtnText, falseFn) {
+  // 취소 버튼 추가
+  addCancelButton(falseBtnText) {
     if (!this.falseBtn) {
       this.falseBtn = document.createElement('button');
       this.falseBtn.type = 'button';
       this.falseBtn.classList.add('btn', 'is-footer', 'is-false');
-      this.dialogContainer.querySelector('.modal-footer').appendChild(this.falseBtn);
+  
+      const modalFooter = this.dialogContainer.querySelector('.modal-footer');
+      modalFooter.insertBefore(this.falseBtn, this.trueBtn); 
     }
     this.falseBtn.style.display = 'inline-flex';
     this.falseBtn.textContent = falseBtnText;
+  }   
 
-    // 취소 버튼 리스너 설정
-    this.falseBtnClickHandler = () => {
-      if (typeof falseFn === 'function') {
-        falseFn();
-      }
-    };
-    this.falseBtn.addEventListener('click', this.falseBtnClickHandler);
-  }
-
-  // 취소 버튼 숨기기 (alert 전용)
+  // 취소 버튼 숨기기
   hideCancelButton() {
     if (this.falseBtn) {
       this.falseBtn.style.display = 'none';
     }
   }
 
-  // 버튼 이벤트 리스너 추가
-  addButtonListeners(trueFn, falseFn) {
-    this.trueBtn.removeEventListener('click', this.trueBtnClickHandler);
-    if (this.falseBtn) {
-      this.falseBtn.removeEventListener('click', this.falseBtnClickHandler);
+  // 다이얼로그 버튼 이벤트 리스너 추가
+  addDialogButtonListeners(trueFn, falseFn) {
+    // 기존 리스너 제거
+    if (this.trueBtn && this.trueBtn._listener) {
+      this.trueBtn.removeEventListener('click', this.trueBtn._listener);
+      delete this.trueBtn._listener;
     }
 
-    this.trueBtnClickHandler = () => {
-      if (typeof trueFn === 'function') {
-        trueFn();
-      }
-      // this.closeCurrentModal();  // 확인 후 모달 닫기
-    };
+    if (this.falseBtn && this.falseBtn._listener) {
+      this.falseBtn.removeEventListener('click', this.falseBtn._listener);
+      delete this.falseBtn._listener;
+    }
 
-    this.trueBtn.addEventListener('click', this.trueBtnClickHandler);
+    // 새로운 리스너 추가
+    if (this.trueBtn && typeof trueFn === 'function') {
+      this.trueBtn.addEventListener('click', trueFn);
+      this.trueBtn._listener = trueFn;
+    }
 
-    if (this.falseBtn) {
-      this.falseBtnClickHandler = () => {
-        if (typeof falseFn === 'function') {
-          falseFn();
-        }
-        // this.closeCurrentModal();  // 취소 후 모달 닫기
-      };
-
-      this.falseBtn.addEventListener('click', this.falseBtnClickHandler);
+    if (this.falseBtn && typeof falseFn === 'function') {
+      this.falseBtn.addEventListener('click', falseFn);
+      this.falseBtn._listener = falseFn;
     }
   }
 
@@ -290,18 +302,22 @@ export class ModalManager {
   // 다이얼로그 모달 열기
   showDialogModal() {
     if (this.dialogContainer) {
-      this.dialogContainer.classList.add('is-show');
+      // 딤드 요소 생성 및 모달 앞에 추가
+      const dimmed = this.createDimmedElement(this.dialogContainer);
+      this.dialogContainer._dimmedElement = dimmed; // 모달에 딤드 요소 참조 저장
 
       this.modalStack.push(this.dialogContainer);
-      if (this.modalStack.length === 1) {
-        this.createDimmedElement();
-      }
+
+      this.dialogContainer.classList.add('is-show');
+
+      // z-index 설정
+      const baseZIndex = 1000;
+      const modalZIndex = baseZIndex + this.modalStack.length * 10;
+      dimmed.style.zIndex = modalZIndex - 1; // 딤드 요소의 z-index 설정
+      this.dialogContainer.style.zIndex = modalZIndex;
 
       // 포커스 트랩 설정
       this.focusTrap(this.dialogContainer);
-
-      // 모달 스택 상태 출력
-      // console.log('다이얼로그 스택 상태 (열림):', this.modalStack);
     }
   }
 
@@ -310,25 +326,25 @@ export class ModalManager {
     if (this.dialogContainer) {
       this.dialogContainer.classList.remove('is-show');
 
-      this.modalStack.pop();
-      if (this.modalStack.length === 0) {
-        this.removeDimmedElement();
+      // 딤드 요소 제거
+      if (this.dialogContainer._dimmedElement) {
+        this.dialogContainer._dimmedElement.remove();
+        delete this.dialogContainer._dimmedElement;
       }
 
-      // console.log('다이얼로그 스택 상태 (닫힘):', this.modalStack);
+      this.removeFocusTrap(this.dialogContainer);
+      this.modalStack.pop();
     }
   }
 
-  // 현재 활성화된 모달 닫기 메서드
+  // 현재 활성화된 모달 닫기
   closeCurrentModal() {
     const activeModal = this.modalStack[this.modalStack.length - 1];
 
     if (activeModal) {
-      this.closeModal(activeModal);  // 가장 마지막에 열린 모달만 닫음
+      this.closeModal(activeModal);
     } else {
       console.error('닫을 모달이 없습니다.');
     }
-
-    // console.log('모달 스택 상태 (현재 모달 닫힘):', this.modalStack);
   }
 }

@@ -82,48 +82,37 @@ export function toggleTooltips(selector) {
 
 // 폼 라벨 상태 업데이트
 export function updateFormLabels() {
-  const inputs = document.querySelectorAll('.inp-base, .inp-checkbox, .inp-radio, .inp-switch');
+  const container = document.body; 
 
-  // 라벨 상태 업데이트
+  function toggleLabelClass(label, condition, className) {
+    label.classList.toggle(className, condition);
+  }
+
   function updateLabelClass(input) {
     const label = input.closest('label');
     if (!label) return;
 
-    // 체크 상태 업데이트 (기존 클래스 유지)
-    if (input.checked) {
-      label.classList.add('is-checked');
-    } else {
-      label.classList.remove('is-checked');
-    }
+    toggleLabelClass(label, input.checked, 'is-checked');
+    toggleLabelClass(label, document.activeElement === input, 'is-focused');
+    toggleLabelClass(label, input.disabled, 'is-disabled');
+    toggleLabelClass(label, input.readOnly, 'is-readonly');
+  }
 
-    // 포커스 상태 업데이트 (기존 클래스 유지)
-    if (input === document.activeElement) {
-      label.classList.add('is-focused');
-    } else {
-      label.classList.remove('is-focused');
-    }
-
-    // 비활성 상태 업데이트 (기존 클래스 유지)
-    if (input.disabled) {
-      label.classList.add('is-disabled');
-    } else {
-      label.classList.remove('is-disabled');
-    }
-
-    // 읽기 전용 상태 업데이트 (기존 클래스 유지)
-    if (input.readOnly) {
-      label.classList.add('is-readonly');
-    } else {
-      label.classList.remove('is-readonly');
+  function eventHandler(e) {
+    const input = e.target.closest('input:not([type="hidden"]):not([type="file"])');
+    if (input && container.contains(input)) {
+      updateLabelClass(input);
     }
   }
 
-  inputs.forEach(input => {
-    updateLabelClass(input); // 초기 상태 설정
+  container.addEventListener('change', eventHandler);
+  container.addEventListener('focusin', eventHandler);
+  container.addEventListener('focusout', eventHandler);
 
-    input.addEventListener('change', () => updateLabelClass(input));
-    input.addEventListener('focus', () => updateLabelClass(input));
-    input.addEventListener('blur', () => updateLabelClass(input));
+  // 초기 상태 설정
+  const inputs = container.querySelectorAll('input:not([type="hidden"]):not([type="file"])');
+  inputs.forEach(input => {
+    updateLabelClass(input);
   });
 }
 
@@ -165,29 +154,28 @@ export function setPasswordForm(selector) {
 
   passwordForms.forEach(passwordForm => {
     const passwordInput = passwordForm.querySelector('.lb-inp.is-toggle .inp-base');
-    const showBtn = passwordForm.querySelector('.btn-eye');
+    const toggleBtn = passwordForm.querySelector('.btn-eye');
 
     // 요소가 존재하는지 확인
-    if (!passwordInput || !showBtn) {
-      // console.warn('Password input or clear button not found in form:', passwordForm);
+    if (!passwordInput || !toggleBtn) {
+      // console.warn('Password input 또는 toggle button을 찾을 수 없습니다:', passwordForm);
       return; 
     }
 
-    showBtn.addEventListener('click', (e) => {
-      const target = e.target;
-      const targetLabel = target.querySelector('.hidden');
+    toggleBtn.addEventListener('click', function () {
+      const hiddenLabel = this.querySelector('.hidden');
 
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        target.classList.add('is-show');
-        targetLabel.innerText = '비밀번호 보기';
+        this.classList.add('is-show');
+        if (hiddenLabel) hiddenLabel.innerText = '비밀번호 숨기기';
       } else {
         passwordInput.type = 'password';
-        target.classList.remove('is-show');
-        targetLabel.innerText = '비밀번호 숨기기';
+        this.classList.remove('is-show');
+        if (hiddenLabel) hiddenLabel.innerText = '비밀번호 보기';
       }
-    })
-  })
+    });
+  });
 }
 
 // 검색 폼 클리어 버튼 제어

@@ -55,10 +55,10 @@
 </div>
 <pre>
 <code class="language-Markup">&lt;div class="form-radio">
-&lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio">default&lt;/label>
-&lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio" checked>checked&lt;/label>
-&lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup" class="inp-radio" disabled>disabled&lt;/label>
-&lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup2" class="inp-radio" checked disabled>disabled(checked)&lt;/label>
+  &lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio">default&lt;/label>
+  &lt;label class="lb-radio">&lt;input type="radio" name="rdoGroup" class="inp-radio" checked>checked&lt;/label>
+  &lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup" class="inp-radio" disabled>disabled&lt;/label>
+  &lt;label class="lb-radio is-disabled">&lt;input type="radio" name="rdoGroup2" class="inp-radio" checked disabled>disabled(checked)&lt;/label>
 &lt;/div></code>
 </pre>
 <!-- // radio -->
@@ -281,16 +281,23 @@
 <!-- // input(password) -->
 
 <h2 class="component-title">Input count</h2>
-<div class="ui-counter">
+<div class="ui-counter is-disabled">
   <button type="button" class="btn-minus"><span class="hidden">감소</span></button>
   <input type="number" class="inp-number" value="10" />
   <button type="button" class="btn-plus"><span class="hidden">증가</span></button>
 </div>
 
-<pre><code class="language-Markup">&lt;div class="ui-counter">
-&lt;button type="button" class="btn-minus">&lt;span class="hidden">감소&lt;/span>&lt;/button>
-&lt;input type="number" class="inp-number" value="10" />
-&lt;button type="button" class="btn-plus">&lt;span class="hidden">증가&lt;/span>&lt;/button>
+<pre>
+<code class="language-Markup">&lt;div class="ui-counter">
+  &lt;button type="button" class="btn-minus">&lt;span class="hidden">감소&lt;/span>&lt;/button>
+  &lt;input type="number" class="inp-number" value="10" />
+  &lt;button type="button" class="btn-plus">&lt;span class="hidden">증가&lt;/span>&lt;/button>
+&lt;/div>
+
+&lt;div class="ui-counter is-disabled"> &lt;!-- disabled --&gt;
+  &lt;button type="button" class="btn-minus" disabled>&lt;span class="hidden">감소&lt;/span>&lt;/button>
+  &lt;input type="number" class="inp-number" value="10" disabled/>
+  &lt;button type="button" class="btn-plus" disabled>&lt;span class="hidden">증가&lt;/span>&lt;/button>
 &lt;/div></code>
 </pre>
 <!-- //count input -->

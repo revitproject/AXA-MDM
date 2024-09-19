@@ -484,6 +484,18 @@
   border-right: 0;
   border-radius: 0;
 }
+.ui-counter.is-disabled .btn-minus:disabled {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath stroke='%23C2C2C9' stroke-linecap='round' d='M13.333 8H2.667'/%3E%3C/svg%3E");
+  background-color: var(--grays-8);
+}
+.ui-counter.is-disabled .btn-plus:disabled {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath stroke='%23C2C2C9' stroke-linecap='round' d='M8 2.667v10.667M13.333 8H2.667'/%3E%3C/svg%3E");
+  background-color: var(--grays-8);
+}
+.ui-counter.is-disabled .inp-number:disabled  {
+  color: var(--grays-6);
+  background-color: var(--grays-8);
+}
 
 /* input search */
 .form-search {
@@ -582,12 +594,11 @@
   transform: rotate(-90deg);
 }
 .btn-tooltip[data-position="bottom"] ~ .tooltip-inner {
-  top: 3.4rem; 
-  left: 50%;
-  transform: translateX(-50%);
+  top: 4.1rem; 
+  left: -1rem;
 }
 .btn-tooltip[data-position="bottom"]:after {
-  top: 2.9rem;
+  top: 3.6rem;
   transform: translateX(-50%);
 }
 .btn-tooltip[data-position="left"] ~ .tooltip-inner {
@@ -603,7 +614,7 @@
   display: none;
   position: absolute;
   z-index: 999;
-  min-width: 31rem;
+  min-width: 32rem;
   max-width: 42rem;
   padding: 2rem;
   border: .1rem solid var(--grays-7);
@@ -625,7 +636,6 @@
   font-size: 1.4rem;
 }
 .tooltip-inner .tooltip-desc {
-  margin-top: .8rem;
   color: #7C7E8A;
   font-size: 1.4rem;
 }
@@ -739,8 +749,8 @@
 }
 .inp-textarea {
   width: 100%;
-  padding: 2rem;
-  min-height: 12rem;
+  min-height: 15.8rem;
+  padding: 1.6rem .8rem 1.6rem 1.6rem;
   color: var(--grays-1);
   font-size: 1.2rem;
   line-height: 1.4;

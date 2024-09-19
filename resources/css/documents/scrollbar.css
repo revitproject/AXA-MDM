@@ -23,3 +23,9 @@
 .has-scrollbar::-webkit-scrollbar-thumb {border-radius: 1rem;}
 .has-scrollbar::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: #fff;}
 .has-scrollbar::-webkit-scrollbar-thumb {background-color: var(--grays-10);}
+
+/* textarea */
+.inp-textarea::-webkit-scrollbar,
+.inp-textarea::-webkit-scrollbar-thumb {border-radius: 1rem;}
+.inp-textarea::-webkit-scrollbar {width: 1.2rem; background-color: transparent;}
+.inp-textarea::-webkit-scrollbar-thumb {background-clip: padding-box; border: .4rem solid transparent; background-color: var(--grays-7);}

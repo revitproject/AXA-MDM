@@ -119,6 +119,7 @@ export function updateFormLabels() {
 // 숫자 입력 컨트롤
 export function setNumberControls(selector) {
   const container = document.querySelector(selector);
+  const containerChildren = container.querySelectorAll('button, input');
 
   if (!container) {
     console.error(`선택자에 해당하는 컨테이너가 없습니다: ${selector}`);
@@ -146,6 +147,15 @@ export function setNumberControls(selector) {
       }
     }
   });
+
+  // 비활성화 처리
+  containerChildren.forEach(child => {
+    if (container.classList.contains('is-disabled')) {
+      child.disabled = true;
+    } else {
+      child.disabled = false;
+    }
+  })
 }
 
 // 패스워드 폼 토글 버튼 제어

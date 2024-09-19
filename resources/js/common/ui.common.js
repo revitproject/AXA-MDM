@@ -35,6 +35,7 @@ class ApplicationInit {
     await loadModule('.ui-counter', 'setNumberControls');       // 숫자 입력 컨트롤 설정
     await loadModule('.form-search', 'setSearchForm');          // 검색 폼 기능 설정
     await loadModule('.form-input', 'setPasswordForm');         // 패스워드 폼 기능 설정
+    await loadModule('.is-floating', 'setFloatingTop');         // 최상단 이동 버튼 기능 설정
   
     // 항상 실행해야 하는 함수는 별도로 호출
     const { updateFormLabels } = await import('../module/utils.js');

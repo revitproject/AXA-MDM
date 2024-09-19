@@ -224,3 +224,33 @@ export function setSearchForm(selector) {
     });
   });
 }
+
+// 최상단 이동 버튼 제어
+export function setFloatingTop(selector) {
+  const floatingWrap = document.querySelector(selector);
+  const container = floatingWrap.closest('.base-content');
+  const floatingBtn = floatingWrap.querySelector('.btn-circle.is-arrow');
+
+  function toggleButtonVisibility() {
+    if (container.scrollHeight > window.innerHeight) {
+      floatingBtn.style.display = 'block';
+    } else {
+      floatingBtn.style.display = 'none';
+    }
+  }
+
+  floatingBtn.addEventListener('click', () => {
+    container.scrollTo({ left: 0, top: 0, behavior: "smooth"});
+  })
+ 
+  // 실시간 body 변화 감지
+  const observer = new MutationObserver(() => {
+    toggleButtonVisibility();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true
+  });
+}

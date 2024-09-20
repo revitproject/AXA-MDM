@@ -44,7 +44,7 @@
                 </label>
               </div>
               <div class="wrap-btn">
-                <button type="button" id="btnConfirm" class="btn is-primary is-h56">확인</button>
+                <button type="button" id="btnPwCheck" class="btn is-primary is-h56">확인</button>
               </div>
             </form>
 
@@ -76,10 +76,10 @@
   <!-- page script -->
   <script>
     // 로그인 시 alert 메시지 예시
-    document.querySelector('#btnConfirm').addEventListener('click', function() {
+    document.querySelector('#btnPwCheck').addEventListener('click', function() {
       window.modalManager.alert(
-        '비밀번호 변경',           // 타이틀
-        '현재 비밀번호를 입력해 주세요.'  // 메시지
+        '현재 비밀번호를 입력해 주세요.',           // 타이틀
+        null  // 메시지
       );
     });
   </script>

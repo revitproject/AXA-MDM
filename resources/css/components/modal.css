@@ -90,7 +90,7 @@
 .modal-footer {
   display: flex;
   justify-content: center;
-  padding: 0 4rem 3.2rem;
+  padding: 0 4rem 2.4rem;
   gap: .8rem;
 }
 .modal-footer .btn.is-secondary-1 {
@@ -119,17 +119,21 @@
 /* alert/confirm */
 .modal.has-alert .modal-header .modal-title,
 .modal.has-confirm .modal-header .modal-title {
-  padding: 6.4rem 2rem .6rem;
+  padding: 7.6rem 2rem .8rem;
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
 .modal.has-alert .modal-header .modal-close,
 .modal.has-confirm .modal-header .modal-close {
-  top: 2rem;
+  top: 2.6rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath stroke='%23111' stroke-linecap='round' stroke-width='1.5' d='M13.333 2.667 2.667 13.333M13.333 13.333 2.667 2.667'/%3E%3C/svg%3E");
 }
 .modal.has-alert .modal-inner,
 .modal.has-confirm .modal-inner {
-  box-shadow: 1.6rem 1.6rem 3rem 0 rgba(0, 0, 0, 0.06);
+  border-radius: .6rem;
+  box-shadow: 2rem 3.2rem 3.6rem -1rem rgba(35, 48, 59, 0.1);
 }
 
 /* qrcode 임시 */

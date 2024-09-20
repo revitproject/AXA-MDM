@@ -16,13 +16,12 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: .8rem;
   line-height: 1;
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background-color: #C0C6CC;
+  background-color: var(--grays-7);
 }
 .list-base[data-bullet=hyphen] > div::before,
 .list-base[data-bullet=hyphen] > li::before {

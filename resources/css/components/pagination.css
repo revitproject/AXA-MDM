@@ -16,11 +16,11 @@
 }
 .wrap-count .count-text {
   color: var(--grays-1);
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 .wrap-count .count-text .count-number {
-  font-weight: 600;
+  color: var(--primary);
 }
 .grid + .wrap-count {
   z-index: 0;

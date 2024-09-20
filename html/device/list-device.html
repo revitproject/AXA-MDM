@@ -94,17 +94,18 @@
         <div class="module-bottom">
           <div class="wrap-tbl">
             <div class="tbl-head">
-              <select class="inp-select">
-                <option value="10">10</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="100" selected>100</option>
-              </select>
               <div class="head-option">
-                <div class="form-search">
-                  <input type="search" class="inp-search" placeholder="기기번호 또는 사용자 검색" />
-                  <button type="button" class="btn-clear" aria-label="검색어 삭제"><span class="hidden">삭제</span></button>
+                <select class="inp-select">
+                  <option value="10">10</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="100" selected>100</option>
+                </select>
+                <div class="wrap-count">
+                  <span class="count-text">총 <em class="count-number">115</em>건</span>
                 </div>
+              </div>
+              <div class="head-option">
                 <button type="button" class="btn is-primary is-h36" onclick="window.location.href='./list-device2.html';">기기 추가</button>
               </div>
             </div>
@@ -165,9 +166,6 @@
             </table>
 
             <div class="wrap-pagination">
-              <div class="wrap-count">
-                <span class="count-text">총 <em class="count-number">115</em>건</span>
-              </div>
               <div class="pagination">
                 <a href="#" class="pagination-link is-first"><span class="hidden">첫 페이지로 이동</span></a>
                 <a href="#" class="pagination-link is-prev"><span class="hidden">이전 페이지로 이동</span></a>

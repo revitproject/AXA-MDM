@@ -57,6 +57,9 @@
 .tbl-base > tbody > tr {
   border-bottom: .1rem solid var(--grays-7);
 }
+/* .tbl-base > tbody > tr:hover td {
+  background-color: yellowgreen;
+} */
 .tbl-base > tfoot > tr > th,
 .tbl-base > tfoot > tr > td {
   font-weight: 500;
@@ -189,7 +192,7 @@
 .tbl-head .head-option {
   display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: 1.2rem;
 }
 .tbl-btn-group {
   display: flex;

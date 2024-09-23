@@ -57,6 +57,7 @@
 .tbl-base > tbody > tr {
   border-bottom: .1rem solid var(--grays-10);
 }
+.tbl-base > tbody > tr:hover th,
 .tbl-base > tbody > tr:hover td:not(.no-result) {
   background-color: #ECEEFF;
 }

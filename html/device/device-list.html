@@ -51,7 +51,6 @@
                   <!-- //DatePicker -->
                   <div class="btn-options">
                     <button type="button" class="btn is-outline-1 is-active">전체</button>
-                    <button type="button" class="btn is-outline-1">오늘</button>
                     <button type="button" class="btn is-outline-1">1주일</button>
                     <button type="button" class="btn is-outline-1">1개월</button>
                     <button type="button" class="btn is-outline-1">3개월</button>
@@ -70,7 +69,7 @@
                 </select>
               </dd>
               <dt><label for="select2" class="lb-inp">관리모드</label></dt>
-              <dd>
+              <dd class="mr-42">
                 <select id="select2" class="inp-select">
                   <option value="전체" selected>전체</option>
                   <option value="프로필">프로필</option>
@@ -78,35 +77,52 @@
                   <option value="불특정 허용">불특정 허용</option>
                 </select>
               </dd>
-              <dt><label for="select3" class="lb-inp">정책</label></dt>
+              <dt class="length4 ml-0"><label for="select3" class="lb-inp">정책</label></dt>
               <dd>
                 <select id="select3" class="inp-select">
                   <option value="전체" selected>전체</option>
-                  <option value="정책리스트">정책리스트</option>
+                  <option value="정책리스트">등록된 정책 리스트01</option>
+                  <option value="정책리스트">등록된 정책 리스트02</option>
                 </select>
               </dd>
             </dl>
-          </div>
-          <div class="wrap-btn is-end">
-            <button type="button" class="btn is-primary is-h48">조회</button>
+            <dl class="dl-formbox">
+              <dt class="length4"><label for="select4" class="lb-inp">검색</label></dt>
+              <dd class="is-grow">
+                <div class="d-flex">
+                  <select id="select4" class="inp-select half">
+                    <option value="전체" selected>전체</option>
+                    <option value="모델">모델</option>
+                    <option value="사용자">사용자</option>
+                  </select>
+                  <div class="form-input w-100 ml-8">
+                    <label class="lb-inp is-focused w-100">
+                      <span class="lb-title hidden">모델 또는 사용자</span>
+                      <input type="text" class="inp-base w-100" name="" aria-label="모델 또는 사용자" placeholder="기기번호 또는 사용자 검색">
+                    </label>
+                  </div>
+                  <button type="button" class="btn is-primary is-h36 ml-8">검색</button>
+                </div>
+              </dd>
+            </dl>
           </div>
         </div>
         <div class="module-bottom">
           <div class="wrap-tbl">
             <div class="tbl-head">
               <div class="head-option">
-                <select class="inp-select">
-                  <option value="10">10</option>
+                <select class="inp-select fw-500">
+                  <option value="10" selected>10</option>
                   <option value="30">30</option>
                   <option value="50">50</option>
-                  <option value="100" selected>100</option>
+                  <option value="100">100</option>
                 </select>
                 <div class="wrap-count">
                   <span class="count-text">총 <em class="count-number">115</em>건</span>
                 </div>
               </div>
               <div class="head-option">
-                <button type="button" class="btn is-primary is-h36" onclick="window.location.href='./list-device2.html';">기기 추가</button>
+                <button type="button" class="btn is-outline-3 is-h36" onclick="window.location.href='./list-device2.html';">기기 추가</button>
               </div>
             </div>
 
@@ -114,11 +130,11 @@
               <colgroup>
                 <col style="width: 5.5rem;">
                 <col>
+                <col style="width: 10rem;">
                 <col>
                 <col>
-                <col>
-                <col style="width: 8.7rem;">
-                <col style="width: 7.8rem;">
+                <col style="width: 9rem;">
+                <col style="width: 8.2rem;">
                 <col style="width: 8.2rem;">
                 <col style="width: 15.4rem;">
                 <col style="width: 8.2rem;">
@@ -143,12 +159,12 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td class="align-left"><a href="#" class="link" data-modal="open" data-url="#modal1">3708efa7af510e94</a></td>
-                  <td class="align-left">SM-G960N</td>
-                  <td class="align-left">홍길동 <span>(revit$%^#&&@revit.com)</span></td>
+                  <td>2</td>
+                  <td><a href="#" class="link" data-modal="open" data-url="#deviceDetails">3708efa7af510e94</a></td>
+                  <td>SM-G960N</td>
+                  <td>홍길동 <span>(revit$%^#&&@revit.com)</span></td>
                   <td>slack/14</td>
-                  <td>프로필</td>
+                  <td>불특정 허용</td>
                   <td>29</td>
                   <td>Y</td>
                   <td>2023-04-24 15:21:59</td>
@@ -161,6 +177,31 @@
                   <td>
                     <button type="button" class="btn-ico is-delete" id="btnDelete"><span class="hidden">삭제</span></button>
                   </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><a href="#" class="link" data-modal="open" data-url="#deviceDetails">3708efa7af510e94</a></td>
+                  <td>SM-G960N</td>
+                  <td>김선재 <span>(revit$%^#&&@revit.com)</span></td>
+                  <td>slack/14</td>
+                  <td>불특정 허용</td>
+                  <td>29</td>
+                  <td>Y</td>
+                  <td>2023-04-24 15:21:59</td>
+                  <td>
+                    <button type="button" class="btn-ico is-setting" data-modal="open" data-url="#modalSetting"><span class="hidden">설정</span></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-ico is-modify" id="btnModify"><span class="hidden">수정</span></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-ico is-delete" id="btnDelete"><span class="hidden">삭제</span></button>
+                  </td>
+                </tr>
+
+                <!-- 데이터 없는 CASE : 'no-result' 클래스 추가 -->
+                <tr>
+                  <td colspan="12" class="no-result">검색 결과가 없습니다.</td>
                 </tr>
               </tbody>
             </table>
@@ -189,18 +230,68 @@
     </main>
     <!-- //base-content -->
 
-    <div id="modal1" class="modal">
-      <div class="modal-inner" style="width: 450px;">
+    <!-- 팝업 영역 -->
+    <!-- 기기 상세 -->
+    <div id="deviceDetails" class="modal">
+      <div class="modal-inner" style="width: 964px;">
         <div class="modal-header">
           <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
           <strong class="modal-title">기기 상세</strong>
         </div>
         <div class="modal-body">
-          기기 상세 내용
+          <div class="content-wrap">
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>기기명</dt>
+                <dd><span>3708EFA7AF510E9</span></dd>
+                <dt>모델</dt>
+                <dd><span>SM-G960N</span></dd>
+                <dt>시리얼 넘버</dt>
+                <dd><span>22D1C09914037ECE</span></dd>
+                <dt>브랜드</dt>
+                <dd><span>Samsung</span></dd>
+              </dl>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>사용자</dt>
+                <dd><span>홍길동/revit@revit.com</span></dd>
+                <dt>소유 방식</dt>
+                <dd><span>PERSONALLY_OWNED</span></dd>
+                <dt>관리 모드</dt>
+                <dd><span>프로필</span></dd>
+                <dt>정책/버전</dt>
+                <dd>
+                  <div class="d-flex items-center content-between">
+                    <span>slack/14</span>
+                    <button type="button" class="btn is-outline-3 is-h28">정책 상세</button>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>사용여부</dt>
+                <dd><span>Y</span></dd>
+                <dt>기기 등록일시</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+                <dt>최종정책 반영일시</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+                <dt>최종상태 보고시간</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- 기기 원격제어 설정 -->
     <div id="modalSetting" class="modal">
       <div class="modal-inner" style="width: 450px;">
         <div class="modal-header">
@@ -238,6 +329,8 @@
       </div>
     </div>
   </div>
+  <!-- //팝업 영역 -->
+
   <!-- //base-wrap -->
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
@@ -302,23 +395,23 @@
   <script>
     document.querySelector('#btnDelete').addEventListener('click', function(){
       window.modalManager.confirm(
-        '알림',
-        '기기를 정말 삭제 하시겠습니까?',
-        () => { console.log('실행이 취소되었습니다.'); }, // 취소 버튼 클릭 시 동작
-        () => { console.log('기기를 삭제했습니다.'); },  // 확인 버튼 클릭 시 동작
-        '취소',    // 취소 버튼 텍스트
+        '기기를 정말 삭제 하시겠습니까?',  // 타이틀
+        null,                           // 메시지
+        () => { console.log('실행이 취소되었습니다.'); },  // 취소 버튼 콜백
+        () => { console.log('기기를 삭제했습니다.'); },   // 확인 버튼 콜백
+        '취소',  // 취소 버튼 텍스트
         '확인'   // 확인 버튼 텍스트
       );
     });
 
     document.querySelector('#alertDevice1').addEventListener('click', function() {
       window.modalManager.confirm(
-        '확인',                     // 타이틀
-        '기기 원격제어 설정을 실행 하시겠습니까?',    // 메시지
-        () => { console.log('삭제 취소'); }, // 취소 버튼 콜백
-        () => { console.log('삭제 완료'); }, // 확인 버튼 콜백
-        '취소',                          // 취소 버튼 텍스트
-        '확인'                           // 확인 버튼 텍스트
+        '기기 원격제어 설정을 실행 하시겠습니까?',  // 타이틀
+        null,                                    // 메시지
+        () => { console.log('삭제 취소'); },      // 취소 버튼 콜백
+        () => { console.log('삭제 완료'); },      // 확인 버튼 콜백
+        '취소',  // 취소 버튼 텍스트
+        '확인'   // 확인 버튼 텍스트
       );
     });
   </script>

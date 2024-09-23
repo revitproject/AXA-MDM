@@ -5,7 +5,7 @@
   position: relative;
   padding-left: 1.2rem;
   font-size: 1.4rem;
-	color: var(--grays-2);
+	color: var(--grays-3);
   line-height: 2rem;
 }
 .list-base > li + li {
@@ -21,7 +21,7 @@
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background-color: var(--grays-7);
+  background-color: var(--grays-10);
 }
 .list-base[data-bullet=hyphen] > div::before,
 .list-base[data-bullet=hyphen] > li::before {
@@ -32,7 +32,7 @@
   line-height: 1;
   width: 0.4rem;
   height: 0.1rem;
-  background-color: var(--grays-4);
+  background-color: var(--grays-10);
 }
 .list-base[data-bullet=info] > div,
 .list-base[data-bullet=info] > li {

@@ -10,7 +10,7 @@
   display: inline-block;
   width: .8rem;
   margin: 0 .4rem;
-  color: var(--grays-3);
+  color: var(--grays-4);
 }
 .tui-datepicker-input {
   width: 100%;
@@ -23,7 +23,7 @@
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.8rem;
-  border: .1rem solid var(--grays-8);
+  border: .1rem solid var(--grays-6);
   background-position: 1.2rem 50%;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3.5H2V10H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 3.5H2V6H10V3.5Z' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 2V3.5' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -181,7 +181,7 @@
   width: 24rem;
   max-height: 3.6rem;
   padding: 0 1.6rem 0 4rem;
-  border: .1rem solid var(--grays-7);
+  border: .1rem solid var(--grays-10);
   border-radius: .4rem;
   background-color: #fff;
   background-position: 1.6rem 50%;
@@ -221,7 +221,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-left: 1.2rem;
+  margin-left: .8rem;
 }
 .area-datepicker .btn-options .btn {
   padding: 0 1.2rem;

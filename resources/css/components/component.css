@@ -27,8 +27,8 @@
 .worklist .tbl-base > thead > tr > th {
   font-size: 1.4rem;
   font-weight: 500;
-  background-color: var(--grays-10);
-  border-right: .1rem solid var(--grays-7);
+  background-color: var(--grays-12);
+  border-right: .1rem solid var(--grays-10);
 }
 .worklist .tbl-base > thead > tr > th:last-child {
   border-right: 0;
@@ -51,7 +51,7 @@
   color: #007CEF;
 }
 .worklist .tbl-base .status.delete {
-  color: var(--grays-4);
+  color: var(--grays-7);
 }
 
 /* component */
@@ -133,7 +133,7 @@
   max-width: 50rem;
   padding: 2rem 2rem;
   margin-top: 3rem;
-  background: var(--grays-10);
+  background: var(--grays-12);
   border-radius: 1rem;
 }
 .component .component-box em {

@@ -58,14 +58,14 @@
 }
 .modal-body {
   margin: 0 4rem 2.4rem;
-  color: var(--grays-3);
+  color: var(--grays-4);
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
   text-align: center;
 }
 .modal-body .msg {
-  color: var(--grays-3);
+  color: var(--grays-4);
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -81,7 +81,7 @@
 }
 .modal-body .modal-msg {
   display: block;
-  color: var(--grays-3);
+  color: var(--grays-4);
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2rem;
@@ -98,7 +98,7 @@
 }
 .modal-footer .btn:disabled {
   color: #fff;
-  background-color: var(--grays-10);
+  background-color: var(--grays-12);
 }
 .modal-footer .btn.is-footer {
   min-width: 10rem;
@@ -112,8 +112,8 @@
   background: var(--primary);
 }
 .modal-footer .btn.is-footer.is-false {
-  color: var(--grays-4);
-  background: var(--grays-9);
+  color: var(--grays-7);
+  background: #F1F1F8;
 }
 
 /* alert/confirm */

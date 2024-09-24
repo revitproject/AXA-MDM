@@ -30,6 +30,10 @@ export class ModalManager {
         }
       }
     });
+
+    document.querySelectorAll('.modal.is-show').forEach((modal) => {
+      this.openModal(modal);
+    });
   }
 
   // 모달 열기 트리거

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body>
+  <!-- base-wrap -->
+  <div class="base-wrap device">
+    <!-- base-header -->
+    <header class="base-header"></header>
+    <!-- //base-header -->
+
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">기기</h1>
+        <a href="#deviceDetails" class="btn is-grays-1" data-modal="open">open</a>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- 팝업 영역 -->
+    <!-- 기기 상세 -->
+    <div id="deviceDetails" class="modal is-show">
+      <div class="modal-inner" style="width: 964px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">기기 상세</strong>
+        </div>
+        <div class="modal-body">
+          <div class="content-wrap">
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>기기명</dt>
+                <dd><span>3708EFA7AF510E9</span></dd>
+                <dt>모델</dt>
+                <dd><span>SM-G960N</span></dd>
+                <dt>시리얼 넘버</dt>
+                <dd><span>22D1C09914037ECE</span></dd>
+                <dt>브랜드</dt>
+                <dd><span>Samsung</span></dd>
+              </dl>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>사용자</dt>
+                <dd><span>홍길동/revit@revit.com</span></dd>
+                <dt>소유 방식</dt>
+                <dd><span>PERSONALLY_OWNED</span></dd>
+                <dt>관리 모드</dt>
+                <dd><span>프로필</span></dd>
+                <dt>정책/버전</dt>
+                <dd>
+                  <div class="d-flex items-center content-between">
+                    <span>slack/14</span>
+                    <button type="button" class="btn is-outline-3 is-h28">정책 상세</button>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-thumb"></div>
+              <dl class="detail-list">
+                <dt>사용여부</dt>
+                <dd><span>Y</span></dd>
+                <dt>기기 등록일시</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+                <dt>최종정책 반영일시</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+                <dt>최종상태 보고시간</dt>
+                <dd><span>2023-04-24 15:21:59</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- //팝업 영역 -->
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new MutationObserver(function(mutations) {
+        if (window.modalManager && typeof window.modalManager.openModalById === 'function') {
+          window.modalManager.openModalById('deviceDetails',
+            () => { console.log('취소 버튼 클릭됨.'); }, // 취소 버튼 콜백
+            () => { console.log('확인 버튼 클릭됨.'); }  // 확인 버튼 콜백
+          );
+          observer.disconnect(); // 모달을 호출한 후 더 이상 변화 감지 필요 없음
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+</body>
+</html>

@@ -91,7 +91,8 @@
         </div>
       </div>
     </div>
-  <!-- //팝업 영역 -->
+    <!-- //팝업 영역 -->
+  </div>
   <!-- //base-wrap -->
   <!-- js library -->
   <script src="../../resources/js/jquery/jquery.min.js"></script>
@@ -99,21 +100,5 @@
   <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
   <!-- js base -->
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
-
-  <!-- page script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new MutationObserver(function(mutations) {
-        if (window.modalManager && typeof window.modalManager.openModalById === 'function') {
-          window.modalManager.openModalById('deviceDetails',
-            () => { console.log('취소 버튼 클릭됨.'); }, // 취소 버튼 콜백
-            () => { console.log('확인 버튼 클릭됨.'); }  // 확인 버튼 콜백
-          );
-          observer.disconnect(); // 모달을 호출한 후 더 이상 변화 감지 필요 없음
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    });
-  </script>
 </body>
 </html>

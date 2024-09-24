@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body>
+  <!-- base-wrap -->
+  <div class="base-wrap device">
+    <!-- base-header -->
+    <header class="base-header"></header>
+    <!-- //base-header -->
+
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">기기</h1>
+        <a href="#deviceSetting" class="btn is-grays-1" data-modal="open">open</a>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- 팝업 영역 -->
+    <!-- 기기 원격제어 설정 -->
+    <div id="deviceSetting" class="modal is-show">
+      <div class="modal-inner" style="width: 450px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">기기 원격제어 설정</strong>
+        </div>
+        <div class="modal-body">
+          <div class="wrap-device">
+            <img src="" alt="">
+            <dl class="dl-formbox">
+              <dt>기기명</dt>
+              <dd>3708EFA7AF510E9</dd>
+            </dl>
+            <dl class="dl-formbox">
+              <dt>사용자</dt>
+              <dd>홍길동/revit@revit.com</dd>
+            </dl>
+          </div>
+
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="status-text">디바이스 잠금</p>
+                <button type="button" id="alertDevice1" class="btn is-outline-1">실행</button>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          </div>
+      </div>
+    </div>
+    <!-- //팝업 영역 -->
+  </div>
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!--swiper -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+    });
+  </script>
+
+  <!-- alert/confirm -->
+  <script>
+    document.querySelector('#alertDevice1').addEventListener('click', function() {
+      window.modalManager.confirm(
+        '기기 원격제어 설정을 실행 하시겠습니까?',  // 타이틀
+        null,                                    // 메시지
+        () => { console.log('삭제 취소'); },      // 취소 버튼 콜백
+        () => { 
+          console.log('삭제 완료');
+          window.modalManager.alert(
+            '성공적으로 원격제어 설정이 실행 되었습니다.',
+            null
+          );
+        },      // 확인 버튼 콜백
+        '취소',  // 취소 버튼 텍스트
+        '확인'   // 확인 버튼 텍스트
+      );
+    });
+  </script>
+</body>
+</html>

@@ -58,12 +58,11 @@
   <!-- js common -->
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
 
-  <!-- page script -->
+  <!-- alert/confirm -->
   <script>
-    // 로그인 시 alert 메시지
     document.querySelector('#btnLogin').addEventListener('click', function() {
       window.modalManager.alert(
-        '메일 정보를 입력해 주세요.',           // 타이틀
+        '메일 정보를 입력해 주세요.',  // 타이틀
         null  // 메시지
       );
     });

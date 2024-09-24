@@ -125,7 +125,7 @@ export class ModalManager {
   createDimmedElement(modal) {
     const dimmed = document.createElement('div');
     dimmed.classList.add('modal-dimmed');
-    modal.parentNode.appendChild(dimmed);
+    modal.before(dimmed);
     return dimmed;
   }
 

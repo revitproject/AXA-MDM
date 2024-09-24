@@ -308,9 +308,19 @@ body {
 	align-items: center;
 	position: static;
 	width: 100%;
-	padding: 5rem;
+	padding: 12rem 0 6rem;
 	border-radius: 0;
 	background-color: transparent;
+}
+.base-wrap.login .copyright {
+  width: fit-content;
+  margin-top: 3.4rem;
+  padding-top: .4rem;
+  padding-left: 0;
+	border-top: 0;
+}
+.base-wrap.login .copyright::before {
+  left: -2.3rem;
 }
 .login-form .login-head {
 	margin-bottom: 3.2rem;
@@ -368,16 +378,6 @@ body {
 	width: 100%;
 	font-weight: 600;
 }
-.login-info {
-	padding-top: 2rem;
-	margin-top: 4rem;
-	border-top: .1rem solid var(--grays-12);
-}
-.login-info .login-text {
-	color: var(--grays-4);
-	font-size: 1.2rem;
-	text-align: center;
-}
 /* 비밀번호 변경 */
 .login-form.has-pwchange .list-tit {
 	margin: 3.2rem 0 1.2rem;
@@ -389,11 +389,11 @@ body {
 
 /* wrap */
 .wrap-flex {
-  display: flex;
+	display: flex;
 	align-items: center;
 }
 .wrap-flex.is-end {
- justify-content: flex-end;
+	justify-content: flex-end;
 }  
 .wrap-flex.is-both {
 	justify-content: space-between;

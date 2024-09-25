@@ -24,6 +24,9 @@
   height: 100%;
   object-fit: cover;
 }
+.device .swiper-pagination-bullet {
+  
+}
 .wrap-device {
   margin-bottom: 2rem;
 }

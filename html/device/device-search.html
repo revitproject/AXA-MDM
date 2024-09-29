@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="device">
+  <!-- base-wrap -->
+  <div class="base-wrap device">
+    <!-- base-header -->
+    <header class="base-header"></header>
+    <!-- //base-header -->
+
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">기기</h1>
+        <a href="#userSearch" class="btn is-grays-1" data-modal="open">open</a>
+      </div>
+    </main>
+    <!-- //base-content -->
+
+    <!-- 팝업 영역 -->
+    <!-- 사용자 검색 -->
+    <div id="userSearch" class="modal is-show">
+      <div class="modal-inner" style="width: 404px;">
+        <div class="modal-header">
+          <button class="modal-close" data-modal="close"><span class="hidden">닫기</span></button>
+          <strong class="modal-title">사용자 검색</strong>
+        </div>
+        <div class="modal-body">
+          <div class="modal-content f-column">
+            <div class="form-search w-100">
+              <input type="search" class="inp-search w-100" placeholder="예) 홍길동, 초성 검색" />
+              <button type="button" class="btn-search" aria-label="검색어 검색" id="searchBtn"><span class="hidden">검색</span></button>
+              <button type="button" class="btn-clear" aria-label="검색어 삭제"><span class="hidden">삭제</span></button>
+            </div>
+
+            <div class="search-result">
+              <!-- default -->
+              <div class="no-data">
+                <p class="text">사용자 이름을 입력해 주세요.</p>
+              </div>
+
+              <!-- 검색 후 결과가 있을 경우 -->
+              <!-- <ul class="user-list has-scrollbar">
+                <li>
+                  <dl class="info-list">
+                    <dt>홍길동</dt>
+                    <dd>revit@revit.com</dd>
+                  </dl>
+                  <button type="button" class="btn is-outline-3 is-h28">선택</button>
+                </li>
+                <li>
+                  <dl class="info-list">
+                    <dt>홍길동</dt>
+                    <dd>revit@revit.com</dd>
+                  </dl>
+                  <button type="button" class="btn is-outline-3 is-h28">선택</button>
+                </li>
+              </ul> -->
+
+              <!-- 검색 후 결과가 없을 경우 -->
+              <!-- <div class="no-data">
+                <p class="text">사용자가 조회되지 않으면 <br>사용자 메뉴에서 추가 하시면 됩니다.</p>
+                <button type="button" class="btn is-primary is-h48 mt-12">사용자 추가</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //팝업 영역 -->
+  </div>
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- alert/confirm -->
+  <script>
+    document.querySelector('#searchBtn').addEventListener('click', function() {
+      window.modalManager.alert(
+        '검색 키워드를 입력해 주세요.',  // 타이틀
+        null  // 메시지
+      );
+    });
+  </script>
+</body>
+</html>

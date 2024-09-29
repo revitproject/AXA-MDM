@@ -20,9 +20,9 @@
 
 /* modal */
 .has-scrollbar::-webkit-scrollbar,
-.has-scrollbar::-webkit-scrollbar-thumb {border-radius: 1rem;}
-.has-scrollbar::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: #fff;}
-.has-scrollbar::-webkit-scrollbar-thumb {background-color: var(--grays-12);}
+.has-scrollbar::-webkit-scrollbar-thumb {border-radius: .4rem;}
+.has-scrollbar::-webkit-scrollbar {width: .4rem; height: .4rem; background-color: transparent;}
+.has-scrollbar::-webkit-scrollbar-thumb {background-color: var(--grays-10);}
 
 /* textarea */
 .inp-textarea::-webkit-scrollbar,

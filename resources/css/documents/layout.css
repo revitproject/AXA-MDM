@@ -167,12 +167,12 @@ body {
 	background: var(--primary);
 	border-radius: .6rem;
 }
-.lnb-item .lnb-sub {
+/* .lnb-item .lnb-sub {
 	display: none;
 }
 .lnb-item.is-open .lnb-sub {
 	display: block;
-}
+} */
 .lnb-item .lnb-link::before {
   content: "";
   display: inline-block;
@@ -352,22 +352,14 @@ body {
 	line-height: 3.4rem;
 }
 .login-form .login-body .form-input {
-	display: block;
 	margin-top: 2.4rem;
 }
-.login-form .lb-inp {
-	display: block;
-	margin-right: 0;
-}
-.login-form .lb-title {
-	font-size: 1.6rem;
-	line-height: 2.4rem;
-	color: var(--grays-4);
+.login-form .form-input > label .lb-title {
+	font-weight: 600;
+	color: var(--grays-2);
 }
 .login-form .inp-base {
-	width: 100%;
 	height: 5.6rem;
-	margin-top: 1.2rem;
 	font-size: 1.6rem;
 	border-radius: .6rem;
 }

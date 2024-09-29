@@ -24,7 +24,7 @@
 @import "contents/home.css";
 @import "contents/device.css";
 /* @import "contents/policy.css";/ */
-/* @import "contents/user.css"; */
+@import "contents/user.css";
 /* @import "contents/admin.css"; */
 
 /* utilities */

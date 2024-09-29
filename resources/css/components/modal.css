@@ -29,9 +29,10 @@
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  min-width: 42rem;
+  min-width: 32rem;
   max-height: 74.7rem;
   background-color: #fff;
+  border-radius: .6rem;
 	overflow: hidden;
 }
 .modal .modal-header {
@@ -39,8 +40,8 @@
 }
 .modal .modal-header .modal-close {
   position: absolute;
-  top: 2.9rem;
-  right: 2.4rem;
+  top: 3.2rem;
+  right: 3.2rem;
   width: 2.4rem;
   height: 2.4rem;
   background-repeat: no-repeat;
@@ -49,11 +50,11 @@
 }
 .modal .modal-header .modal-title {
   display: block;
-  padding: 2.4rem;
+  padding: 3.2rem 3.2rem 0 3.2rem;
   color: var(--grays-1);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  line-height: 3.4rem;
+  line-height: 2.6rem;
   text-align: center;
 }
 .modal-body {
@@ -129,6 +130,7 @@
 }
 .modal.has-alert .modal-inner,
 .modal.has-confirm .modal-inner {
+  min-width: 42rem;
   border-radius: .6rem;
   box-shadow: 2rem 3.2rem 3.6rem -1rem rgba(35, 48, 59, 0.1);
 }

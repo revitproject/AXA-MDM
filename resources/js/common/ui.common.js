@@ -19,6 +19,9 @@ class ApplicationInit {
    */
   async initComponents() {
     window.sidebarManager = new SidebarManager();  // 사이드바 초기화
+    await window.sidebarManager.initSidebar();     // 사이드바가 로드된 후 LNB 활성화 (body의 data-route 값 기반)
+    window.sidebarManager.lnbActiveByBodyRoute();  // LNB 메뉴 활성화 (data-route 값 기반)
+
     window.modalManager = new ModalManager();      // 모달 초기화
     window.tabManagers = [new TabManager()];       // 탭 초기화
   

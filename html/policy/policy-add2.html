@@ -10,7 +10,7 @@
   <!-- css base -->
   <link rel="stylesheet" href="../../resources/css/base.css">
 </head>
-<body data-route="admin">
+<body>
   <!-- base-wrap -->
   <div class="base-wrap">
     <!-- base-header -->
@@ -20,12 +20,12 @@
     <!-- base-aside -->
     <aside class="base-aside"></aside>
     <!-- //base-aside -->
-
+    <p>2dpeth acitve sample</p>
     <!-- base-content -->
     <main class="base-content">
       <div class="content-inner">
-        <h1 class="content-title">설정</h1>
-        
+        <h1 class="content-title">정책</h1>
+        <p>정책추가2</p>
       </div>
     </main>
     <!-- //base-content -->
@@ -38,5 +38,13 @@
   <script type="module" src="../../resources/js/common/ui.common.js"></script>
 
   <!-- page script -->
+  <script>
+    // 사이드바가 로드된 후 lnbActive를 호출하기 위한 로직
+    window.addEventListener('load', async function () {
+      // 사이드바가 초기화된 후에만 lnbActive를 호출
+      await window.sidebarManager.initSidebar();
+      window.sidebarManager.lnbActive(2, 1);  // 1depth, 2depth
+    });
+  </script>
 </body>
 </html>

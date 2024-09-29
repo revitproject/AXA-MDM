@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA MDM</title>
+  <link rel="shortcut icon" href="../../resources/images/common/favicon.ico">
+  <!-- css library -->
+  <link rel="stylesheet" href="../../resources/css/lib/tui-date-picker.min.css">
+  <!-- css base -->
+  <link rel="stylesheet" href="../../resources/css/base.css">
+</head>
+<body data-route="device">
+  <!-- base-wrap -->
+  <div class="base-wrap device">
+    <!-- base-header -->
+    <header class="base-header"></header>
+    <!-- //base-header -->
+
+    <!-- base-aside -->
+    <aside class="base-aside"></aside>
+    <!-- //base-aside -->
+
+    <!-- base-content -->
+    <main class="base-content">
+      <div class="content-inner">
+        <h1 class="content-title">기기 추가</h1> <!-- 추가일 경우 -->
+        <!-- <h1 class="content-title">기기 수정</h1> 수정일 경우 -->
+        <div class="update-content">
+          <div class="qrcode-wrap">
+            <div class="content-icon"></div>
+            <p class="qrcode-title">소유 기기 QR 코드</p> <!-- default -->
+            <!-- <p class="qrcode-title">기업 소유 기기(초기화) QR 코드</p> 관리모드 > 디바이스 선택 시 -->
+            <!-- <p class="qrcode-title">개인 소유 기기(BYOD) QR 코드</p> 관리모드 > 프로필 선택 시 -->
+            <div class="qrcode-box">
+              <p class="qrcode-guide">[QR 코드 생성]을 하시면 <br>기기에 추가할 QR 이미지가 <br>생성 됩니다.</p> <!-- default, qr 코드 생성 전 -->
+              <!-- <img src="https://via.placeholder.com/120" alt="QR Code" style="width: 120px; height: 120px;"> qr 코드 생성 후 이미지 표시 -->
+            </div>
+          </div>
+          <div class="form-wrap">
+            <div class="search-form">
+              <div class="form-input is-column">
+                <label class="lb-inp is-focused">
+                  <span class="lb-title strong">사용자</span>
+                  <input type="text" class="inp-base is-h48" name="" aria-label="사용자" placeholder="">
+                </label>
+              </div>
+              <button type="button" class="btn is-primary is-h48">검색</button>
+            </div>
+
+            <div class="form-inner">
+              <label class="form-title">정책</label>
+              <select class="inp-select is-h48">
+                <option value="" selected disabled hidden>선택</option>
+                <option value="최근 등록된 정책 리스트">최근 등록된 정책 리스트</option>
+                <option value="등록된 정책 리스트01">등록된 정책 리스트01</option>
+                <option value="등록된 정책 리스트02">등록된 정책 리스트02</option>
+              </select>
+            </div>
+
+            <div class="form-inner">
+              <label class="form-title">관리 모드</label>
+              <div class="slider-radio">
+                <input type="radio" name="rdoGroup1" class="slider-inp" id="radio1-1" checked>
+                <label class="slider-lb" for="radio1-1">디바이스</label>
+                <input type="radio" name="rdoGroup1" class="slider-inp" id="radio1-2">
+                <label class="slider-lb" for="radio1-2">프로필</label>
+                <input type="radio" name="rdoGroup1" class="slider-inp" id="radio1-3">
+                <label class="slider-lb" for="radio1-3">불특정 허용</label>
+                <div class="active-el"></div>
+              </div>
+            </div>
+
+            <div class="form-inner">
+              <label class="form-title">QR 유효기간</label>
+              <div class="slider-radio">
+                <input type="radio" name="rdoGroup2" class="slider-inp" id="radio2-1" checked>
+                <label class="slider-lb" for="radio2-1">10분</label>
+                <input type="radio" name="rdoGroup2" class="slider-inp" id="radio2-2">
+                <label class="slider-lb" for="radio2-2">30분</label>
+                <input type="radio" name="rdoGroup2" class="slider-inp" id="radio2-3">
+                <label class="slider-lb" for="radio2-3">60분</label>
+                <div class="active-el"></div>
+              </div>
+            </div>
+
+            <button type="button" class="btn is-primary is-h48 is-full mt-30">QR 코드 생성</button>
+            <button type="button" class="btn is-outline-3 is-h48 is-full mt-10">QR 코드 메일 전송</button>
+          </div>
+        </div>
+
+        <div class="btn-wrap">
+          <button type="button" class="btn is-secondary-1 is-h48">목록</button>
+        </div>
+      </div>
+    </main>
+    <!-- //base-content -->
+  </div>
+  <!-- //base-wrap -->
+  <!-- js library -->
+  <script src="../../resources/js/jquery/jquery.min.js"></script>
+  <script src="../../resources/js/lib/tui-date-picker.min.js"></script>
+  <!-- js base -->
+  <script type="module" src="../../resources/js/common/ui.common.js"></script>
+
+  <!-- page script -->
+</body>
+</html>

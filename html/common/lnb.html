@@ -1,35 +1,29 @@
 <nav class="base-nav">
   <ul class="lnb">
-    <li class="lnb-item">
-      <a href="../home/home.html" class="lnb-link" data-route="home"><span>홈</span></a> 
+    <li class="lnb-item" data-route="home">
+      <a href="../home/home.html" class="lnb-link"><span>홈</span></a> 
     </li>
-    <li class="lnb-item">
-      <a href="../device/device-list.html" class="lnb-link" data-route="device"><span>기기</span></a> 
+    <li class="lnb-item" data-route="device">
+      <a href="../device/device-list.html" class="lnb-link"><span>기기</span></a> 
+    </li>
+    <li class="lnb-item" data-route="policy">
+      <a href="../policy/list-policy.html" class="lnb-link"><span>정책</span></a>
+      <!-- 2depth e.g -->
       <ul class="lnb-sub">
-        <li class="lnb-subitem">
-          <a href="../device/list-device2.html" class="lnb-sub-link"><span>기기 추가1</span></a>
+        <li class="lnb-subitem" data-route="policy-add1">
+          <a href="../policy/policy-add1.html" class="lnb-sub-link"><span>정책 추가1</span></a>
         </li>
-        <li class="lnb-subitem">
-          <a href="../device/list-device3.html" class="lnb-sub-link"><span>기기 추가2</span></a>
+        <li class="lnb-subitem" data-route="policy-add2">
+          <a href="../policy/policy-add2.html" class="lnb-sub-link"><span>정책 추가2</span></a>
         </li>
-      </ul>
+      </ul> 
+      <!-- //2depth e.g -->
     </li>
-    <li class="lnb-item">
-      <a href="../policy/list-policy.html" class="lnb-link" data-route="policy"><span>정책</span></a> 
-      <ul class="lnb-sub">
-        <li class="lnb-subitem">
-          <a href="../policy/add-policy1.html" class="lnb-sub-link"><span>정책 추가1</span></a>
-        </li>
-        <li class="lnb-subitem">
-          <a href="../policy/add-policy2.html" class="lnb-sub-link"><span>정책 추가2</span></a>
-        </li>
-      </ul>
+    <li class="lnb-item" data-route="user">
+      <a href="../user/list-user.html" class="lnb-link"><span>사용자</span></a> 
     </li>
-    <li class="lnb-item">
-      <a href="../user/list-user.html" class="lnb-link" data-route="user"><span>사용자</span></a> 
-    </li>
-    <li class="lnb-item">
-      <a href="../admin/list-admin.html" class="lnb-link" data-route="admin"><span>관리자</span></a> 
+    <li class="lnb-item" data-route="admin">
+      <a href="../admin/list-admin.html" class="lnb-link"><span>관리자</span></a> 
     </li>
   </ul>
 </nav>
